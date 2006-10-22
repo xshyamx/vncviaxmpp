@@ -1,4 +1,4 @@
-Source code: http://svn.jivesoftware.org/svn/repos/smack/trunk
+Source code: http://svn.jivesoftware.org/svn/repos/smack/branches/Jingle
 Date: 10/22/2006
 Build by: 
 ------------
