@@ -30,7 +30,7 @@ public class XMPP2TCPPumpThread extends Thread  {
 			OutputStream os = this.socket.getOutputStream();
 			OutputStream bos = new BufferedOutputStream(os);
 			
-			PacketFilter filter = new FromContainsFilter("hathanhthai2@gmail.com");
+			PacketFilter filter = new FromContainsFilter(recipientId);
 			PacketCollector myCollector = connection.createPacketCollector(filter);
 			Packet p;
 			do {

@@ -24,9 +24,10 @@ public class Main {
 			System.err.println("Could not listen on port: 5900.");
 			System.exit(-1);
 		}
-
+		//usr/pwd: xmppclient@gmail.com/thaiha
+		//usr/pwd: xmppserver@gmail.com/thaiha
 		while (listening) {
-			new TCPOverXMPPThread(serverSocket.accept(), "hathanhthai", "purplecat809", "hathanhthai2@gmail.com").start();
+			new TCPOverXMPPThread(serverSocket.accept(), "xmppclient", "thaiha", "xmppserver@gmail.com").start();
 		}
 		serverSocket.close();
 	}
