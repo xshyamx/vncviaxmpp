@@ -11,24 +11,19 @@ import org.jivesoftware.smack.XMPPConnection;
 
 public class TCP2XMPPPumpThread extends Thread {
 	private Socket socket = null;
+	private Chat chat;
 
-	private XMPPConnection connection = null;
-
-	private String recipientId;
-
-	public TCP2XMPPPumpThread(Socket socket, XMPPConnection connection,
-			String recipientId) {
+	public TCP2XMPPPumpThread(Socket socket, Chat chat) {
 		this.socket = socket;
-		this.connection = connection;
-		this.recipientId = recipientId;
+		this.chat = chat;
 	}
 
 	public void run() {
 		XMPPConnection.DEBUG_ENABLED = true;
 		try {
-			Chat chat = connection.createChat(recipientId);
 			InputStream is = this.socket.getInputStream();
 			InputStream bis = new BufferedInputStream(is);
+			chat.sendMessage("_start");
 			byte[] buffer = new byte[4*1024];
 			int read;
 			do {
@@ -41,10 +36,9 @@ public class TCP2XMPPPumpThread extends Thread {
 					chat.sendMessage(new String(text));
 				}
 			} while (read >= 0);
+			chat.sendMessage("_end");
 			bis.close();
 			is.close();
-			connection.close();
-			System.out.println("CLOSED!");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
