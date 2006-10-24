@@ -30,6 +30,7 @@ public class TCPOverXMPPThread extends Thread {
 			t2.join();
 			socket.close();
 			connection.close();
+			System.out.println("CLOSEDMAIN!");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

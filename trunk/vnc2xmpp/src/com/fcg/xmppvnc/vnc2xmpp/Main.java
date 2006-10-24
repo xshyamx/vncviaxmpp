@@ -28,9 +28,7 @@ public class Main {
 		while (listening) {
 			new TCPOverXMPPThread(serverSocket.accept(), "hathanhthai", "purplecat809", "hathanhthai2@gmail.com").start();
 		}
-
 		serverSocket.close();
-
 	}
 
 }
