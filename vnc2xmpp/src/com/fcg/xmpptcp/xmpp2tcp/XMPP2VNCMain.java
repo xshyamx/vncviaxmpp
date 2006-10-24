@@ -42,14 +42,16 @@ public class XMPP2VNCMain {
 					if (packet instanceof Message) {
 						Message msg = (Message) packet;
 						synchronized(threadIds) {
-							System.out.println("thread id:" + msg.getThread());
-							if (!threadIds.contains(msg.getThread())) {
+							System.out.println("see thread id:" + msg.getThread());
+							if (!threadIds.containsKey(msg.getThread())) {
 								threadIds.put(msg.getThread(), "true");
 								/* a message of a brand new thread */
 								Chat chat = new Chat(con, "xmppclient@gmail.com", msg.getThread());
 								Socket socket = new Socket("localhost", 23);
 								System.out.println("Chat not exist, create new tunnel");
 								new XMPPOverTCPThread(socket, chat).start();
+							} else {
+								System.out.println("Existing tunnel");
 							}
 						}
 					}
