@@ -1,6 +1,7 @@
 package com.fcg.xmpptcp.tcp2xmpp;
 
 import java.net.Socket;
+import java.util.Date;
 
 import org.jivesoftware.smack.Chat;
 import org.jivesoftware.smack.SSLXMPPConnection;
@@ -13,16 +14,15 @@ import com.fcg.xmpptcp.common.XMPP2TCPPumpThread;
 public class TCPOverXMPPThread extends Thread {
 	private Socket socket = null;
 	private XMPPConnection connection = null;
-	private String recipientId;
 	private Chat chat;
+	private String resource = "TCPOverXMPPThread_" + (new Date()).getTime();
 	
 	public TCPOverXMPPThread(Socket socket, String gtalkUsr, String gtalkPwd, String recipientId) throws XMPPException {
 		super("TCPOverXMPPThread");
 		this.socket = socket;
 		XMPPConnection con = new SSLXMPPConnection("talk.google.com", 443, "gmail.com");
-		con.login(gtalkUsr, gtalkPwd);
+		con.login(gtalkUsr, gtalkPwd, resource);
 		this.connection = con;
-		this.recipientId = recipientId;
 		chat = connection.createChat(recipientId);
 	}
  
@@ -36,7 +36,7 @@ public class TCPOverXMPPThread extends Thread {
 			t2.join();
 			socket.close();
 			connection.close();
-			System.out.println("CLOSEDMAIN!");
+			System.out.println("CLOSED connection of resource :" + resource);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
