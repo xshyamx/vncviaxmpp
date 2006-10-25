@@ -5,6 +5,7 @@ import java.net.Socket;
 
 import org.apache.commons.codec.binary.Hex;
 import org.jivesoftware.smack.Chat;
+import org.jivesoftware.smack.packet.Message;
 
 public class XMPP2TCPPumpThread extends Thread  {
 	private Socket socket = null;
@@ -19,7 +20,8 @@ public class XMPP2TCPPumpThread extends Thread  {
 		try {
 			OutputStream os = this.socket.getOutputStream();
 			do {
-				String message = chat.nextMessage().getBody();
+				Message messageObj = chat.nextMessage();
+				String message = messageObj.getBody();
 				if (message.equals("_start")) continue;
 				if (message.equals("_end")) break;
 				byte[] bytes = Hex.decodeHex(message.toCharArray());
