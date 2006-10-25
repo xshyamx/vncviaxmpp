@@ -47,7 +47,7 @@ public class XMPP2VNCMain {
 								threadIds.put(msg.getThread(), "true");
 								/* a message of a brand new thread */
 								Chat chat = new Chat(con, "xmppclient@gmail.com", msg.getThread());
-								Socket socket = new Socket("localhost", 23);
+								Socket socket = new Socket("localhost", 5900);
 								System.out.println("Chat not exist, create new tunnel");
 								new XMPPOverTCPThread(socket, chat).start();
 							} else {
