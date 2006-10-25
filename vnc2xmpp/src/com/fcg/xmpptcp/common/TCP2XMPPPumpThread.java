@@ -25,20 +25,23 @@ public class TCP2XMPPPumpThread extends Thread {
 			InputStream bis = new BufferedInputStream(is);
 			chat.sendMessage("_start");
 			byte[] buffer = new byte[4*1024];
-			int read;
-			do {
-				read = bis.read(buffer);
-				if (read > 0) {
-					byte[] newArray = (byte[]) Array.newInstance(buffer
-							.getClass().getComponentType(), read);
-					System.arraycopy(buffer, 0, newArray, 0, read);
-					char[] text = Hex.encodeHex(newArray);
-					chat.sendMessage(new String(text));
-				}
-			} while (read >= 0);
+			try {
+				int read;
+				do {
+					read = bis.read(buffer);
+					if (read > 0) {
+						byte[] newArray = (byte[]) Array.newInstance(buffer
+								.getClass().getComponentType(), read);
+						System.arraycopy(buffer, 0, newArray, 0, read);
+						char[] text = Hex.encodeHex(newArray);
+						chat.sendMessage(new String(text));
+					}
+				} while (read >= 0);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			chat.sendMessage("_end");
-			bis.close();
-			is.close();
+			this.socket.shutdownInput();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
