@@ -27,7 +27,7 @@ public class XMPP2TCPPumpThread extends Thread  {
 				byte[] bytes = Hex.decodeHex(message.toCharArray());
 				os.write(bytes);
 			} while (true);
-			os.close();
+			this.socket.shutdownOutput();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
