@@ -26,6 +26,9 @@ public class XMPP2TCPMain {
 	private static Hashtable threadIds = new Hashtable();
 
 	public static void main(String[] args) throws XMPPException {
+		final String host = args.length > 1 ? args[0] : "localhost";
+		final String port = args.length > 1 ? args[1] : "5900";
+		
 		XMPPConnection.DEBUG_ENABLED = true;
 
 		con = new SSLXMPPConnection("talk.google.com", 443, "gmail.com");
@@ -46,7 +49,7 @@ public class XMPP2TCPMain {
 								threadIds.put(msg.getThread(), "true");
 								/* a message of a brand new thread */
 								Chat chat = new Chat(con, "xmppclient@gmail.com", msg.getThread());
-								Socket socket = new Socket("localhost", 23);
+								Socket socket = new Socket(host, Integer.parseInt(port));
 								System.out.println("Chat not exist, create new tunnel " + msg.getThread());
 								new XMPPOverTCPThread(socket, chat).start();
 							}

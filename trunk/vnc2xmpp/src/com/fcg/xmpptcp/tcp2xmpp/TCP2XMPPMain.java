@@ -17,11 +17,11 @@ public class TCP2XMPPMain {
 	public static void main(String[] args) throws XMPPException, IOException {
 		ServerSocket serverSocket = null;
 		boolean listening = true;
-
+		String port = args.length > 0 ? args[0] : "5900";
 		try {
-			serverSocket = new ServerSocket(5900);
+			serverSocket = new ServerSocket(Integer.parseInt(port));
 		} catch (IOException e) {
-			System.err.println("Could not listen on port: 5900.");
+			System.err.println("Could not listen on port: " + port);
 			System.exit(-1);
 		}
 		//usr/pwd: xmppclient@gmail.com/thaiha
