@@ -5,7 +5,6 @@ import java.util.Hashtable;
 
 import org.jivesoftware.smack.Chat;
 import org.jivesoftware.smack.PacketListener;
-import org.jivesoftware.smack.SSLXMPPConnection;
 import org.jivesoftware.smack.XMPPConnection;
 import org.jivesoftware.smack.XMPPException;
 import org.jivesoftware.smack.filter.AndFilter;
@@ -14,6 +13,8 @@ import org.jivesoftware.smack.filter.PacketFilter;
 import org.jivesoftware.smack.filter.PacketTypeFilter;
 import org.jivesoftware.smack.packet.Message;
 import org.jivesoftware.smack.packet.Packet;
+
+import com.fcg.xmpptcp.common.ConnectionUtil;
 
 
 public class XMPP2TCPMain {
@@ -31,7 +32,7 @@ public class XMPP2TCPMain {
 		
 		XMPPConnection.DEBUG_ENABLED = true;
 
-		con = new SSLXMPPConnection("talk.google.com", 443, "gmail.com");
+		con = ConnectionUtil.getGoogleConnection();//new SSLXMPPConnection("talk.google.com", 443, "gmail.com");
 		con.login(gtalkUsr, gtalkPwd);
 
 		// Accept only messages from client

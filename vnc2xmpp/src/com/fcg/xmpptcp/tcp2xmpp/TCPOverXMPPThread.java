@@ -4,10 +4,10 @@ import java.net.Socket;
 import java.util.Date;
 
 import org.jivesoftware.smack.Chat;
-import org.jivesoftware.smack.SSLXMPPConnection;
 import org.jivesoftware.smack.XMPPConnection;
 import org.jivesoftware.smack.XMPPException;
 
+import com.fcg.xmpptcp.common.ConnectionUtil;
 import com.fcg.xmpptcp.common.TCP2XMPPPumpThread;
 import com.fcg.xmpptcp.common.XMPP2TCPPumpThread;
 
@@ -20,7 +20,7 @@ public class TCPOverXMPPThread extends Thread {
 	public TCPOverXMPPThread(Socket socket, String gtalkUsr, String gtalkPwd, String recipientId) throws XMPPException {
 		super("TCPOverXMPPThread");
 		this.socket = socket;
-		XMPPConnection con = new SSLXMPPConnection("talk.google.com", 443, "gmail.com");
+		XMPPConnection con = ConnectionUtil.getGoogleConnection(); //new SSLXMPPConnection("talk.google.com", 443, "gmail.com");
 		con.login(gtalkUsr, gtalkPwd, resource);
 		this.connection = con;
 		chat = connection.createChat(recipientId);
