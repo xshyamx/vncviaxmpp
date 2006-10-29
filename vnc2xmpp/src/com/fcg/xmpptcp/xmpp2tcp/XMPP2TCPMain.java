@@ -27,7 +27,7 @@ public class XMPP2TCPMain {
 
 	public static void main(String[] args) throws XMPPException {
 		final String host = args.length > 1 ? args[0] : "localhost";
-		final String port = args.length > 1 ? args[1] : "5900";
+		final String port = args.length > 1 ? args[1] : (args.length == 1 ? args[0] : "5900");
 		
 		XMPPConnection.DEBUG_ENABLED = true;
 
