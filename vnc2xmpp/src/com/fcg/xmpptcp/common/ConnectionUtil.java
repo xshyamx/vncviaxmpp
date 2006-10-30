@@ -16,7 +16,7 @@ public class ConnectionUtil {
 			sock.connect(new InetSocketAddress(host, port), 1000);
 			open = true;
 		} catch (Exception e) {
-			e.printStackTrace();
+			/* ignore this exception */
 		}
 		return open;
 	}
