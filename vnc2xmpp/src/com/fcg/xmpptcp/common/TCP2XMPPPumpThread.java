@@ -5,7 +5,6 @@ import java.io.InputStream;
 import java.net.Socket;
 
 import org.jivesoftware.smack.Chat;
-import org.jivesoftware.smack.XMPPConnection;
 import org.jivesoftware.smack.util.StringUtils;
 
 public class TCP2XMPPPumpThread extends Thread {
@@ -22,7 +21,6 @@ public class TCP2XMPPPumpThread extends Thread {
 	}
 
 	public void run() {
-		XMPPConnection.DEBUG_ENABLED = true;
 		try {
 			InputStream is = this.socket.getInputStream();
 			InputStream bis = new BufferedInputStream(is);
