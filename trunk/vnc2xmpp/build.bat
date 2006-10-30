@@ -4,6 +4,7 @@ set CLASSPATH=%CLASSPATH%;bin;lib\smack.jar;;lib\smackx.jar;lib\smackx-debug.jar
 
 mkdir bin
 
+javac -d bin src\com\fcg\xmpptcp\common\ConnectionUtil.java
 javac -d bin src\com\fcg\xmpptcp\common\TCP2XMPPPumpThread.java 
 javac -d bin src\com\fcg\xmpptcp\common\XMPP2TCPPumpThread.java
 javac -d bin src\com\fcg\xmpptcp\tcp2xmpp\TCPOverXMPPThread.java
