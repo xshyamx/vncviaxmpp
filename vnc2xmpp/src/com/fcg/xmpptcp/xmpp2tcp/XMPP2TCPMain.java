@@ -33,9 +33,29 @@ public class XMPP2TCPMain {
 		/* save this value to be used when relaunching server */
 		XMPP2TCPMain.args = args;
 
-		final String host = args.length > 1 ? args[0] : "localhost";
-		final String port = args.length > 1 ? args[1] : (args.length == 1 ? args[0] : "5900");
-
+		String tmphost = null;
+		String tmpport = null;
+		String tmpsender = null;
+		for (int i = 0; i < args.length; i++) {
+			String arg = args[i];
+			if (arg.indexOf('@') >= 0) {
+				tmpsender = arg;
+			} else {
+				// check if this is a number
+				try {
+					int p = Integer.parseInt(arg);
+					tmpport = String.valueOf(p);
+				} catch (Exception e) {
+					tmphost = arg;
+				}
+			}
+		}
+		final String host = tmphost != null ? tmphost : "localhost";
+		final String port = tmpport != null ? tmpport : "5900";
+		final String sender = tmpsender != null ? tmpsender : "xmppclient@gmail.com";
+		
+		System.out.println("Host:" + host + "; port:" + port + "; sender:" + sender);
+		
 		// If we remove this, the main thread will exit and the background threads exit too --> server stops immediately
 		XMPPConnection.DEBUG_ENABLED = true;
 
@@ -57,7 +77,7 @@ public class XMPP2TCPMain {
 		// Accept only messages from client
 		PacketFilter filter = new AndFilter(
 				new PacketTypeFilter(Message.class), new FromContainsFilter(
-						"xmppclient@gmail.com"));
+						sender));
 
 		PacketListener myListener = new PacketListener() {
 			public void processPacket(Packet packet) {
@@ -78,12 +98,12 @@ public class XMPP2TCPMain {
 							try {
 								socket = new Socket(host, Integer.parseInt(port));
 								/* a message of a brand new thread */
-								Chat chat = new Chat(con, "xmppclient@gmail.com", msg.getThread());
+								Chat chat = new Chat(con, sender, msg.getThread());
 								System.out.println("Chat not exist, create new tunnel " + msg.getThread());
 								new XMPPOverTCPThread(socket, chat).start();
 							} catch (Exception e) {
 								/* cannot open a socket? inform the sender*/
-								new Chat(con, "xmppclient@gmail.com", msg.getThread()).sendMessage("0:_end");
+								new Chat(con, sender, msg.getThread()).sendMessage("0:_end");
 							}
 						}
 					}
