@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="src" path="tests"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="lib/smack.jar" sourcepath="lib/source.zip"/>
-	<classpathentry kind="lib" path="lib/smackx.jar" sourcepath="lib/source.zip"/>
-	<classpathentry kind="lib" path="lib/smackx-debug.jar" sourcepath="lib/source.zip"/>
+	<classpathentry sourcepath="lib/source.zip" kind="lib" path="lib/smack.jar"/>
+	<classpathentry sourcepath="lib/source.zip" kind="lib" path="lib/smackx.jar"/>
+	<classpathentry sourcepath="lib/source.zip" kind="lib" path="lib/smackx-debug.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/3.8.1"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
