@@ -32,6 +32,7 @@ public class TCPOverXMPPThread extends Thread {
 			Thread t2 = new XMPP2TCPPumpThread(chat, socket);
 			t1.start();
 			t2.start();
+						
 			t1.join();
 			t2.join();
 			socket.close();

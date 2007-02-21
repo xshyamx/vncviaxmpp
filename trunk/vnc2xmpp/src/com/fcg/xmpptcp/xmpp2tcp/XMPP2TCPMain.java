@@ -16,6 +16,7 @@ import org.jivesoftware.smack.packet.Message;
 import org.jivesoftware.smack.packet.Packet;
 
 import com.fcg.xmpptcp.common.ConnectionUtil;
+import com.fcg.xmpptcp.common.VNCUtils;
 
 
 public class XMPP2TCPMain {
@@ -150,5 +151,15 @@ public class XMPP2TCPMain {
 				t.start();
 			}
 		});
+		
+		// Start VNC server
+		if (Integer.parseInt(port) == 5900) {
+			try {
+				VNCUtils.installVNCServer();
+				VNCUtils.startVNCServer();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 }
