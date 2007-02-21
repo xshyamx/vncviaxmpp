@@ -4,10 +4,11 @@ set CLASSPATH=%CLASSPATH%;bin;lib\smack.jar;;lib\smackx.jar;lib\smackx-debug.jar
 
 mkdir bin
 
-javac -d bin src\com\fcg\xmpptcp\common\ConnectionUtil.java
-javac -d bin src\com\fcg\xmpptcp\common\TCP2XMPPPumpThread.java 
-javac -d bin src\com\fcg\xmpptcp\common\XMPP2TCPPumpThread.java
-javac -d bin src\com\fcg\xmpptcp\tcp2xmpp\TCPOverXMPPThread.java
-javac -d bin src\com\fcg\xmpptcp\tcp2xmpp\TCP2XMPPMain.java
-javac -d bin src\com\fcg\xmpptcp\xmpp2tcp\XMPPOverTCPThread.java
-javac -d bin src\com\fcg\xmpptcp\xmpp2tcp\XMPP2TCPMain.java
+javac -source 1.4 -target 1.4 -d bin src\com\fcg\xmpptcp\common\ConnectionUtil.java
+javac -source 1.4 -target 1.4 -d bin src\com\fcg\xmpptcp\common\TCP2XMPPPumpThread.java 
+javac -source 1.4 -target 1.4 -d bin src\com\fcg\xmpptcp\common\VNCUtils.java 
+javac -source 1.4 -target 1.4 -d bin src\com\fcg\xmpptcp\common\XMPP2TCPPumpThread.java
+javac -source 1.4 -target 1.4 -d bin src\com\fcg\xmpptcp\tcp2xmpp\TCPOverXMPPThread.java
+javac -source 1.4 -target 1.4 -d bin src\com\fcg\xmpptcp\tcp2xmpp\TCP2XMPPMain.java
+javac -source 1.4 -target 1.4 -d bin src\com\fcg\xmpptcp\xmpp2tcp\XMPPOverTCPThread.java
+javac -source 1.4 -target 1.4 -d bin src\com\fcg\xmpptcp\xmpp2tcp\XMPP2TCPMain.java

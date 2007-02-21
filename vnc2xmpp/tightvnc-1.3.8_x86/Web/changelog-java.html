@@ -1,0 +1,573 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>TightVNC: Change Log, Java Viewer</title>
+    <link rel="stylesheet" href="tightvnc.css">
+    <meta name="author" content="Constantin Kaplinsky">
+    <meta name="generator" content="XEmacs + Ruby + Guava tools">
+    <meta name="description"
+          content="TightVNC - An enhanced VNC version with many new features, improvements,
+                   optimizations and bugfixes.">
+    <meta name="keywords"
+          content="vnc, remote desktop, remote control, remote administration, compression">
+  </head>
+  <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="#FDFAEC"
+    link="#9A1614" alink="#FF4040" vlink="#8A7634">
+    <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="8">
+          &nbsp;
+        </td><td valign="top">
+          <table width="100%" border="0" cellspacing="0" cellpadding="16">
+            <tr><td valign="top">
+  <table width="100%" border="0" align="center" cellspacing="0" cellpadding="0">
+    <tr><td width="99%">
+      <table width="100%" bgcolor="#C49A82" border="0" cellspacing="0" cellpadding="2">
+        <tr><td align="center" valign="middle">
+          <table width="100%" border="0" bgcolor="#F8EECB" align="center" cellspacing="0"
+            cellpadding="6">
+            <tr><td align="center" valign="middle">
+              <font size="+2"><b>Change Log, Java Viewer</b></font>
+            </td></tr>
+          </table>
+        </td></tr>
+      </table>
+    </td><td width="1%">&nbsp;
+    </td><td align="right" valign="middle">
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td align="right" valign="middle"><a href="http://www.tightvnc.com/donate.html"><img
+            border="0" hspace="8" src="donate.jpg" width="96" height="32"
+            alt="[DONATE]"></a></td>
+          <td nowrap align="center" valign="middle"><b>Improve TightVNC:</b><br><a
+            href="http://www.tightvnc.com/donate.html">Make a Donation</a>!</td>
+        </tr>
+      </table>
+    </td></tr>
+  </table>
+  <br>
+  <p>See the <a href="Java-ChangeLog.txt">text version</a> from which this document was generated.</p>
+<p><font color="#700000"><b>2006-08-10 17:26</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">README:</font> 
+Version string and copyright info changed, version 1.3.8.</li></ul>
+<p><font color="#700000"><b>2006-06-15 20:43</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">README:</font> 
+Version string changed for version 1.3dev8.</li></ul>
+<p><font color="#700000"><b>2006-06-15 20:38</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">README:</font> 
+Updated description of the &quot;Encoding&quot; parameter that now can be set and defaults to &quot;Auto&quot;.</li></ul>
+<p><font color="#700000"><b>2005-10-03 22:51</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">VncCanvas.java, VncViewer.java:</font> 
+Improved the VncViewer.setEncodings() method. Now it does not build the complete encoding list when auto-selecting encodings.</li></ul>
+<p><font color="#700000"><b>2005-10-03 22:26</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">VncCanvas.java, VncViewer.java:</font> 
+Implemented encoding auto selection based on measuring current network throughput.</li></ul>
+<p><font color="#700000"><b>2005-10-03 20:25</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">OptionsFrame.java, VncViewer.java:</font> 
+Improved encoding selection code. Also, now we request compression and quality levels regardless of current preferred encoding and color format.</li></ul>
+<p><font color="#700000"><b>2005-10-03 09:52</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">OptionsFrame.java, VncViewer.java:</font> 
+Now the encoding array is prepared in the VncViewer.setEncodings() method, instead of OptionsFrame.setEncodings(). This will allow to implement auto encoding selection in VncViewer.setEncodings().</li></ul>
+<p><font color="#700000"><b>2005-10-03 08:32</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">Makefile:</font> 
+Added JCFLAGS variable for javac command-line flags.</li></ul>
+<p><font color="#700000"><b>2005-09-30 19:42</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">Makefile:</font> 
+Reverted accidental change included in the previous commit.</li></ul>
+<p><font color="#700000"><b>2005-09-30 19:27</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">AuthPanel.java, Makefile, RfbProto.java, VncCanvas.java:</font> 
+Measuring network throughput. This will allow auto encoding selection work properly.</li></ul>
+<p><font color="#700000"><b>2005-09-30 10:38</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">OptionsFrame.java:</font> 
+Starting implementation of automatic encoding selection. Right now, the &quot;Auto&quot; choice in the encoding list is equivalent to &quot;Tight&quot;, but without an option to set the compression level.</li></ul>
+<p><font color="#700000"><b>2005-07-03 16:03</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">README:</font> 
+Version string changed for version 1.3dev7.</li></ul>
+<p><font color="#700000"><b>2005-07-03 15:57</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">README, index.html:</font> 
+More information about editing the index.html example.</li></ul>
+<p><font color="#700000"><b>2004-10-10 18:05</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">README:</font> 
+Added documentation for the &quot;Scale remote cursor&quot; option.</li></ul>
+<p><font color="#700000"><b>2004-10-10 13:15</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">OptionsFrame.java, VncCanvas.java:</font> 
+New &quot;scale remote cursor&quot; option allowing to reduce or enlarge soft cursor image in the full-control mode. This change is based on a patch from Horizon Wimba.</li></ul>
+<p><font color="#700000"><b>2004-10-09 19:47</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">README:</font> 
+Version string changed, version 1.3dev6.</li></ul>
+<p><font color="#700000"><b>2004-10-09 18:08</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">VncCanvas.java:</font> 
+Applied a patch from Horizon Wimba, to remove synchronization from the paint method and deal with cursor repaints properly.</li></ul>
+<p><font color="#700000"><b>2004-08-22 13:42</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">README:</font> 
+A typo fixed.</li></ul>
+<p><font color="#700000"><b>2004-08-22 12:14</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">VncCanvas.java:</font> 
+Made the VncCanvas.paint() method synchronized, to protect cursorX and cursorY members from concurrent access.</li></ul>
+<p><font color="#700000"><b>2004-05-30 21:50</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">README:</font> 
+Version string changed, version 1.3dev5.</li></ul>
+<p><font color="#700000"><b>2004-03-04 20:02</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">README:</font> 
+Version string changed, version 1.3dev4.</li></ul>
+<p><font color="#700000"><b>2004-03-04 19:34</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">AuthPanel.java, AuthUnixLoginPanel.java, Makefile, RfbProto.java, VncViewer.java:</font> 
+Added support for Unix login-style authentication.</li></ul>
+<p><font color="#700000"><b>2004-03-04 00:57</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">CapabilityInfo.java, RfbProto.java, VncViewer.java:</font> 
+Added support for TightVNC protocol extensions in RFB 3.7 protocol.</li></ul>
+<p><font color="#700000"><b>2004-03-02 22:55</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">RfbProto.java, VncViewer.java:</font> 
+Added support for RFB protocol version 3.7, without TightVNC protocol extensions yet.</li></ul>
+<p><font color="#700000"><b>2003-07-24 22:29</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">VncViewer.java:</font> 
+Minor fix to move the keyboard focus to VncCanvas on opening the desktop.</li></ul>
+<p><font color="#700000"><b>2003-07-24 21:42</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">VncCanvas.java, VncViewer.java:</font> 
+Applied a set of changes by HorizonLive.com, Inc. In the VncCanvas class, fixed a problem of createImage() returning null. In the VncViewer, problems with some JVMs hanging on destroying the applet were solved. Also, implemented a possibility to enable/disable input via inter-applet communication.</li></ul>
+<p><font color="#700000"><b>2003-07-02 19:05</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">CapabilityInfo.java, CapsContainer.java, Makefile:</font> 
+Implemented a Java version of the CapsContainer class that will be used in the protocol 3.130 handling code.</li></ul>
+<p><font color="#700000"><b>2003-05-18 20:45</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">AuthPanel.java, VncViewer.java:</font> 
+Code refactored to enable integration of pluggable authentication schemes. Now the Java viewer first connects to the server, then shows the authentication panel only if the server requires authentication. All the authentication code has been moved to the AuthPanel class. Also, now the viewer shows status messages on connecting to the server.</li></ul>
+<p><font color="#700000"><b>2003-03-02 16:54</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">RfbProto.java:</font> 
+Passing through X keysyms for foreign currencies, a modified patch from Bernd Krueger-Knauber.</li></ul>
+<p><font color="#700000"><b>2003-01-22 20:35</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">README:</font> 
+Version string changed, version 1.2.8.</li></ul>
+<p><font color="#700000"><b>2002-11-13 23:50</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">README:</font> 
+Version string changed, version 1.2.7.</li></ul>
+<p><font color="#700000"><b>2002-11-12 15:21</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">MANIFEST.MF, Makefile:</font> 
+Added a MANIFEST file with a Main-Class statement to allow easy execution of the JAR file, using java -jar command-line option.</li></ul>
+<p><font color="#700000"><b>2002-11-12 15:18</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">dir.mk:</font> 
+Removed dir.mk file.</li></ul>
+<p><font color="#700000"><b>2002-11-12 15:15</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">index.html:</font> 
+Applet height increased by 32 pixels.</li></ul>
+<p><font color="#700000"><b>2002-11-12 13:34</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">Makefile:</font> 
+Extra .vnc files have been removed, having just index.vnc should be enough.</li></ul>
+<p><font color="#700000"><b>2002-11-12 13:33</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">hextile.vnc, index.html, index.vnc, noshared.vnc, shared.vnc, tight.vnc, zlib.vnc:</font> 
+Extra .vnc files have been removed, having just index.vnc should be enough. Also, an example HTML page has been prepared, to simplify installation under a standalone Web server.</li></ul>
+<p><font color="#700000"><b>2002-11-12 13:13</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">README:</font> 
+Documented three ways to use the Java viewer, in the Installation section.</li></ul>
+<p><font color="#700000"><b>2002-11-07 19:12</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">VncCanvas.java, VncViewer.java:</font> 
+Minor change to preserve keyboard focus in VncCanvas after resizing the frame, when running in a separate window.</li></ul>
+<p><font color="#700000"><b>2002-11-06 22:49</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">Makefile, README, ReloginPanel.java, VncViewer.java:</font> 
+Implemented new buttons &quot;Login again&quot; and &quot;Close window&quot; near the disconnect or error messages in the applet mode, and introduced new &quot;Offer Relogin&quot; parameter to control this improvement. Thanks to Peter Astrand for the initial version of the &quot;Login again&quot; patch.</li></ul>
+<p><font color="#700000"><b>2002-10-30 00:26</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">VncCanvas.java:</font> 
+Don't defer update requests if there is some data to receive, or if the last update included a PointerPos message.</li></ul>
+<p><font color="#700000"><b>2002-10-29 23:06</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">HTTPConnectSocket.java, HTTPConnectSocketFactory.java, Makefile:</font> 
+Support for connections via HTTP proxies using HTTP CONNECT method. Most likely, this will not work in applet mode, due to security restrictions in JVMs.</li></ul>
+<p><font color="#700000"><b>2002-10-29 23:03</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">OptionsFrame.java, RfbProto.java, VncCanvas.java:</font> 
+Added support for new CursorPos pseudo-encoding which allows to transmit pointer position from server to clients.</li></ul>
+<p><font color="#700000"><b>2002-09-25 04:29</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">RecordingFrame.java:</font> 
+A patch from Harmen van der Wal -- &quot;a workaround for AFAIK a rare (Blackdown 1.1.7) SecurityManager.checkPropertyAccess() bug, that would otherwise be fatal for an unprivileged applet&quot;.</li></ul>
+<p><font color="#700000"><b>2002-09-25 04:23</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">RfbProto.java, VncViewer.java:</font> 
+Enhancements to the exception handling mechanisms, a patch from Harmen van der Wal.</li></ul>
+<p><font color="#700000"><b>2002-09-25 04:01</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">Makefile, README, RfbProto.java, SocketFactory.java, VncViewer.java:</font> 
+A patch from Harmen van der Wal, which makes it easy to plug-in alternative transport methods to the viewer. It can be useful for for things like HTTP tunneling, SSL support, or perhaps for integration with &quot;zebedee&quot;, ssh or other tunneling mechanisms.</li></ul>
+<p><font color="#700000"><b>2002-09-24 08:52</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">VncCanvas.java:</font> 
+Reducing max frame size by 30 pixels in each direction, to leave some place on the screen, e.g. for the menu bar on Macintosh or the task bar on Windows; a patch from Steve Kann.</li></ul>
+<p><font color="#700000"><b>2002-08-27 19:23</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">README:</font> 
+Version string changed, version 1.2.6.</li></ul>
+<p><font color="#700000"><b>2002-08-04 23:39</b></font> <b>const</b></p>
+<ul><li><font color="#007000">README, RfbProto.java, VncCanvas.java:</font> 
+Version string changed, version 1.2.5. Copyrights updated.</li></ul>
+<p><font color="#700000"><b>2002-07-05 15:37</b></font> <b>const</b></p>
+<ul><li><font color="#007000">RfbProto.java, VncCanvas.java, VncViewer.java:</font> 
+More robust and correct methods to determine if Zlib- or Tight-encoded data should be saved Raw-encoded or re-compressed in recorded sessions. Also, always emit warnings in the Java console if such recoding was necessary.</li></ul>
+<p><font color="#700000"><b>2002-07-05 15:26</b></font> <b>const</b></p>
+<ul><li><font color="#007000">README:</font> 
+Minor documentation addition.</li></ul>
+<p><font color="#700000"><b>2002-07-05 13:17</b></font> <b>const</b></p>
+<ul><li><font color="#007000">OptionsFrame.java:</font> 
+JPEG quality setting should be enabled in the Options frame only in the 24-bit color mode.</li></ul>
+<p><font color="#700000"><b>2002-07-05 13:02</b></font> <b>const</b></p>
+<ul><li><font color="#007000">OptionsFrame.java:</font> 
+Unused temporary hack was removed.</li></ul>
+<p><font color="#700000"><b>2002-07-04 03:25</b></font> <b>const</b></p>
+<ul><li><font color="#007000">README:</font> 
+Some documentation on RFB session recording.</li></ul>
+<p><font color="#700000"><b>2002-07-04 02:43</b></font> <b>const</b></p>
+<ul><li><font color="#007000">RfbProto.java:</font> 
+Forgot to remove debugging output.</li></ul>
+<p><font color="#700000"><b>2002-07-04 02:38</b></font> <b>const</b></p>
+<ul><li><font color="#007000">RfbProto.java, VncCanvas.java:</font> 
+Re-compressing Tight-encoded rectangles when recorded session starts after the connection was established, to make it possible to decompress the data without knowing prior pixel data.</li></ul>
+<p><font color="#700000"><b>2002-07-03 21:11</b></font> <b>const</b></p>
+<ul><li><font color="#007000">VncViewer.java, RfbProto.java, VncCanvas.java:</font> 
+Special handling of Zlib-encoded rectangles -- they are written either Zlib-encoded if it's a beginning of RFB session, or Raw encoded otherwise. This is needed to make sure it will be possible to decode saved data without knowing the state of zlib compression stream used by the encoder.</li></ul>
+<p><font color="#700000"><b>2002-07-03 17:49</b></font> <b>const</b></p>
+<ul><li><font color="#007000">ButtonPanel.java, RecordingFrame.java, VncViewer.java:</font> 
+The &quot;Record&quot; button now appears only if current SecurityManager allows access to the local filesystem. Exceptions after an intentional disconnect are not shown in the applet panel or window any more.</li></ul>
+<p><font color="#700000"><b>2002-07-03 16:40</b></font> <b>const</b></p>
+<ul><li><font color="#007000">RecordingFrame.java, RfbProto.java, VncCanvas.java, VncViewer.java:</font> 
+Implement dynamic toggling of session recording.</li></ul>
+<p><font color="#700000"><b>2002-07-03 13:34</b></font> <b>const</b></p>
+<ul><li><font color="#007000">VncViewer.java:</font> 
+Preparing to implement dynamic toggling of session recording. The &quot;Save Session&quot; parameter was removed.</li></ul>
+<p><font color="#700000"><b>2002-07-01 12:44</b></font> <b>const</b></p>
+<ul><li><font color="#007000">RecordingFrame.java:</font> 
+Fixed copyright string.</li></ul>
+<p><font color="#700000"><b>2002-06-13 01:45</b></font> <b>const</b></p>
+<ul><li><font color="#007000">ButtonPanel.java, RecordingFrame.java, VncViewer.java:</font> 
+A simple hack to make the RecordingFrame work, at least when the recording is being turned on before making the connection. The RecordingFrame is still not very useful but at least does allow to record a whole session in one file.</li></ul>
+<p><font color="#700000"><b>2002-06-12 19:03</b></font> <b>const</b></p>
+<ul><li><font color="#007000">ButtonPanel.java, Makefile, RecordingFrame.java, VncViewer.java:</font> 
+Added new &quot;Record&quot; button and a GUI to control recording of sessions in FBS files.</li></ul>
+<p><font color="#700000"><b>2002-06-05 01:01</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Makefile, OptionsFrame.java, RfbProto.java, SessionRecorder.java, VncCanvas.java, VncViewer.java:</font> 
+Implemented experimental feature to save RFB sessions in FBS files compatible with rfbproxy, and the new &quot;Save Session&quot; parameter where a user can set a file name. Color format requested from the server was changed to little-endian to make saved sessions similar to ones written by the VNC Reflector, and to make colors compatible with RFB Session Player.</li></ul>
+<p><font color="#700000"><b>2002-06-04 12:55</b></font> <b>const</b></p>
+<ul><li><font color="#007000">VncCanvas.java:</font> 
+Cleanups in &quot;throws&quot; statements.</li></ul>
+<p><font color="#700000"><b>2002-06-04 12:50</b></font> <b>const</b></p>
+<ul><li><font color="#007000">VncCanvas.java:</font> 
+Minor cleanup in comment.</li></ul>
+<p><font color="#700000"><b>2002-06-04 12:37</b></font> <b>const</b></p>
+<ul><li><font color="#007000">VncCanvas.java:</font> 
+Major Code cleanup: each decoder was moved from the processNormalProtocol() method to a separate function.</li></ul>
+<p><font color="#700000"><b>2002-06-04 12:19</b></font> <b>const</b></p>
+<ul><li><font color="#007000">README:</font> 
+Minor cleanup.</li></ul>
+<p><font color="#700000"><b>2002-05-23 23:58</b></font> <b>const</b></p>
+<ul><li><font color="#007000">README, VncViewer.java:</font> 
+New &quot;ENCPASSWORD&quot; parameter, modified patch from Peter Astrand.</li></ul>
+<p><font color="#700000"><b>2002-05-19 15:03</b></font> <b>const</b></p>
+<ul><li><font color="#007000">RfbProto.java, VncCanvas.java, VncViewer.java:</font> 
+Throwing Exception instead of IOException if that was not an I/O error.</li></ul>
+<p><font color="#700000"><b>2002-05-19 13:38</b></font> <b>const</b></p>
+<ul><li><font color="#007000">RfbProto.java:</font> 
+Applied patch from Peter Astrand to fix problems with Swedish keys and broken JVMs.</li></ul>
+<p><font color="#700000"><b>2002-04-25 18:51</b></font> <b>const</b></p>
+<ul><li><font color="#007000">README:</font> 
+Updated version strings for version 1.2.4.</li></ul>
+<p><font color="#700000"><b>2002-04-25 18:49</b></font> <b>const</b></p>
+<ul><li><font color="#007000">README:</font> 
+Documented new feature to refresh remote desktop in the view-only mode using &quot;R&quot;/&quot;r&quot; keys.</li></ul>
+<p><font color="#700000"><b>2002-04-23 20:02</b></font> <b>const</b></p>
+<ul><li><font color="#007000">ButtonPanel.java:</font> 
+Bugfix: keyboard focus could be set incorrectly. It was returned to desktop even when windows such as Options or Clipboard were created. This looked like new windows had appeared behind the authenticator or desktop window, if the viewer itself was running in a separate window.</li></ul>
+<p><font color="#700000"><b>2002-04-10 02:10</b></font> <b>const</b></p>
+<ul><li><font color="#007000">VncViewer.java:</font> 
+Minor bugfix to prevent the &quot;Refresh&quot; button to disappear after the &quot;Disconnect&quot; button changes to &quot;Hide desktop&quot;.</li></ul>
+<p><font color="#700000"><b>2002-04-10 02:05</b></font> <b>const</b></p>
+<ul><li><font color="#007000">VncViewer.java:</font> 
+Previous bugfix was broken.</li></ul>
+<p><font color="#700000"><b>2002-04-10 02:01</b></font> <b>const</b></p>
+<ul><li><font color="#007000">VncViewer.java:</font> 
+Minor bugfix to prevent dumping exceptions on pressing &quot;R&quot;/&quot;r&quot; keys over disconnected desktop.</li></ul>
+<p><font color="#700000"><b>2002-04-10 01:53</b></font> <b>const</b></p>
+<ul><li><font color="#007000">VncCanvas.java:</font> 
+Now &quot;R&quot;/&quot;r&quot; keys can be used to request screen updates in view-only mode.</li></ul>
+<p><font color="#700000"><b>2002-04-09 02:17</b></font> <b>const</b></p>
+<ul><li><font color="#007000">README:</font> 
+&quot;Show offline desktop&quot; parameter documented.</li></ul>
+<p><font color="#700000"><b>2002-04-09 02:12</b></font> <b>const</b></p>
+<ul><li><font color="#007000">OptionsFrame.java, VncCanvas.java, VncViewer.java:</font> 
+&quot;Show Controls&quot; setting moved from OptionsFrame to VncViewer class.</li></ul>
+<p><font color="#700000"><b>2002-04-09 02:04</b></font> <b>const</b></p>
+<ul><li><font color="#007000">ButtonPanel.java, VncViewer.java:</font> 
+New &quot;Show Offline Desktop&quot; parameter allowing the disktop to be still displayed even after the remote side closed connection.</li></ul>
+<p><font color="#700000"><b>2002-04-03 00:12</b></font> <b>const</b></p>
+<ul><li><font color="#007000">AuthPanel.java:</font> 
+Disabling the password input field on activating connections.</li></ul>
+<p><font color="#700000"><b>2002-04-02 22:38</b></font> <b>const</b></p>
+<ul><li><font color="#007000">VncViewer.java:</font> 
+Reporting more meaningful messages on errors.</li></ul>
+<p><font color="#700000"><b>2002-03-25 21:41</b></font> <b>const</b></p>
+<ul><li><font color="#007000">VncViewer.java:</font> 
+A cosmetic change.</li></ul>
+<p><font color="#700000"><b>2002-03-07 23:27</b></font> <b>const</b></p>
+<ul><li><font color="#007000">VncCanvas.java:</font> 
+Fixed bug causing NullPointerException in view-only mode with disabled button panel.</li></ul>
+<p><font color="#700000"><b>2002-02-14 21:20</b></font> <b>const</b></p>
+<ul><li><font color="#007000">ButtonPanel.java, VncCanvas.java:</font> 
+Made the &quot;Ctrl-Alt-Del&quot; button disabled in the view-only mode.</li></ul>
+<p><font color="#700000"><b>2002-02-14 21:19</b></font> <b>const</b></p>
+<ul><li><font color="#007000">VncViewer.java:</font> 
+Removed calls printing debugging output.</li></ul>
+<p><font color="#700000"><b>2002-02-13 05:02</b></font> <b>const</b></p>
+<ul><li><font color="#007000">README, VncCanvas.java, VncViewer.java:</font> 
+Added new parameters &quot;Defer screen updates&quot;, &quot;Defer cursor updates&quot;, &quot;Defer update requests&quot;, documented in README.</li></ul>
+<p><font color="#700000"><b>2002-02-13 03:03</b></font> <b>const</b></p>
+<ul><li><font color="#007000">VncCanvas.java:</font> 
+Made &quot;Restricted colors&quot; option dynamic.</li></ul>
+<p><font color="#700000"><b>2002-02-13 02:36</b></font> <b>const</b></p>
+<ul><li><font color="#007000">VncCanvas.java, VncViewer.java:</font> 
+Code cleanups, preparing to make &quot;Restricted colors&quot; option dynamic.</li></ul>
+<p><font color="#700000"><b>2002-02-12 23:32</b></font> <b>const</b></p>
+<ul><li><font color="#007000">ButtonPanel.java, OptionsFrame.java, README, RfbProto.java, VncCanvas.java, VncViewer.java:</font> 
+Documented applet parameters, updated copyright strings.</li></ul>
+<p><font color="#700000"><b>2002-02-12 19:53</b></font> <b>const</b></p>
+<ul><li><font color="#007000">VncCanvas.java:</font> 
+Solved all issues with JPEG image loading. Added more comments in the source code.</li></ul>
+<p><font color="#700000"><b>2002-02-12 18:13</b></font> <b>const</b></p>
+<ul><li><font color="#007000">OptionsFrame.java, VncCanvas.java:</font> 
+Solved problems with asynchronous JPEG image loading, although the solution is not ideal yet. Now the ImageObserver interface is used only to track loading of JPEG images, and is not used with drawImage() method calls.  Draft scaling implementation appeared in previous CVS commit was temporarily removed in this revision.</li></ul>
+<p><font color="#700000"><b>2002-02-08 18:06</b></font> <b>const</b></p>
+<ul><li><font color="#007000">OptionsFrame.java, VncCanvas.java:</font> 
+Simple and inefficient scaling implementation, new &quot;Scaling Factor&quot; parameter.</li></ul>
+<p><font color="#700000"><b>2002-02-08 00:20</b></font> <b>const</b></p>
+<ul><li><font color="#007000">ButtonPanel.java, VncViewer.java:</font> 
+Preventing authentication retries when the PASSWORD parameter is used. Closing windows and disconnecting on the applet shutdown. Terminating the application properly on closing the authentication window. Packing the window on reporting errors when in a separate window; this is necessary because it's possible that the window was empty. Disconnecting on fatal errors. Always forcing the keyboard focus go to the desktop on activating the connection. Code re-organizations and cleanups e.g. new tryAuthenticate() method.</li></ul>
+<p><font color="#700000"><b>2002-01-31 00:25</b></font> <b>const</b></p>
+<ul><li><font color="#007000">VncCanvas.java:</font> 
+The frame size now should be limited by the screen size. JPEG support improved, but drawing is still not reliable. Minor code cleanups -- methods re-arranged.</li></ul>
+<p><font color="#700000"><b>2002-01-31 00:22</b></font> <b>const</b></p>
+<ul><li><font color="#007000">OptionsFrame.java:</font> 
+A small piece of debugging code removed.</li></ul>
+<p><font color="#700000"><b>2002-01-30 19:47</b></font> <b>const</b></p>
+<ul><li><font color="#007000">OptionsFrame.java, RfbProto.java, VncCanvas.java:</font> 
+Drawing model was changed again; now usual off-screen Image is used for double-buffering instead of MemoryImageSource. Preliminary implementation of JPEG support in the Tight decoder. New &quot;JPEG image quality&quot; parameter and corresponding item in the Options frame.</li></ul>
+<p><font color="#700000"><b>2002-01-25 12:49</b></font> <b>const</b></p>
+<ul><li><font color="#007000">VncCanvas.java:</font> 
+Bugfixes in the Tight decoder: recent changes broke 8-bit color mode. Bugfixes in the XCursor encoding support: cursor colors were interpreted incorrectly.</li></ul>
+<p><font color="#700000"><b>2002-01-15 03:11</b></font> <b>const</b></p>
+<ul><li><font color="#007000">VncCanvas.java:</font> 
+24-bit Tight decoder finished. Now it parses 24-bit (not 32-bit!) color samples correctly, and is able to decode data pre-processed with the &quot;Gradient&quot; filter.</li></ul>
+<p><font color="#700000"><b>2002-01-15 00:46</b></font> <b>const</b></p>
+<ul><li><font color="#007000">VncCanvas.java:</font> 
+Preliminary working support for 24-bit colors in the Tight decoder.</li></ul>
+<p><font color="#700000"><b>2002-01-14 20:00</b></font> <b>const</b></p>
+<ul><li><font color="#007000">OptionsFrame.java:</font> 
+Color format was not set correctly.</li></ul>
+<p><font color="#700000"><b>2002-01-14 19:32</b></font> <b>const</b></p>
+<ul><li><font color="#007000">RfbProto.java, VncCanvas.java:</font> 
+Code cleanups: changes in rfb.is.read() and rfb.is.readFully() calls.</li></ul>
+<p><font color="#700000"><b>2002-01-14 19:18</b></font> <b>const</b></p>
+<ul><li><font color="#007000">AuthPanel.java, VncCanvas.java, VncViewer.java:</font> 
+Support for 24-bit color in RichCursor encoding.</li></ul>
+<p><font color="#700000"><b>2002-01-13 06:11</b></font> <b>const</b></p>
+<ul><li><font color="#007000">OptionsFrame.java, VncCanvas.java:</font> 
+Support for 24-bit colors. At this moment, all decoders support this color mode, with two exceptions of Tight and RichCursor.</li></ul>
+<p><font color="#700000"><b>2002-01-13 05:57</b></font> <b>const</b></p>
+<ul><li><font color="#007000">RfbProto.java:</font> 
+Removed a piece of code used for debugging.</li></ul>
+<p><font color="#700000"><b>2002-01-13 00:23</b></font> <b>const</b></p>
+<ul><li><font color="#007000">OptionsFrame.java, RfbProto.java, VncCanvas.java:</font> 
+The &quot;View Only&quot; mode now can be turned on/off at any moment.</li></ul>
+<p><font color="#700000"><b>2002-01-12 22:12</b></font> <b>const</b></p>
+<ul><li><font color="#007000">RfbProto.java:</font> 
+Insert key now can be passed to the remote side.</li></ul>
+<p><font color="#700000"><b>2002-01-12 20:32</b></font> <b>const</b></p>
+<ul><li><font color="#007000">VncCanvas.java, VncViewer.java:</font> 
+Dramatically simplified and robust implementation of handling XCursor/RichCursor encodings.  Enhancements and bugfixes for the &quot;Open New Window&quot; mode. Other minor enhancements and code cleanups.</li></ul>
+<p><font color="#700000"><b>2002-01-12 00:36</b></font> <b>const</b></p>
+<ul><li><font color="#007000">ClipboardFrame.java, OptionsFrame.java:</font> 
+Minor code enhancements.</li></ul>
+<p><font color="#700000"><b>2002-01-11 23:35</b></font> <b>const</b></p>
+<ul><li><font color="#007000">VncCanvas.java, VncViewer.java:</font> 
+Implemented scrolling of the desktop area, when the desktop is shown in a separate window.</li></ul>
+<p><font color="#700000"><b>2002-01-11 18:51</b></font> <b>const</b></p>
+<ul><li><font color="#007000">ClipboardFrame.java, OptionsFrame.java:</font> 
+&quot;Dismiss&quot; buttons renamed to &quot;Close&quot;.</li></ul>
+<p><font color="#700000"><b>2002-01-11 04:19</b></font> <b>const</b></p>
+<ul><li><font color="#007000">ButtonPanel.java, VncViewer.java:</font> 
+Changes in the button panel. Now keyboard focus moves back to the authentication panel or to the desktop after pressing any button on the panel. Additionally, keyboard focus should move to the desktop automatically when VNC connection is established.</li></ul>
+<p><font color="#700000"><b>2002-01-11 03:53</b></font> <b>const</b></p>
+<ul><li><font color="#007000">ButtonPanel.java:</font> 
+Implemented new &quot;Refresh&quot; button. Pressing it results sending a non-incremental FramebufferUpdateRequest message to the server.</li></ul>
+<p><font color="#700000"><b>2002-01-11 03:51</b></font> <b>const</b></p>
+<ul><li><font color="#007000">VncCanvas.java:</font> 
+Now the viewer adjusts its desktop/window size on desktop size changes on the remote side (working support for NewFBSize pseudo-encoding).</li></ul>
+<p><font color="#700000"><b>2002-01-11 02:50</b></font> <b>const</b></p>
+<ul><li><font color="#007000">AuthPanel.java, ButtonPanel.java, ClipboardFrame.java, Makefile, OptionsFrame.java, RfbProto.java, VncCanvas.java, VncViewer.java, authenticationPanel.java, clipboardFrame.java, dir.mk, hextile.vnc, index.vnc, noshared.vnc, optionsFrame.java, rfbProto.java, shared.vnc, tight.vnc, vncCanvas.java, vncviewer.java, zlib.vnc:</font> 
+New &quot;Open New Window&quot; parameter was implemented, now the viewer can work in a separate frame instead of running in the applet area.  Class names were capitalized, to reflect usual Java naming standards.</li></ul>
+<p><font color="#700000"><b>2002-01-11 00:22</b></font> <b>const</b></p>
+<ul><li><font color="#007000">hextile.vnc, index.vnc, noshared.vnc, shared.vnc, tight.vnc, zlib.vnc:</font> 
+Inserted a &amp;lt;br> tag to prevent www.tightvnc.com link appear to the left of the applet area.</li></ul>
+<p><font color="#700000"><b>2001-12-18 03:32</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer.java:</font> 
+In application mode, terminate application on window close event.</li></ul>
+<p><font color="#700000"><b>2001-12-18 02:28</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncCanvas.java:</font> 
+Performance fixes in CopyRect routine, and the FillLargeArea method.</li></ul>
+<p><font color="#700000"><b>2001-12-18 01:39</b></font> <b>const</b></p>
+<ul><li><font color="#007000">ButtonPanel.java, Makefile, dir.mk, rfbProto.java, vncCanvas.java, vncviewer.java:</font> 
+Converted to Java 1.1 event model.</li></ul>
+<p><font color="#700000"><b>2001-12-17 03:49</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncCanvas.java:</font> 
+Got rid of calls to deprecated methods etc.</li></ul>
+<p><font color="#700000"><b>2001-12-17 03:37</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer.java:</font> 
+Minor code cleanups.</li></ul>
+<p><font color="#700000"><b>2001-12-17 03:37</b></font> <b>const</b></p>
+<ul><li><font color="#007000">authenticationPanel.java:</font> 
+Converted to Java 1.1 event model.</li></ul>
+<p><font color="#700000"><b>2001-12-17 02:51</b></font> <b>const</b></p>
+<ul><li><font color="#007000">optionsFrame.java:</font> 
+Converted to Java 1.1 event model.</li></ul>
+<p><font color="#700000"><b>2001-12-17 02:19</b></font> <b>const</b></p>
+<ul><li><font color="#007000">clipboardFrame.java:</font> 
+Converted to Java 1.1 event model.</li></ul>
+<p><font color="#700000"><b>2001-12-17 00:17</b></font> <b>const</b></p>
+<ul><li><font color="#007000">clipboardFrame.java:</font> 
+Removed debugging code forgotten in the previous version. Minor code cleanups and formating changes.</li></ul>
+<p><font color="#700000"><b>2001-12-17 00:00</b></font> <b>const</b></p>
+<ul><li><font color="#007000">authenticationPanel.java, clipboardFrame.java, optionsFrame.java, rfbProto.java, vncviewer.java:</font> 
+Got rid of most calls to methods deprecated in Java 1.1.</li></ul>
+<p><font color="#700000"><b>2001-12-16 21:41</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncCanvas.java:</font> 
+Beeping through java.awt.Toolkit on receiving Bell RFB message.</li></ul>
+<p><font color="#700000"><b>2001-12-16 21:33</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncCanvas.java:</font> 
+Drawing techniques have been changed: now all the painting is performed in update() and paint() methods of the Canvas component. This should solve painting problems under some JVM implementations.</li></ul>
+<p><font color="#700000"><b>2001-12-16 20:56</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Makefile, animatedMemoryImageSource.java, dir.mk, vncCanvas.java:</font> 
+First step of converting the source to Java 1.1: got rid of animatedMemoryImageSource class; using new setAnimated() method in the standard MemoryImageSource class instead.</li></ul>
+<p><font color="#700000"><b>2001-09-16 14:06</b></font> <b>const</b></p>
+<ul><li><font color="#007000">optionsFrame.java, rfbProto.java, vncCanvas.java, vncviewer.java:</font> 
+Addition of new parameters PASSWORD, &quot;Include Controls&quot;, and &quot;View Only&quot;, modified patch from Steve Kann.</li></ul>
+<p><font color="#700000"><b>2001-06-18 23:46</b></font> <b>const</b></p>
+<ul><li><font color="#007000">README:</font> 
+Version string change.</li></ul>
+<p><font color="#700000"><b>2001-05-12 16:55</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer.java: <font color="#700070">(setEncodings)</font>:</font> 
+Possible NullPointerException fixed.</li></ul>
+<p><font color="#700000"><b>2001-03-07 14:06</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncCanvas.java:</font> 
+Initial &quot;software cursor&quot; position set to (0, 0) instead of (40, 40). Minor code clean-up.</li></ul>
+<p><font color="#700000"><b>2001-02-16 04:45</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncCanvas.java:</font> 
+Minor performance fix and tiny clean-ups in code and comments.</li></ul>
+<p><font color="#700000"><b>2001-02-16 03:29</b></font> <b>const</b></p>
+<ul><li><font color="#007000">clipboardFrame.java, optionsFrame.java:</font> 
+Tiny changes after looking in the TridiaVNC CVS sources.</li></ul>
+<p><font color="#700000"><b>2001-02-16 02:48</b></font> <b>const</b></p>
+<ul><li><font color="#007000">README:</font> 
+Version string changed.</li></ul>
+<p><font color="#700000"><b>2001-02-15 23:48</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncCanvas.java:</font> 
+A number of performance optimizations and code clean-ups for all supported encodings.</li></ul>
+<p><font color="#700000"><b>2001-02-15 01:56</b></font> <b>const</b></p>
+<ul><li><font color="#007000">optionsFrame.java, vncCanvas.java:</font> 
+Drawing techniques changed: now all drawing is performed through the rawPixelsImage object and the pixels[] array, paintImage is not used any more. Settings &quot;Raw pixel drawing: Fast/Reliable&quot; and &quot;CopyRect: Fast/Reliable&quot; removed from the Options panel since they do not make sense in new drawing model. Currently drawing of solid-color areas is slow but this issue hopefully will be fixed in next versions.</li></ul>
+<p><font color="#700000"><b>2001-02-08 07:06</b></font> <b>const</b></p>
+<ul><li><font color="#007000">rfbProto.java, vncCanvas.java, vncviewer.java:</font> 
+Fixes for compilation on Java 2 platform, from Klaus Erber.</li></ul>
+<p><font color="#700000"><b>2001-01-28 16:58</b></font> <b>const</b></p>
+<ul><li><font color="#007000">README, optionsFrame.java, rfbProto.java, vncCanvas.java:</font> 
+One more name added to copyright strings. ;-)</li></ul>
+<p><font color="#700000"><b>2001-01-28 16:51</b></font> <b>const</b></p>
+<ul><li><font color="#007000">hextile.vnc, index.vnc, noshared.vnc, shared.vnc, tight.vnc, zlib.vnc:</font> 
+www.TridiaVNC.com links chanded to www.TightVNC.com.</li></ul>
+<p><font color="#700000"><b>2001-01-28 16:43</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Makefile, hextile.vnc, noshared.vnc, tight.vnc:</font> 
+More HTML templates for different default settings prepared.</li></ul>
+<p><font color="#700000"><b>2001-01-28 16:36</b></font> <b>const</b></p>
+<ul><li><font color="#007000">optionsFrame.java:</font> 
+Tight encoding is now set by default.</li></ul>
+<p><font color="#700000"><b>2001-01-27 04:24</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer.java:</font> 
+Tiny formatting changes.</li></ul>
+<p><font color="#700000"><b>2001-01-27 03:11</b></font> <b>const</b></p>
+<ul><li><font color="#007000">authenticationPanel.java, vncviewer.java:</font> 
+From TridiaVNC: set initial input focus to password field.</li></ul>
+<p><font color="#700000"><b>2001-01-27 02:58</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Makefile:</font> 
+Unneeded changes reverted.</li></ul>
+<p><font color="#700000"><b>2001-01-27 00:52</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncCanvas.java:</font> 
+Many changes. Cursor shape updates should work in all modes.</li></ul>
+<p><font color="#700000"><b>2001-01-26 01:31</b></font> <b>const</b></p>
+<ul><li><font color="#007000">optionsFrame.java, rfbProto.java, vncCanvas.java:</font> 
+Support for EncodingLastRect added. Bugfix: &quot;Cursor shape updates: Ignore&quot; option caused exceptions on XCursor updates.</li></ul>
+<p><font color="#700000"><b>2001-01-26 01:10</b></font> <b>const</b></p>
+<ul><li><font color="#007000">optionsFrame.java, vncCanvas.java, vncviewer.java:</font> 
+RichCursor and XCursor encodings now work, but only for raw encoding. Minor formatting fixes (spaces -> tabs).</li></ul>
+<p><font color="#700000"><b>2001-01-26 01:09</b></font> <b>const</b></p>
+<ul><li><font color="#007000">rfbProto.java:</font> 
+Minor formatting fixes (spaces -> tabs).</li></ul>
+<p><font color="#700000"><b>2001-01-25 00:25</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncCanvas.java:</font> 
+&quot;Cursor shape updates: Ignore&quot; option works for RichCursor encoding.</li></ul>
+<p><font color="#700000"><b>2001-01-24 23:55</b></font> <b>const</b></p>
+<ul><li><font color="#007000">optionsFrame.java, vncCanvas.java:</font> 
+Non-finished RichCursor support, minor code cleanups.</li></ul>
+<p><font color="#700000"><b>2001-01-23 23:42</b></font> <b>const</b></p>
+<ul><li><font color="#007000">optionsFrame.java, rfbProto.java:</font> 
+&quot;Cursor shape updates&quot; item in options frame. Minor bugfix: &quot;Compression level&quot; item remained enabled when raw encoding was chosen after zlib or tight.</li></ul>
+<p><font color="#700000"><b>2001-01-23 22:02</b></font> <b>const</b></p>
+<ul><li><font color="#007000">optionsFrame.java, rfbProto.java:</font> 
+Requesting compression level for tight and zlib encodings.</li></ul>
+<p><font color="#700000"><b>2001-01-22 23:22</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncCanvas.java:</font> 
+Major speed optimizations and code cleanups in tight encoding implementation.</li></ul>
+<p><font color="#700000"><b>2001-01-22 20:10</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncCanvas.java:</font> 
+More error checking.</li></ul>
+<p><font color="#700000"><b>2001-01-22 20:06</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncCanvas.java:</font> 
+Error checking, code cleanups.</li></ul>
+<p><font color="#700000"><b>2001-01-19 12:53</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Makefile, optionsFrame.java, rfbProto.java, vncCanvas.java:</font> 
+First version of Java vncviewer with tight encoding support.</li></ul>
+<p><font color="#700000"><b>2000-09-29 22:39</b></font> <b>const</b></p>
+<ul><li><font color="#007000">DesCipher.java, LICENCE.TXT, Makefile, README, animatedMemoryImageSource.java, authenticationPanel.java, clipboardFrame.java, dir.mk, index.vnc, optionsFrame.java, rfbProto.java, shared.vnc, vncCanvas.java, vncviewer.java, zlib.vnc:</font> 
+Initial revision</li></ul>
+            </td></tr>
+          </table>
+        </td><td width="2" bgcolor="#C49A82">
+          <img src="brpixel.jpg" width="2" height="1" alt="">
+        </td><td width="6" valign="top" bgcolor="#F8EECB">
+          &nbsp;
+        </td><td width="128" valign="top" bgcolor="#F8EECB">
+          <table border="0" width="100%" cellspacing="0" cellpadding="8">
+            <tr><td align="center"><a href="http://www.tightvnc.com/"><img
+              src="tightvnc-logo.jpg" width="128" height="128" border="0"
+              alt="[LOGO]"></a></td></tr>
+            <tr><td align="center">
+              <table align="center" border="0"><tr><td nowrap>
+  <p><b>TightVNC:</b><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="index.html">main page</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="download.html"><b>download</b></a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="support.html">get support</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="contribute.html">contribute</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="contact.html">contact us</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="people.html">people</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="sitemap.html">site map</a><br>
+  <p><b>Information:</b><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="intro.html">introduction</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="http://www.tightvnc.com/screenshots.html">screenshots</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="docs.html">documentation</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="faq.html">FAQ</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="lists.html">mailing lists</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="changelogs.html">change logs</a><br>
+  <p><b>Development:</b><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="bugs.html">report bugs</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="rfe.html">suggest features</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="http://sourceforge.net/tracker/?func=add&group_id=14067&atid=314067">submit patches</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="http://sourceforge.net/cvs/?group_id=14067">CVS</a><br>
+  <p><b>Links:</b><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="http://www.tightvnc.com/">primary site</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="othersites.html">other sites</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="related.html">related software</a><br>
+              </td></tr></table>
+            </td></tr>
+          </table>
+        </td><td width="6" bgcolor="#F8EECB">
+          &nbsp;
+        </td></tr>
+    </table> 
+  </body>
+</html>
+<!-- Guava tools by Steve Morphet 1999-2001. -->

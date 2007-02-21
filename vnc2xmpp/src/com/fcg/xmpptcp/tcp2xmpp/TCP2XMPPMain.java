@@ -5,6 +5,8 @@ import java.net.ServerSocket;
 
 import org.jivesoftware.smack.XMPPException;
 
+import com.fcg.xmpptcp.common.VNCUtils;
+
 public class TCP2XMPPMain {
 
 	/**
@@ -51,6 +53,10 @@ public class TCP2XMPPMain {
 			System.err.println("Could not listen on port: " + port);
 			System.exit(-1);
 		}
+		
+		//start vnc client
+		VNCUtils.startVNCClient("localhost", Integer.parseInt(port));
+
 		//usr/pwd: xmppclient@gmail.com/thaiha
 		//usr/pwd: xmppserver@gmail.com/thaiha
 		while (listening) {
@@ -58,5 +64,4 @@ public class TCP2XMPPMain {
 		}
 		serverSocket.close();
 	}
-
 }
