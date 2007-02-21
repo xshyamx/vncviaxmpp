@@ -6,8 +6,6 @@ import java.net.URL;
 
 public class VNCUtils {
 	
-	public static final String VNC_HOME = "D:/projects/vncviaxmpp/vnc2xmpp/tightvnc-1.3.8_x86";
-	
 	private static File getVNCHome() {
 		URL source = VNCUtils.class.getProtectionDomain().getCodeSource().getLocation();
 		File file = new File(source.getFile());
