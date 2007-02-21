@@ -9,14 +9,14 @@ import org.jivesoftware.smack.XMPPException;
 
 public class ConnectionUtil {
 	private static boolean isOpen(String host, int port) {
-		boolean open = false;
+		boolean open;
 		try {
 			Socket sock = new Socket();
 			sock.bind(null);
 			sock.connect(new InetSocketAddress(host, port), 1000);
 			open = true;
 		} catch (Exception e) {
-			/* ignore this exception */
+			open = false;
 		}
 		return open;
 	}
