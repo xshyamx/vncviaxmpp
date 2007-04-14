@@ -8,6 +8,7 @@
 	<name>support</name>
 
 	<modules>
+		<module>izpack-maven-plugin</module><!-- http://jroller.com/rss/vschiavoni -->
 		<module>supporter-server</module>
 		<module>supporter-client</module>
 	</modules>
