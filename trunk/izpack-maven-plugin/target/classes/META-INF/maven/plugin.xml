@@ -1,0 +1,66 @@
+<plugin>
+  <description>Maven plugin which assembles files an IzPack Installer</description>
+  <groupId>org.codehaus.mojo</groupId>
+  <artifactId>izpack-maven-plugin</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <goalPrefix>izpack</goalPrefix>
+  <isolatedRealm>false</isolatedRealm>
+  <inheritedByDefault>true</inheritedByDefault>
+  <mojos>
+    <mojo>
+      <goal>izpack</goal>
+      <description>Build an IzPack installer
+
+TODO it&apos;d be nice to create a default install.xml file if it does not exist, or maybe a different goal</description>
+      <requiresDependencyResolution>package</requiresDependencyResolution>
+      <requiresDirectInvocation>false</requiresDirectInvocation>
+      <requiresProject>true</requiresProject>
+      <requiresReports>false</requiresReports>
+      <aggregator>false</aggregator>
+      <requiresOnline>false</requiresOnline>
+      <inheritedByDefault>true</inheritedByDefault>
+      <phase>package</phase>
+      <implementation>org.codehaus.mojo.izpack.IzPackMojo</implementation>
+      <language>java</language>
+      <instantiationStrategy>per-lookup</instantiationStrategy>
+      <executionStrategy>once-per-session</executionStrategy>
+      <parameters>
+        <parameter>
+          <name>basedir</name>
+          <type>java.io.File</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description>Basedir for the the izpack project</description>
+        </parameter>
+        <parameter>
+          <name>installerFile</name>
+          <type>java.lang.String</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description>Name of the installer file to be generated</description>
+        </parameter>
+        <parameter>
+          <name>izpackConfig</name>
+          <type>java.lang.String</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description>The izpack default configuration file</description>
+        </parameter>
+        <parameter>
+          <name>kind</name>
+          <type>java.lang.String</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description>kind argument for izpack, standard or web</description>
+        </parameter>
+      </parameters>
+      <configuration>
+        <kind implementation="java.lang.String" default-value="standard">standard</kind>
+        <izpackConfig implementation="java.lang.String" default-value="${project.basedir}/src/izpack/install.xml">${project.basedir}/src/izpack/install.xml</izpackConfig>
+        <installerFile implementation="java.lang.String">${basedir}/target/${project.groupId}-${project.artifactId}-${project.version}-installer.jar</installerFile>
+        <basedir implementation="java.io.File" default-value="basedir">${project.basedir}</basedir>
+      </configuration>
+    </mojo>
+  </mojos>
+  <dependencies/>
+</plugin>
