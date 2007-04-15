@@ -30,7 +30,7 @@
 					</archive>
 				</configuration>
 			</plugin>
-			<!--plugin>
+			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>izpack-maven-plugin</artifactId>
 				<version>1.0-SNAPSHOT</version>
@@ -42,7 +42,7 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin-->
+			</plugin>
 		</plugins>
 	</build>
 </project>
