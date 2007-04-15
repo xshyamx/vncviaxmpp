@@ -23,8 +23,8 @@ REGEDIT4
 "RemoveWallpaper"=dword:00000001
 "BlankScreen"=dword:00000000
 "EnableFileTransfers"=dword:00000001
-"Password"=hex:f4,01,85,64,bd,10,52,84
-"PasswordViewOnly"=hex:f4,01,85,64,bd,10,52,84
+"Password"=hex:d3,b8,d8,8a,7e,82,9a,cc
+"PasswordViewOnly"=hex:d3,b8,d8,8a,7e,82,9a,cc
 "PollUnderCursor"=dword:00000000
 "PollForeground"=dword:00000001
 "PollFullScreen"=dword:00000000
