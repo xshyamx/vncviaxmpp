@@ -64,7 +64,16 @@
 			<artifactId>standalone-compiler</artifactId>
 			<version>3.8.0</version>
 			<!-- 
-			<url>http://www.izforge.com/izpack/</url>
+				Windows native installers:
+				NSIS (cross-platform, targets Windows)
+				Inno Setup
+
+				Cross-platform Java installers:
+				IzPack
+
+			Intall4J 4.0.x
+             Name: FALLEN 
+			 License Key  : L-FLN#66804-30jl671cpu8nj#006
 			 -->
 		</dependency>
 	</dependencies>

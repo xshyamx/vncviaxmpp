@@ -1,0 +1,54 @@
+<installation version="1.0">
+
+<info>
+	<appname>Super extractor</appname>
+	<appversion>2.1 beta 6</appversion>
+	<appsubpath>myCompany/SExtractor</appsubpath>
+	<url>http://www.superextractor.com/</url>
+	<authors>
+	<author name="John John Doo" email="jjd@jjd-mail.com"/>
+	<author name="El Goyo" email="goyoman@mymail.org"/>
+	</authors>
+	<javaversion>1.2</javaversion>
+</info>
+
+  <guiprefs height="600" resizable="yes" width="800">
+
+    <laf name="metouia">
+
+      <os family="unix" />
+
+    </laf>
+
+    <laf name="looks">
+
+      <os family="windows" />
+
+      <param name="variant" value="extwin" />
+
+     </laf>
+
+   </guiprefs>
+
+<locale>
+<langpack iso3="eng"/>
+</locale>
+
+<panels>
+<panel classname="HelloPanel"/>
+<panel classname="LicencePanel"/>
+<panel classname="TargetPanel"/>
+<panel classname="InstallPanel"/>
+<panel classname="FinishPanel"/>
+</panels>
+
+
+<packs>
+<!-- The core files -->
+<pack name="Core" required="yes">
+<description>The IzPack core files.</description>
+<file targetdir="$INSTALL_PATH" src="target/supporter-client-1.0-SNAPSHOT.jar"/>
+</pack>
+</packs>
+
+</installation>
