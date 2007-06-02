@@ -19,22 +19,26 @@
  */
 package com.fcg.xmpptcp.jmf;
 
-import org.jivesoftware.smack.SSLXMPPConnection;
+import java.awt.event.ActionEvent;
+
+import javax.swing.AbstractAction;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 import org.jivesoftware.smack.XMPPConnection;
 import org.jivesoftware.smack.XMPPException;
-import org.jivesoftware.smack.ConnectionConfiguration;
-import org.jivesoftware.smack.SASLAuthentication;
 import org.jivesoftware.smackx.jingle.IncomingJingleSession;
 import org.jivesoftware.smackx.jingle.JingleManager;
 import org.jivesoftware.smackx.jingle.JingleSessionRequest;
 import org.jivesoftware.smackx.jingle.OutgoingJingleSession;
 import org.jivesoftware.smackx.jingle.listeners.JingleSessionRequestListener;
-import org.jivesoftware.smackx.jingle.nat.*;
+import org.jivesoftware.smackx.jingle.mediaimpl.jmf.JmfMediaManager;
+import org.jivesoftware.smackx.jingle.nat.ICETransportManager;
+import org.jivesoftware.smackx.jingle.nat.JingleTransportManager;
 
 import com.fcg.xmpptcp.common.ConnectionUtil;
-
-import javax.swing.*;
-import java.awt.event.ActionEvent;
 
 /**
  * Jingle Demo Application. It register in a XMPP Server and let users place calls using a full JID and auto-receive calls.
