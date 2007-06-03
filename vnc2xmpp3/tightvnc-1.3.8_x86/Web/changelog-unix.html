@@ -1,0 +1,984 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>TightVNC: Change Log, Unix Version</title>
+    <link rel="stylesheet" href="tightvnc.css">
+    <meta name="author" content="Constantin Kaplinsky">
+    <meta name="generator" content="XEmacs + Ruby + Guava tools">
+    <meta name="description"
+          content="TightVNC - An enhanced VNC version with many new features, improvements,
+                   optimizations and bugfixes.">
+    <meta name="keywords"
+          content="vnc, remote desktop, remote control, remote administration, compression">
+  </head>
+  <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="#FDFAEC"
+    link="#9A1614" alink="#FF4040" vlink="#8A7634">
+    <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="8">
+          &nbsp;
+        </td><td valign="top">
+          <table width="100%" border="0" cellspacing="0" cellpadding="16">
+            <tr><td valign="top">
+  <table width="100%" border="0" align="center" cellspacing="0" cellpadding="0">
+    <tr><td width="99%">
+      <table width="100%" bgcolor="#C49A82" border="0" cellspacing="0" cellpadding="2">
+        <tr><td align="center" valign="middle">
+          <table width="100%" border="0" bgcolor="#F8EECB" align="center" cellspacing="0"
+            cellpadding="6">
+            <tr><td align="center" valign="middle">
+              <font size="+2"><b>Change Log, Unix Version</b></font>
+            </td></tr>
+          </table>
+        </td></tr>
+      </table>
+    </td><td width="1%">&nbsp;
+    </td><td align="right" valign="middle">
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td align="right" valign="middle"><a href="http://www.tightvnc.com/donate.html"><img
+            border="0" hspace="8" src="donate.jpg" width="96" height="32"
+            alt="[DONATE]"></a></td>
+          <td nowrap align="center" valign="middle"><b>Improve TightVNC:</b><br><a
+            href="http://www.tightvnc.com/donate.html">Make a Donation</a>!</td>
+        </tr>
+      </table>
+    </td></tr>
+  </table>
+  <br>
+  <p>See the <a href="ChangeLog.txt">text version</a> from which this document was generated.</p>
+<p><font color="#700000"><b>2006-08-15 14:05</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/init.c:</font> 
+Year changed in copyright statement.</li></ul>
+<p><font color="#700000"><b>2006-08-15 13:10</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncserver.man, Xvnc/programs/Xserver/Xvnc.man, vncconnect/vncconnect.man, vncpasswd/vncpasswd.man, vncviewer/vncviewer.man:</font> 
+Updated e-mails and dates in man pages, typos fixed.</li></ul>
+<p><font color="#700000"><b>2006-08-11 09:09</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">tightvnc.spec:</font> 
+Updated for version 1.3.8.</li></ul>
+<p><font color="#700000"><b>2006-08-10 18:01</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">README, vncserver, Xvnc/config/cf/vnc.def, vncviewer/README, vncviewer/argsresources.c:</font> 
+Version strings changed, version 1.3.8.</li></ul>
+<p><font color="#700000"><b>2006-08-10 17:59</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">README, vncserver, Xvnc/config/cf/vnc.def, vncviewer/README, vncviewer/argsresources.c:</font> 
+Preparing for stable version numbering - replaced 1.3dev7 with 1.3.7, fixed text for automated version/copyright updating, etc.</li></ul>
+<p><font color="#700000"><b>2006-07-21 09:51</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/listen.c:</font> 
+Port numbers are calculated modulo 65536 with vncviewer's -listen option. That makes it possible to listen on port 443 with the command &quot;vncviewer -listen 60479&quot; (because 443 + 65536 - 5500 = 60479).</li></ul>
+<p><font color="#700000"><b>2006-06-15 20:55</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">classes/: AuthPanel.class, OptionsFrame.class, RfbProto.class, VncCanvas.class, VncViewer.class, VncViewer.jar:</font> 
+Built-in Java viewer updated to the latest version.</li></ul>
+<p><font color="#700000"><b>2005-07-05 00:40</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">README, vncserver, Xvnc/config/cf/vnc.def, vncviewer/README, vncviewer/argsresources.c:</font> 
+Version strings changed, version 1.3dev7.</li></ul>
+<p><font color="#700000"><b>2005-07-04 22:24</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">tightvnc.spec:</font> 
+Removed vnc-server's dependence on XFree86, changed maintainer's e-mail address, version updated to 1.3dev7.</li></ul>
+<p><font color="#700000"><b>2005-07-03 13:58</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">classes/: OptionsFrame.class, VncCanvas.class, VncViewer.jar:</font> 
+Updated built-in Java viewer to its latest version.</li></ul>
+<p><font color="#700000"><b>2005-04-19 19:52</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/rfbserver.c:</font> 
+Fixed a problem with Bell messages sent to non-authenticated clients, bug <a href="http://sourceforge.net/tracker/index.php?func=detail&aid=1185800&group_id=14067&atid=114067">#1185800</a>.</li></ul>
+<p><font color="#700000"><b>2005-04-14 19:58</b></font> <b>astrand</b></p>
+<ul><li><font color="#007000">Xvnc/: configure, lib/Xau/AuRead.c, lib/Xau/AuWrite.c:</font> 
+Make Xvnc build on modern distributions, such as Fedora Core 3: <BR> - The configure script adds &quot;LinuxCLibMajorVersion 6&quot; to platform.cf. This makes the build system define _XOPEN_SOURCE, which causes __USE_XOPEN to be defined. This, in turn, makes fds_bits available. (As far as I know, imake should find out and define LinuxCLibMajorVersion, but for some reason, this doesn't work.) <BR> - lib/Xau/AuRead.c and lib/Xau/AuWrite.c has been updated to the latest X.Org versions. There are only small fixes: Not defining a prototype for malloc, for example.</li></ul>
+<p><font color="#700000"><b>2005-02-09 20:16</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/rfbserver.c:</font> 
+Disallowing clipboard transfers for view-only clients.</li></ul>
+<p><font color="#700000"><b>2005-02-03 00:25</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/sprite.c:</font> 
+Fixed a serious bug with sending cursor updates when there was no FrameBufferUpdateRequest from that client.</li></ul>
+<p><font color="#700000"><b>2004-05-30 22:09</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">README, tightvnc.spec, vncserver, Xvnc/config/cf/vnc.def, vncviewer/README, vncviewer/argsresources.c:</font> 
+Version strings changed, version 1.3dev5.</li></ul>
+<p><font color="#700000"><b>2004-05-29 00:29</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/desktop.c:</font> 
+Reverted the change that caused vncviewer to crash on switching between virtual desktops in KDE 3.1.4, bug <a href="http://sourceforge.net/tracker/index.php?func=detail&aid=852195&group_id=14067&atid=114067">#852195</a>.</li></ul>
+<p><font color="#700000"><b>2004-05-27 14:47</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/sprite.c:</font> 
+Fixed a problem with sending cursor shape updates only together with other changes on the screen, in Xvnc, bug <a href="http://sourceforge.net/tracker/index.php?func=detail&aid=726935&group_id=14067&atid=114067">#726935</a>.</li></ul>
+<p><font color="#700000"><b>2004-05-27 14:02</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">include/rfbproto.h:</font> 
+Copied the latest version of rfbproto.h from the Win32 version.</li></ul>
+<p><font color="#700000"><b>2004-05-18 17:26</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/rfbserver.c:</font> 
+Fixed a problem with cuttext copied to non-authenticated clients, bug <a href="http://sourceforge.net/tracker/index.php?func=detail&aid=855500&group_id=14067&atid=114067">#855500</a>.</li></ul>
+<p><font color="#700000"><b>2004-03-12 00:14</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: argsresources.c, rfbproto.c, vncviewer.h, vncviewer.man:</font> 
+Added support for new vncviewer -autopass option. This is an improvement from Ki NETWORKS, Inc.</li></ul>
+<p><font color="#700000"><b>2004-03-04 21:26</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">README, tightvnc.spec, vncserver, Xvnc/config/cf/vnc.def, vncviewer/README, vncviewer/argsresources.c:</font> 
+Version strings changed, version 1.3dev4.</li></ul>
+<p><font color="#700000"><b>2004-03-04 20:26</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">classes/: AuthPanel.class, AuthUnixLoginPanel.class, CapabilityInfo.class, CapsContainer.class, RfbProto.class, VncCanvas.class, VncViewer.class, VncViewer.jar:</font> 
+The Java viewer bytecode upgraded to the latest version.</li></ul>
+<p><font color="#700000"><b>2004-03-03 15:11</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/selection.c:</font> 
+Fixed bug <a href="http://sourceforge.net/tracker/index.php?func=detail&aid=904471&group_id=14067&atid=114067">#904471</a>: the viewer crashed on selecting text in Xvnc and choosing F8 / Clipboard: local -> remote, twice.</li></ul>
+<p><font color="#700000"><b>2004-03-02 22:23</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/rfbproto.c:</font> 
+Removed debugging output.</li></ul>
+<p><font color="#700000"><b>2004-03-02 22:00</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/rfbproto.c:</font> 
+Minor changes in comments.</li></ul>
+<p><font color="#700000"><b>2004-02-27 19:22</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">README, tightvnc.spec, vncserver, Xvnc/config/cf/vnc.def, vncviewer/README, vncviewer/argsresources.c:</font> 
+Version strings changed, version 1.3dev3.</li></ul>
+<p><font color="#700000"><b>2004-02-27 18:22</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/: auth.c, init.c, loginauth.c, rfb.h, rfbserver.c:</font> 
+In Xvnc, added support for protocol 3.7 with TightVNC extensions, dropped support for protocol 3.130.</li></ul>
+<p><font color="#700000"><b>2004-02-26 21:53</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">include/rfbproto.h:</font> 
+Added signature for &quot;no authentication&quot; capability, together with minor code formatting changes.</li></ul>
+<p><font color="#700000"><b>2004-01-13 20:22</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">include/rfbproto.h, vncviewer/rfbproto.c, vncviewer/vncviewer.c, vncviewer/vncviewer.h:</font> 
+Added support for protocol 3.7 with TightVNC extensions, dropped support for protocol 3.130. The changes affect only the viewer at the moment -- Xvnc compilation is temporarily broken.</li></ul>
+<p><font color="#700000"><b>2003-10-09 16:23</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/fullscreen.c:</font> 
+Applied a fix for the fullscreen mode, from Peter Astrand -- &quot;Some WMs do not obey x, y values of XReparentWindow; the window was not placed in the upper left corner&quot;.</li></ul>
+<p><font color="#700000"><b>2003-07-31 15:55</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">classes/HTTPConnectSocket.class:</font> 
+file HTTPConnectSocket.class was initially added on branch BRANCH_1_2_STABLE.</li></ul>
+<p><font color="#700000"><b>2003-07-31 15:55</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">classes/HTTPConnectSocketFactory.class:</font> 
+file HTTPConnectSocketFactory.class was initially added on branch BRANCH_1_2_STABLE.</li></ul>
+<p><font color="#700000"><b>2003-07-31 15:03</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/tunnel.c:</font> 
+Fixed a problem with incorrect port interpretation when the -tunnel option is used.</li></ul>
+<p><font color="#700000"><b>2003-07-31 14:36</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/cfb/cfbtile32.c:</font> 
+Applied a patch from the RealVNC distribution, to fix Xvnc crashes under Sparc, in 16-bit and 32-bit pixel formats.</li></ul>
+<p><font color="#700000"><b>2003-07-31 11:57</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/desktop.c:</font> 
+Applied a patch from Greg Breland, to fix the input focus problem.</li></ul>
+<p><font color="#700000"><b>2003-05-03 16:31</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncserver, Xvnc/config/cf/vnclibs.def, Xvnc/programs/Xserver/hw/vnc/Imakefile, Xvnc/programs/Xserver/hw/vnc/auth.c, Xvnc/programs/Xserver/hw/vnc/init.c, Xvnc/programs/Xserver/hw/vnc/loginauth.c, Xvnc/programs/Xserver/hw/vnc/rfb.h, Xvnc/programs/Xserver/hw/vnc/rfbserver.c, include/rfbproto.h, vncviewer/README, vncviewer/argsresources.c, vncviewer/rfbproto.c, vncviewer/vncviewer.h, vncviewer/vncviewer.man:</font> 
+New authentication method has been implemented. This is a login-style authentication which uses Unix system password files. User names and passwords are sent in clear text, and the server should run as root or suid-root on most systems to access encrypted passwords. To activate new authentication, Xvnc -loginauth option can be used. This authentication method was developed for Ki NETWORKS, Inc.</li></ul>
+<p><font color="#700000"><b>2003-04-22 13:26</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">README, tightvnc.spec, vncserver, Xvnc/config/cf/vnc.def, vncviewer/README, vncviewer/argsresources.c:</font> 
+Version strings changed, version 1.3dev1.</li></ul>
+<p><font color="#700000"><b>2003-04-09 05:18</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/httpd.c:</font> 
+Minor code cleanup.</li></ul>
+<p><font color="#700000"><b>2003-04-08 20:54</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/auth.c:</font> 
+Minor corrections in comments.</li></ul>
+<p><font color="#700000"><b>2003-04-02 00:30</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/auth.c, Xvnc/programs/Xserver/hw/vnc/rfb.h, Xvnc/programs/Xserver/hw/vnc/rfbserver.c, include/rfbproto.h, vncviewer/caps.c, vncviewer/caps.h, vncviewer/rfbproto.c:</font> 
+Major changes in the protocol 3.130, reorganizations in the authentication code, and in other places as well.</li></ul>
+<p><font color="#700000"><b>2003-03-22 19:33</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">Xvnc/config/cf/vnc.def:</font> 
+Fixed a problem with XvncRelease string containing a space.</li></ul>
+<p><font color="#700000"><b>2003-03-12 23:47</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">include/rfbproto.h:</font> 
+Minor formatting change in a comment.</li></ul>
+<p><font color="#700000"><b>2003-03-12 22:19</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">Xvnc/config/cf/vnc.def, Xvnc/programs/Xserver/hw/vnc/init.c, Xvnc/programs/Xserver/hw/vnc/rfb.h, Xvnc/programs/Xserver/hw/vnc/rfbserver.c, include/rfbproto.h, vncviewer/Imakefile, vncviewer/caps.c, vncviewer/caps.h, vncviewer/rfbproto.c, vncviewer/vncviewer.c, vncviewer/vncviewer.h:</font> 
+Implemented C version of the CapsContainer class from the Win32 version. Added full support for protocol version 3.130. Improved the output of the vncviewer, and a startup log messages of Xvnc.</li></ul>
+<p><font color="#700000"><b>2003-03-01 22:59</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncpasswd/vncpasswd.c:</font> 
+Fixed a buffer overflow caused by long file names in the vncpasswd command line.</li></ul>
+<p><font color="#700000"><b>2003-03-01 22:48</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">libvncauth/vncauth.c, vncpasswd/vncpasswd.c, vncpasswd/vncpasswd.man:</font> 
+Implemented new vncpasswd -f command-line option which allows to provide passwords on stdin and write encrypted passwords to stdout. Also, the password file name &quot;-&quot; now denotes stdout.</li></ul>
+<p><font color="#700000"><b>2003-02-19 22:39</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">Xvnc/: configure, config/cf/darwin.cf, config/imake/imakemdep.h, programs/Xserver/include/servermd.h, programs/Xserver/mi/miarc.c:</font> 
+A set of changes to Xvnc to get it to build and run on Mac OS X 10.2; a patch from Ki Networks, Inc.</li></ul>
+<p><font color="#700000"><b>2003-02-07 16:30</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: README, Vncviewer, argsresources.c, desktop.c:</font> 
+Implemented a new SendRFBEvent(fbupdate) action, and a corresponding &quot;Request refresh&quot; button in the popup menu.</li></ul>
+<p><font color="#700000"><b>2003-02-07 00:11</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">Xvnc/config/cf/Imake.cf:</font> 
+Compilation fixes for HP-UX, from Ki Networks, Inc.</li></ul>
+<p><font color="#700000"><b>2003-02-05 20:56</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncconnect/vncconnect.man:</font> 
+Minor correction in the AUTHORS heading, and updated copyright strings.</li></ul>
+<p><font color="#700000"><b>2003-01-29 22:03</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">README, tightvnc.spec, vncserver, Xvnc/config/cf/vnc.def, vncviewer/README, vncviewer/argsresources.c:</font> 
+Version strings changed, version 1.2.8. Also, a small change was made in the .spec file, to remove viewer's dependences on /sbin/service and /sbin/chkconfig.</li></ul>
+<p><font color="#700000"><b>2003-01-29 19:55</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">Xvnc/config/cf/Imake.cf:</font> 
+Applied tightvnc-1.2.6-platform-fixes-imake-cf.patch from Debian Linux. This should solve build problems under some particular architectures.</li></ul>
+<p><font color="#700000"><b>2003-01-29 19:52</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">Xvnc/: config/cf/xfree86.cf, config/imake/imakemdep.h, programs/Xserver/os/rpcauth.c, programs/Xserver/os/xalloc.c:</font> 
+Applied tightvnc-1.2.6-platform-fixes.patch from Debian Linux. This should solve build problems under some particular architectures.</li></ul>
+<p><font color="#700000"><b>2003-01-29 19:50</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">Xvnc/: config/cf/site.def, lib/Xdmcp/Wraphelp.c:</font> 
+Applied vnc-3.3.3-10-xdm-auth-support.patch from Debian Linux.</li></ul>
+<p><font color="#700000"><b>2003-01-29 18:36</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/argsresources.c:</font> 
+Making sure that if there is no tty an X window will be displayed even if hostname is supplied; a patch from Debian Linux, authored by William Thompson.</li></ul>
+<p><font color="#700000"><b>2003-01-29 18:35</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">Xvnc/config/makedepend/: def.h, main.c, parse.c:</font> 
+Applied a fix for a getline incompatibility; a patch from the Debian Bug Tracking System for the bug <a href="http://sourceforge.net/tracker/index.php?func=detail&aid=114343&group_id=14067&atid=114067">#114343</a>, authored by LaMont Jones.</li></ul>
+<p><font color="#700000"><b>2003-01-29 18:34</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">Xvnc/lib/xtrans/: Xtranslcl.c, Xtranssock.c:</font> 
+If the directory /tmp/X11-unix did not exist, Xvnc created it without +t permissions; a patch from the Debian Bug Tracking System for the bug <a href="http://sourceforge.net/tracker/index.php?func=detail&aid=128096&group_id=14067&atid=114067">#128096</a>, authored by Oryn.</li></ul>
+<p><font color="#700000"><b>2003-01-29 18:33</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/os/connection.c:</font> 
+Uncommented the code to enable sending SIGUSR1 to (gdm/xdm/kdm) when Xvnc is ready to accept connections; a patch from the Debian Bug Tracking System for the bug <a href="http://sourceforge.net/tracker/index.php?func=detail&aid=122561&group_id=14067&atid=114067">#122561</a> authored by Nick Phillips.</li></ul>
+<p><font color="#700000"><b>2003-01-29 18:32</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/httpd.c:</font> 
+The &quot;\n\n&quot; sequences in NOT_FOUND_STR and OK_STR have been changed to &quot;\r\n\r\n&quot;; a patch from the Debian Bug Tracking System for the bug <a href="http://sourceforge.net/tracker/index.php?func=detail&aid=174688&group_id=14067&atid=114067">#174688</a> reported by C. Scott Ananian.</li></ul>
+<p><font color="#700000"><b>2003-01-17 20:14</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncpasswd/: vncpasswd.c, vncpasswd.man:</font> 
+Support for saving two passwords, full-control and view-only.</li></ul>
+<p><font color="#700000"><b>2003-01-17 20:12</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">libvncauth/vncauth.c: <font color="#700070">(vncEncryptAndStorePasswd2)</font>:</font> 
+Fixed incorrect return codes.</li></ul>
+<p><font color="#700000"><b>2003-01-15 16:44</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/: auth.c, rfb.h, rfbserver.c:</font> 
+Support for two passwords, for full-control and view-only client authentication.</li></ul>
+<p><font color="#700000"><b>2003-01-15 15:46</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: argsresources.c, cursor.c, desktop.c, rfbproto.c, vncviewer.h, vncviewer.man:</font> 
+New -x11cursor option, a patch from Peter Astrand.</li></ul>
+<p><font color="#700000"><b>2003-01-15 13:58</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: README, argsresources.c, misc.c, vncviewer.h:</font> 
+Applied a patch from Peter Astrand: &quot;This patch adds a new command to the X11 vncviewer popup menu: RunCommand. It can be used to run arbitrary commands or applications from the popup.&quot;</li></ul>
+<p><font color="#700000"><b>2003-01-15 12:23</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">libvncauth/vncauth.c:</font> 
+Two new functions vncEncryptAndStorePasswd2 and vncDecryptPasswdFromFile2 were added in addition to vncEncryptAndStorePasswd and vncDecryptPasswdFromFile functions. New ones can handle two passwords in a file, for full-control and read-only access.</li></ul>
+<p><font color="#700000"><b>2003-01-14 04:25</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">Xvnc/lib/font/fc/fserve.c:</font> 
+Fixed a problem with Xvnc eating all CPU time after xfs restarts, a patch from Martin Koegler.</li></ul>
+<p><font color="#700000"><b>2002-11-14 22:57</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncserver:</font> 
+Minor change in the vncserver -help output.</li></ul>
+<p><font color="#700000"><b>2002-11-14 22:56</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">tightvnc.spec, vnc.spec:</font> 
+Spec file vnc.spec renamed to tightvnc.spec, and updated for the version 1.2.7.</li></ul>
+<p><font color="#700000"><b>2002-11-14 00:03</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">README, vncserver, Xvnc/config/cf/vnc.def, vncviewer/README, vncviewer/argsresources.c:</font> 
+Version strings changed, version 1.2.7.</li></ul>
+<p><font color="#700000"><b>2002-11-13 19:51</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">classes/: OptionsFrame.class, RecordingFrame.class, ReloginPanel.class, RfbProto.class, SocketFactory.class, VncCanvas.class, VncViewer.class, VncViewer.jar, hextile.vnc, index.vnc, noshared.vnc, shared.vnc, tight.vnc, zlib.vnc:</font> 
+Java viewer updated to the most recent version.</li></ul>
+<p><font color="#700000"><b>2002-11-04 13:41</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncserver:</font> 
+Minor change in the usage help message.</li></ul>
+<p><font color="#700000"><b>2002-11-04 02:55</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: argsresources.c, tunnel.c, vncviewer.man:</font> 
+Added support for the format &quot;host::port&quot; in the command line, in addition to the standard &quot;host:display&quot; format.</li></ul>
+<p><font color="#700000"><b>2002-11-03 16:38</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/vncviewer.man:</font> 
+Documented new -nojpeg option and enableJPEG resource. Updated to reflect recent changes in handling of the JPEG compression in the Tight encoding by default.</li></ul>
+<p><font color="#700000"><b>2002-11-03 16:08</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: README, argsresources.c, rfbproto.c, vncviewer.h:</font> 
+Enabling JPEG compression in the Tight encoding by default.</li></ul>
+<p><font color="#700000"><b>2002-10-30 21:37</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/vncviewer.man:</font> 
+The BUGS section of the manual page has been removed to reflect the latest improvements in local cursor handling.</li></ul>
+<p><font color="#700000"><b>2002-10-30 17:28</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/: cursor.c, rfb.h, rfbserver.c, sprite.c, sprite.h, stats.c:</font> 
+Added support for new CursorPos pseudo-encoding which allows to transmit pointer position from server to clients.</li></ul>
+<p><font color="#700000"><b>2002-10-29 20:18</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">include/rfbproto.h, vncviewer/cursor.c, vncviewer/rfbproto.c:</font> 
+Added support for new CursorPos pseudo-encoding which allows to transmit pointer position from server to clients.</li></ul>
+<p><font color="#700000"><b>2002-10-27 18:36</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/: init.c, sockets.c:</font> 
+Bugfix for Xvnc's -localhost and -interface options that were broken on some systems e.g. on NetBSD, a patch from Luke Mewburn.</li></ul>
+<p><font color="#700000"><b>2002-10-27 12:40</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/init.c:</font> 
+Xvnc -version option has been implemented.</li></ul>
+<p><font color="#700000"><b>2002-10-16 19:22</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/vncviewer.man:</font> 
+Minor correction.</li></ul>
+<p><font color="#700000"><b>2002-10-15 22:02</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">include/rfbproto.h:</font> 
+Documented the Tight encoding.</li></ul>
+<p><font color="#700000"><b>2002-09-10 15:17</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/tight.c:</font> 
+Decreased JPEG quality factors for low quality levels. Added one comment to document the CheckSolidTile() function.</li></ul>
+<p><font color="#700000"><b>2002-09-06 18:16</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/os/utils.c:</font> 
+A porting fix from Ki Networks, to build correctly under AIX 4 or 5.</li></ul>
+<p><font color="#700000"><b>2002-09-06 18:15</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">include/rfbproto.h:</font> 
+Documented the first byte of a Tight-encoded rectangle. :-)</li></ul>
+<p><font color="#700000"><b>2002-08-30 21:56</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/fullscreen.c:</font> 
+Improved scrolling in the full-screen mode, modified patch from Ville Herva.</li></ul>
+<p><font color="#700000"><b>2002-08-30 16:16</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vnc-xclients.patch, vnc.spec, vncserver.init:</font> 
+Added files to simplify building of Linux RPMs, thanks to Peter Astrand.</li></ul>
+<p><font color="#700000"><b>2002-08-29 13:31</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">libvncauth/vncauth.c:</font> 
+Fixed a repeated challenge replay attack vulnerability, bugtraq id 5296.</li></ul>
+<p><font color="#700000"><b>2002-08-27 19:19</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">README, vncserver, Xvnc/config/cf/vnc.def, vncviewer/README, vncviewer/argsresources.c:</font> 
+Version strings changed, version 1.2.6.</li></ul>
+<p><font color="#700000"><b>2002-08-27 19:10</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncserver:</font> 
+Cosmetic changes not affecting functionality.</li></ul>
+<p><font color="#700000"><b>2002-08-27 18:47</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncserver:</font> 
+Fixed the bug preventing the vncserver script from working properly when the XAUTHORITY environment variable is not set.</li></ul>
+<p><font color="#700000"><b>2002-08-27 18:36</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">libvncauth/vncauth.c:</font> 
+Reverted the change from chmod() to fchmod() introduced in the previous release. That change introduced a bug not allowing fchmod() work correctly. Now we're using chmod() again because it's more portable.</li></ul>
+<p><font color="#700000"><b>2002-08-08 13:23</b></font> <b>const</b></p>
+<ul><li><font color="#007000">README, vncserver, Xvnc/config/cf/vnc.def, vncviewer/README, vncviewer/argsresources.c:</font> 
+Version strings changed, version 1.2.5.</li></ul>
+<p><font color="#700000"><b>2002-08-08 13:15</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncpasswd/vncpasswd.c:</font> 
+Improved error message on mkdir() failure.</li></ul>
+<p><font color="#700000"><b>2002-08-08 13:13</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncserver:</font> 
+Improved support of users' vnc directories under /tmp.</li></ul>
+<p><font color="#700000"><b>2002-08-08 05:17</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncserver:</font> 
+Added possibility to keep users' vnc directories under /tmp, as suggested by Ivan Popov. This mode can be enabled by setting the $vncUserDirUnderTmp to non-zero in the vncserver script. Note that &quot;vncpasswd -t&quot; should be used to change passwords kept under /tmp.</li></ul>
+<p><font color="#700000"><b>2002-08-08 04:38</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncpasswd/: vncpasswd.c, vncpasswd.man:</font> 
+New vncpasswd -t option allowing to write password files under /tmp.</li></ul>
+<p><font color="#700000"><b>2002-08-07 22:04</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncpasswd/vncpasswd.c:</font> 
+Minor cleanup.</li></ul>
+<p><font color="#700000"><b>2002-08-07 21:45</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncserver.man, vncconnect/vncconnect.man, vncpasswd/vncpasswd.man, vncviewer/vncviewer.man:</font> 
+Dates updated.</li></ul>
+<p><font color="#700000"><b>2002-08-07 21:42</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/Xvnc.man:</font> 
+Documented the -viewonly command-line option.</li></ul>
+<p><font color="#700000"><b>2002-08-07 21:38</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/httpd.c, classes/hextile.vnc, classes/index.vnc, classes/tight.vnc, classes/zlib.vnc:</font> 
+Implemented a possibility to specify applet parameters in the URL request for the HTTP server.</li></ul>
+<p><font color="#700000"><b>2002-08-07 19:25</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/: init.c, rfb.h, rfbserver.c:</font> 
+Xvnc -viewonly patch from Ehud Karni.</li></ul>
+<p><font color="#700000"><b>2002-08-07 18:42</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/include/servermd.h:</font> 
+Linux/PowerPC fix from Peter A. Castro.</li></ul>
+<p><font color="#700000"><b>2002-08-07 18:39</b></font> <b>const</b></p>
+<ul><li><font color="#007000">libvncauth/vncauth.c:</font> 
+chmod() call replaced by fchmod().</li></ul>
+<p><font color="#700000"><b>2002-08-04 23:44</b></font> <b>const</b></p>
+<ul><li><font color="#007000">classes/: ButtonPanel.class, OptionsFrame.class, RecordingFrame.class, RfbProto.class, SessionRecorder.class, VncCanvas.class, VncViewer.class, VncViewer.jar:</font> 
+Java viewer updated to the most recent version.</li></ul>
+<p><font color="#700000"><b>2002-07-05 13:42</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/rfbserver.c:</font> 
+The server failed to reset compression level and JPEG image quality on reading client's encoding list.</li></ul>
+<p><font color="#700000"><b>2002-06-30 10:20</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/: cursor.c, rfbproto.c, vncviewer.h:</font> 
+Handle XCursor encoding operating on the framebuffer instead of setting new cursors directly in X.</li></ul>
+<p><font color="#700000"><b>2002-06-28 12:53</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/config/cf/vnclibs.def, Xvnc/programs/Xserver/os/osinit.c, vncviewer/Imakefile:</font> 
+Porting fixes from Ki Networks, Inc.</li></ul>
+<p><font color="#700000"><b>2002-06-28 12:52</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/init.c:</font> 
+Minor changes to write information about TightVNC into the log file.</li></ul>
+<p><font color="#700000"><b>2002-05-19 20:35</b></font> <b>const</b></p>
+<ul><li><font color="#007000">classes/: RfbProto.class, VncCanvas.class, VncViewer.class, VncViewer.jar:</font> 
+Updated Java viewer.</li></ul>
+<p><font color="#700000"><b>2002-05-15 19:14</b></font> <b>const</b></p>
+<ul><li><font color="#007000">README, vncserver, Xvnc/config/cf/vnc.def, vncviewer/README, vncviewer/argsresources.c:</font> 
+Version strings changed for version 1.2.4.</li></ul>
+<p><font color="#700000"><b>2002-05-15 19:05</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncserver.man, Xvnc/programs/Xserver/Xvnc.man, vncconnect/vncconnect.man, vncpasswd/vncpasswd.man, vncviewer/vncviewer.man:</font> 
+Dates fixed.</li></ul>
+<p><font color="#700000"><b>2002-05-15 19:02</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/: README, Vncviewer, argsresources.c, fullscreen.c, vncviewer.h, vncviewer.man:</font> 
+Made grabbing the keyboard optional in full-screen mode, new boolean &quot;grabKeyboard&quot; X resource added to control this behavior.</li></ul>
+<p><font color="#700000"><b>2002-05-09 13:10</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/: argsresources.c, rfbproto.c, vncviewer.h:</font> 
+The -autopass option removed.</li></ul>
+<p><font color="#700000"><b>2002-05-09 12:00</b></font> <b>const</b></p>
+<ul><li><font color="#007000">README:</font> 
+Minor correction.</li></ul>
+<p><font color="#700000"><b>2002-05-09 11:56</b></font> <b>const</b></p>
+<ul><li><font color="#007000">libvncauth/vncauth.c:</font> 
+Added a possibility to denote standard input with the &quot;-&quot; file name.</li></ul>
+<p><font color="#700000"><b>2002-04-30 20:07</b></font> <b>const</b></p>
+<ul><li><font color="#007000">[MANY FILES]:</font> 
+Applied patch from Ki Networks, Inc. solving build problems on a number of commercial Unix systems, fixing a number of minor bugs and typos, and adding the -autopass option to the vncviewer.</li></ul>
+<p><font color="#700000"><b>2002-04-25 20:15</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/fullscreen.c:</font> 
+Applied patch to solve keyboard focus problems in the full-screen mode, from Peter Astrand. The patch does not seem to solve all the issues, but makes things better nevertheless.</li></ul>
+<p><font color="#700000"><b>2002-04-25 18:54</b></font> <b>const</b></p>
+<ul><li><font color="#007000">classes/: AuthPanel.class, ButtonPanel.class, OptionsFrame.class, VncCanvas.class, VncViewer.class, VncViewer.jar:</font> 
+Updated Java viewer.</li></ul>
+<p><font color="#700000"><b>2002-04-23 21:01</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncpasswd/vncpasswd.c:</font> 
+Fixed a bug causing vncpasswd work incorrectly when a file name argument was given. Minor cleanup in the message &quot;Passwords do not match&quot; :-).</li></ul>
+<p><font color="#700000"><b>2002-03-25 16:19</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncconnect/vncconnect.man:</font> 
+The date was incorrect.</li></ul>
+<p><font color="#700000"><b>2002-03-20 16:49</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/config/cf/linux.cf:</font> 
+Forcing Xvnc to link dynamically to the system zlib library.</li></ul>
+<p><font color="#700000"><b>2002-03-20 16:38</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Imakefile, README, tightvnc-libs.patch, Xvnc/config/cf/Imake.tmpl, Xvnc/config/cf/vnclibs.def, Xvnc/lib/Imakefile, Xvnc/lib/font/fontfile/Imakefile, vncviewer/Imakefile:</font> 
+Zlib library was removed from the core X sources. Instead, both vncviewer and Xvnc now can use either system zlib and JPEG libraries, or ones packaged within TightVNC source archive in the lib/ directory. This allows to distribute two version of the source archive: one with these libraries for those who don't have them installed in the system, and another version without libraries, directly from CVS, for those who do have zlib and/or JPEG libraries installed. In the former case, build procedure would include additional &quot;make libs&quot; step. System libraries will be linked dynamically, libraries included in the source archive will be linked in statically.</li></ul>
+<p><font color="#700000"><b>2002-03-20 11:57</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/config/cf/linux.cf:</font> 
+Cleanups in code layout.</li></ul>
+<p><font color="#700000"><b>2002-03-20 11:40</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncserver:</font> 
+Removed extra 2-seconds delay after Xvnc startup.</li></ul>
+<p><font color="#700000"><b>2002-03-20 11:38</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncserver:</font> 
+Made default color depth 24 instead of 8.</li></ul>
+<p><font color="#700000"><b>2002-03-20 11:36</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/: config/cf/Imake.cf, config/cf/linux.cf, config/imake/imakemdep.h, programs/Xserver/include/servermd.h:</font> 
+Support for s390 and s390x architectures under Linux, patch from RedHat vnc RPM.</li></ul>
+<p><font color="#700000"><b>2002-03-20 11:16</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/: config/cf/Imake.cf, config/cf/linux.cf, config/cf/vnc.def, config/imake/imakemdep.h, programs/Xserver/cfb/Imakefile, programs/Xserver/cfb/stipsparc.s, programs/Xserver/cfb/stipsprc32.s:</font> 
+Applied vnc-imake patch from RedHat vnc RPM. This should add support for more architechtures under Linux.</li></ul>
+<p><font color="#700000"><b>2002-03-19 23:59</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/: httpd.c, sockets.c:</font> 
+Changes allowing to use libwrap library from tcp_wrappers for server access control, modified patch from RedHat vnc package.</li></ul>
+<p><font color="#700000"><b>2002-03-19 23:34</b></font> <b>const</b></p>
+<ul><li><font color="#007000">tightvnc-libs.patch:</font> 
+Move from zlib-1.1.3 to zlib-1.1.4.</li></ul>
+<p><font color="#700000"><b>2002-03-19 23:25</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/rfbserver.c:</font> 
+Fixed memory alignment problem in Raw encoder for architectures like Sparc that force words to be aligned on word boundaries in memory.</li></ul>
+<p><font color="#700000"><b>2002-03-19 21:23</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/httpd.c:</font> 
+Fixed blocking I/O problem which led to easy denial-of-service attacks via built-in HTTP server, modified patch from Tim Waugh.</li></ul>
+<p><font color="#700000"><b>2002-03-19 17:44</b></font> <b>const</b></p>
+<ul><li><font color="#007000">README, vncinstall:</font> 
+The vncinstall script now understands two-argument form allowing to install manual pages.</li></ul>
+<p><font color="#700000"><b>2002-03-19 17:12</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncserver:</font> 
+Variable names changed: vncFontPath to fontPath, vncColorsPath to colorPath, to correspond to configuration variable names found in the /etc/vnc.conf of Debian GNU/Linux.</li></ul>
+<p><font color="#700000"><b>2002-03-19 16:56</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncserver:</font> 
+Trying to check if Xvnc was started, on failure trying to start it once more with default font path; modified patch from Tim Waugh. Added valiables $vncFontPath and $vncColorsPath to the configuration section in the beginning of the script.</li></ul>
+<p><font color="#700000"><b>2002-03-19 16:29</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/lib/font/fc/fserve.c:</font> 
+Fixed Xvnc crash in the font server code, patch from Tim Waugh.</li></ul>
+<p><font color="#700000"><b>2002-03-19 16:25</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncserver:</font> 
+vncserver -help output made similar to vncviewer -help output.</li></ul>
+<p><font color="#700000"><b>2002-03-19 14:51</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/Xvnc.man:</font> 
+Xvnc manual page prepared.</li></ul>
+<p><font color="#700000"><b>2002-03-19 14:50</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncserver.man:</font> 
+Minor correction.</li></ul>
+<p><font color="#700000"><b>2002-03-18 11:54</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncserver.man:</font> 
+Corrected a double occurence of a word.</li></ul>
+<p><font color="#700000"><b>2002-03-18 11:51</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncserver.man:</font> 
+A manual page for vncserver script prepared.</li></ul>
+<p><font color="#700000"><b>2002-03-07 23:28</b></font> <b>const</b></p>
+<ul><li><font color="#007000">classes/: VncCanvas.class, VncViewer.jar:</font> 
+Java viewer update.</li></ul>
+<p><font color="#700000"><b>2002-03-05 15:06</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncconnect/vncconnect.man, vncpasswd/vncpasswd.man:</font> 
+Minor corrections in comments.</li></ul>
+<p><font color="#700000"><b>2002-03-05 11:28</b></font> <b>const</b></p>
+<ul><li><font color="#007000">README, Xvnc/config/cf/vnc.def, vncviewer/README, vncviewer/argsresources.c:</font> 
+Version strings changed, version 1.2.3.</li></ul>
+<p><font color="#700000"><b>2002-03-04 23:55</b></font> <b>const</b></p>
+<ul><li><font color="#007000">classes/: AuthPanel.class, ButtonPanel.class, ClipboardFrame.class, OptionsFrame.class, RfbProto.class, VncCanvas.class, VncViewer.class, VncViewer.jar, animatedMemoryImageSource.class, authenticationPanel.class, clipboardFrame.class, hextile.vnc, index.vnc, noshared.vnc, optionsFrame.class, rfbProto.class, shared.vnc, tight.vnc, vncCanvas.class, vncviewer.class, vncviewer.jar, zlib.vnc:</font> 
+Updated version of the Java viewer.</li></ul>
+<p><font color="#700000"><b>2002-02-28 16:57</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncpasswd/vncpasswd.man:</font> 
+Man page for vncpasswd prepared.</li></ul>
+<p><font color="#700000"><b>2002-02-28 16:56</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/vncviewer.man:</font> 
+Release date updated.</li></ul>
+<p><font color="#700000"><b>2002-02-20 15:27</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/vncviewer.man:</font> 
+A small correction in the description of the -compresslevel option.</li></ul>
+<p><font color="#700000"><b>2002-01-02 15:00</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncconnect/vncconnect.man:</font> 
+Man page for vncconnect prepared.</li></ul>
+<p><font color="#700000"><b>2002-01-02 14:57</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/: README, vncviewer.man:</font> 
+Man page for vncviewer prepared, README file updated.</li></ul>
+<p><font color="#700000"><b>2001-12-12 15:52</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/argsresources.c:</font> 
+Minor correction in the vncviewer -help output.</li></ul>
+<p><font color="#700000"><b>2001-11-26 23:29</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/argsresources.c:</font> 
+Minor change in the vncviewer -help output.</li></ul>
+<p><font color="#700000"><b>2001-11-26 18:07</b></font> <b>const</b></p>
+<ul><li><font color="#007000">tightvnc-libs.patch:</font> 
+A patch to build TightVNC with libraries.</li></ul>
+<p><font color="#700000"><b>2001-11-26 18:04</b></font> <b>const</b></p>
+<ul><li><font color="#007000">README, Xvnc/config/cf/vnc.def, vncviewer/README, vncviewer/argsresources.c:</font> 
+Version strings changed, version 1.2.2.  Minor bugfix in fprintf() for vncviewer -help.</li></ul>
+<p><font color="#700000"><b>2001-11-25 20:15</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/argsresources.c:</font> 
+Changes in the vncviewer -help output.</li></ul>
+<p><font color="#700000"><b>2001-11-24 17:01</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/cursor.c:</font> 
+Minor bugfix which should prevent potential dereference of a NULL pointer.</li></ul>
+<p><font color="#700000"><b>2001-11-22 18:13</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/: argsresources.c, rfbproto.c, vncviewer.h:</font> 
+Now viewer window is raised on beep, unless -noraiseonbeep option is provided or raiseOnBeep resource set to False.</li></ul>
+<p><font color="#700000"><b>2001-11-13 17:31</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/Imakefile:</font> 
+&quot;ComplexProgramTargetNoMan&quot; directive causing problems on many non-XFree86 systems changed back to &quot;ComplexProgramTarget&quot;.</li></ul>
+<p><font color="#700000"><b>2001-09-16 14:18</b></font> <b>const</b></p>
+<ul><li><font color="#007000">README, Xvnc/config/cf/vnc.def, vncviewer/README:</font> 
+Version strings changed.</li></ul>
+<p><font color="#700000"><b>2001-09-16 14:11</b></font> <b>const</b></p>
+<ul><li><font color="#007000">classes/: optionsFrame.class, rfbProto.class, vncCanvas.class, vncviewer.class, vncviewer.jar:</font> 
+New version of the Java viewer.</li></ul>
+<p><font color="#700000"><b>2001-09-16 12:58</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/: argsresources.c, tunnel.c, vncviewer.c, vncviewer.h:</font> 
+New -via &amp;lt;GATEWAY> vncviewer option providing enhanced tunneling functionality. Now one can make vncviewer tunnel connections to a VNC host via third machine acting as a gateway. Tunneling command template can be provided in the VNC_VIA_CMD environment variable containing %H, %L, %R, %G patterns where %G denotes host address of the gateway machine (%H, %L, %R patterns are similar to ones used in the VNC_TUNNEL_CMD template for -tunnel option). Default command template for the -via option invokes SSH port forwarding.</li></ul>
+<p><font color="#700000"><b>2001-09-15 18:12</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/vncviewer.h:</font> 
+Tunneling command template has been changed, to allow tunneled connections to hosts where only loopback VNC connections are enabled.</li></ul>
+<p><font color="#700000"><b>2001-09-06 14:34</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncpasswd/vncpasswd.c:</font> 
+Creating ~/.vnc directory if it does not exist, modified patch by Tim Waugh.</li></ul>
+<p><font color="#700000"><b>2001-08-22 22:23</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/tight.c:</font> 
+Minor cleanup: parens around arguments of HASH_FUNCxx macros.</li></ul>
+<p><font color="#700000"><b>2001-08-04 18:48</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/config/cf/: linux.cf, Imake.cf:</font> 
+PowerPC support, patch from Debian.</li></ul>
+<p><font color="#700000"><b>2001-08-03 17:40</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/rfbproto.c:</font> 
+Checking return value after malloc().</li></ul>
+<p><font color="#700000"><b>2001-06-25 14:59</b></font> <b>const</b></p>
+<ul><li><font color="#007000">README, Xvnc/config/cf/vnc.def, vncviewer/README, vncviewer/argsresources.c:</font> 
+Version strings changed.</li></ul>
+<p><font color="#700000"><b>2001-06-25 14:52</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncserver:</font> 
+Added an example to set fontpath when using font server.</li></ul>
+<p><font color="#700000"><b>2001-06-25 14:49</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/argsresources.c:</font> 
+Clarification in vncviewer -help output for -compresslevel and -quality options.</li></ul>
+<p><font color="#700000"><b>2001-06-25 14:43</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncserver:</font> 
+A patch for vncserver script to respect the XAUTHORITY environment variable applied, from Red Hat Linux RPM.</li></ul>
+<p><font color="#700000"><b>2001-06-25 13:23</b></font> <b>const</b></p>
+<ul><li><font color="#007000">classes/: vncviewer.class, vncviewer.jar:</font> 
+Java classes updated to the latest viewer version.</li></ul>
+<p><font color="#700000"><b>2001-06-18 20:17</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/Imakefile:</font> 
+Imakefile fix to compile the source under XFree86 4.1.0, the patch sent by Tim Waugh.</li></ul>
+<p><font color="#700000"><b>2001-03-07 14:12</b></font> <b>const</b></p>
+<ul><li><font color="#007000">classes/: vncCanvas.class, vncviewer.jar:</font> 
+Java classes updated to current version.</li></ul>
+<p><font color="#700000"><b>2001-03-01 14:48</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/tight.c:</font> 
+Two changes to lower latencies: (1) now we send pending data prior to processing of each rectangle if there is at least 128 bytes pending; (2) now, when we are trying to find solid-color areas and already have passed an amount of data which should be split anyway, we are sending them immediately. A number of other minor clean-ups and fixes.</li></ul>
+<p><font color="#700000"><b>2001-03-01 14:35</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/cursor.c:</font> 
+Contents of update buffer is not sent immediately any more. This change should prevent calling rfbSendUpdateBuf() with ublen==0 after a framebuffer update.</li></ul>
+<p><font color="#700000"><b>2001-03-01 14:31</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/rfbserver.c:</font> 
+Minor formatting clean-up and a check in rfbSendUpdateBuf() to make sure that (ublen > 0).</li></ul>
+<p><font color="#700000"><b>2001-03-01 10:35</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/tight.c:</font> 
+Minor clean-ups to get rid of all warnings on compilation with -Wall gcc option.</li></ul>
+<p><font color="#700000"><b>2001-02-17 21:50</b></font> <b>const</b></p>
+<ul><li><font color="#007000">README, Xvnc/config/cf/vnc.def, vncviewer/README, vncviewer/argsresources.c:</font> 
+Version strings changed.</li></ul>
+<p><font color="#700000"><b>2001-02-17 21:46</b></font> <b>const</b></p>
+<ul><li><font color="#007000">classes/: clipboardFrame.class, optionsFrame.class, rfbProto.class, vncCanvas.class, vncviewer.jar:</font> 
+Java viewer 1.1p9.</li></ul>
+<p><font color="#700000"><b>2001-02-17 04:38</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/tight.c:</font> 
+Enhanced technique to split large rectangles: now we're trying to maximize dimensions of solid-color areas found. Minor code clean-ups and formating fixes.</li></ul>
+<p><font color="#700000"><b>2001-02-15 15:21</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/: rfb.h, rfbserver.c, tight.c:</font> 
+LastRect markers are not being sent when an update consist of small rectangles not to be searched for solid-color areas. Minor performance fix: searches for solid-color areas might have been performed several times in the same area of rectangle. Minor terminology fixes in names of functions implementing tight encoder and other minor code clean-ups.</li></ul>
+<p><font color="#700000"><b>2001-02-14 18:34</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/tight.c:</font> 
+Order in which parts of large rectangles are being sent is now strictly top-to-bottom, left-to-right. Such behaviour look better at client side.</li></ul>
+<p><font color="#700000"><b>2001-02-08 06:25</b></font> <b>const</b></p>
+<ul><li><font color="#007000">README, Xvnc/config/cf/vnc.def, vncviewer/README, vncviewer/argsresources.c:</font> 
+Version strings changed.</li></ul>
+<p><font color="#700000"><b>2001-02-08 05:52</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/tight.c:</font> 
+Parameters for algorithms to split screen rectangles has been changed; this can improve both compression ratios and CPU usage.</li></ul>
+<p><font color="#700000"><b>2001-02-08 05:47</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/tight.c:</font> 
+Important bugfix in Xvnc tight encoder: the code to split large rectangles behaved incorrectly; this caused compression ratios to be worse than expected and could result segfaults in certain situations.</li></ul>
+<p><font color="#700000"><b>2001-02-03 04:48</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/tight.c:</font> 
+Bugfix: a typo fixed in the Xvnc that prevented it to communicate correctly with older viewers without JPEG compression support.</li></ul>
+<p><font color="#700000"><b>2001-02-01 14:24</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/: cursor.c, tight.c, argsresources.c:</font> 
+Tiny clean-up in vncviewer -help message.</li></ul>
+<p><font color="#700000"><b>2001-02-01 14:23</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/stats.c:</font> 
+Protocol overhead produced by LastRect is not counted as part of real framebuffer updates when statistics is dumped. This seems to be more correct.</li></ul>
+<p><font color="#700000"><b>2001-02-01 14:21</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/rfbserver.c:</font> 
+Bug fixed: LastRect pseudo-encoding worked incorrectly when preferred encoding was not Tight.</li></ul>
+<p><font color="#700000"><b>2001-02-01 06:57</b></font> <b>const</b></p>
+<ul><li><font color="#007000">README, Xvnc/config/cf/vnc.def, vncviewer/README, vncviewer/argsresources.c:</font> 
+Version strings changed.</li></ul>
+<p><font color="#700000"><b>2001-02-01 05:56</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/tight.c:</font> 
+Rectangles prepared for indexed-color encoding are now may be compressed with JPEG on low quality levels.</li></ul>
+<p><font color="#700000"><b>2001-02-01 05:04</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/: rfb.h, rfbserver.c, stats.c, tight.c:</font> 
+Large rectangles now should be split according to their contents: encoder tries to find large solid-color areas and to encode them in separate rectangles. This often reduces amount of data sent, improves compression speed and lowers latencies.</li></ul>
+<p><font color="#700000"><b>2001-01-31 22:37</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/rfbproto.c:</font> 
+Support for LastRect pseudo-encoding added. This fake encoding is used in empty rectangles indicating that there will be no more rectangles in current framebuffer update.</li></ul>
+<p><font color="#700000"><b>2001-01-30 22:24</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/: rfb.h, rfbserver.c, tight.c:</font> 
+JPEG image quality in Xvnc tight encoder is now configurable.</li></ul>
+<p><font color="#700000"><b>2001-01-30 17:55</b></font> <b>const</b></p>
+<ul><li><font color="#007000">include/rfbproto.h, vncviewer/argsresources.c, vncviewer/rfbproto.c, vncviewer/vncviewer.h:</font> 
+Support for JPEG quality level setting in vncviewer, -quality option implemented.</li></ul>
+<p><font color="#700000"><b>2001-01-30 17:53</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/tight.c:</font> 
+Bugfix in colorspace translation from JPEG data.</li></ul>
+<p><font color="#700000"><b>2001-01-30 17:52</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/tight.c:</font> 
+JPEG compression is now supported with any 16bpp and 32bpp server pixel formats.</li></ul>
+<p><font color="#700000"><b>2001-01-30 03:24</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/config/cf/vnclibs.def, Xvnc/programs/Xserver/hw/vnc/tight.c, include/rfbproto.h, vncviewer/Imakefile, vncviewer/rfbproto.c, vncviewer/tight.c:</font> 
+Preliminary implementation of JPEG compression. It works perfectly, but there are things to do: client should send explicit request for JPEG compression with quality level, algorithms to decide if a rectangle may be compressed by JPEG should be designed and implemented (for now JPEG compression just replaces Gradient filter).</li></ul>
+<p><font color="#700000"><b>2001-01-28 18:21</b></font> <b>const</b></p>
+<ul><li><font color="#007000">classes/: DesCipher.class, animatedMemoryImageSource.class, authenticationPanel.class, clipboardFrame.class, hextile.vnc, index.vnc, noshared.vnc, optionsFrame.class, rfbProto.class, shared.vnc, tight.vnc, vncCanvas.class, vncviewer.class, vncviewer.jar, zlib.vnc:</font> 
+VNC Java viewer classes and HTML templates replaced with recently implemented Java version of TightVNC viewer.</li></ul>
+<p><font color="#700000"><b>2001-01-28 18:16</b></font> <b>const</b></p>
+<ul><li><font color="#007000">README, Xvnc/README, Xvnc/config/cf/vnc.def, Xvnc/programs/Xserver/hw/vnc/README, Xvnc/programs/Xserver/hw/vnc/cursor.c, Xvnc/programs/Xserver/hw/vnc/tight.c, vncviewer/README, vncviewer/argsresources.c, vncviewer/tight.c, vncviewer/tunnel.c:</font> 
+Copyright and version strings changed.</li></ul>
+<p><font color="#700000"><b>2001-01-26 01:39</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/cursor.c:</font> 
+Bugfix: locked screen area calculation was broken on locks > 1. Minor bugfix: there was 1 pixel error (safe) in code to determine collisions between software cursor and locked area.</li></ul>
+<p><font color="#700000"><b>2001-01-26 01:33</b></font> <b>const</b></p>
+<ul><li><font color="#007000">include/rfbproto.h:</font> 
+rfbEncodingLastRect added to list of known ensodings.</li></ul>
+<p><font color="#700000"><b>2001-01-24 23:53</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/cursor.c:</font> 
+Minor cleanups.</li></ul>
+<p><font color="#700000"><b>2001-01-22 10:52</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/: Vncviewer, argsresources.c:</font> 
+vncviewer now requests shared session by default, &quot;-noshared&quot; option supported to alter this behaviour.</li></ul>
+<p><font color="#700000"><b>2001-01-17 17:03</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/: init.c, rfb.h, sockets.c:</font> 
+Code cleanup in Xvnc -interface option implementation, from TridiaVNC.</li></ul>
+<p><font color="#700000"><b>2001-01-17 05:17</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/cursor.c:</font> 
+Minor code cleanups.</li></ul>
+<p><font color="#700000"><b>2001-01-17 04:26</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/corre.c:</font> 
+Bug fixed: CoRRE implementation refused to check return codes after writing data to clients; this caused Xvnc crashes after write operation into closed descriptor.</li></ul>
+<p><font color="#700000"><b>2001-01-17 03:37</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/desktop.c:</font> 
+Minor change in dot cursor shape (rounded).</li></ul>
+<p><font color="#700000"><b>2001-01-17 02:47</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/cursor.c:</font> 
+Transparent 1x1 cursor is treated as &quot;no cursor&quot; (width 0, height 0).</li></ul>
+<p><font color="#700000"><b>2001-01-17 02:20</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/: init.c, kbdptr.c, rfb.h:</font> 
+New -compatiblekbd option implemented in Xvnc to force META and ALT keys behave the same way as they do in the original AT&amp;T's version (they both correspond to the Mod1 modifier there).</li></ul>
+<p><font color="#700000"><b>2001-01-17 01:55</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/: init.c, rfb.h, sockets.c:</font> 
+Support for Xvnc -interface option added (patch from Tim Waught).</li></ul>
+<p><font color="#700000"><b>2001-01-16 14:16</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/Imakefile, Xvnc/programs/Xserver/hw/vnc/rfb.h, Xvnc/programs/Xserver/hw/vnc/rfbserver.c, Xvnc/programs/Xserver/hw/vnc/zlib.c, include/rfbproto.h, vncviewer/rfbproto.c, vncviewer/vncviewer.h, vncviewer/zlib.c:</font> 
+Zlib encoding support merged from the TridiaVNC code.</li></ul>
+<p><font color="#700000"><b>2001-01-16 14:07</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/listen.c:</font> 
+XBell volume changed from 100 to 0.</li></ul>
+<p><font color="#700000"><b>2001-01-16 14:07</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/: Vncviewer, argsresources.c:</font> 
+Version info changed, minor typo fixed.</li></ul>
+<p><font color="#700000"><b>2001-01-16 13:17</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/config/cf/vnc.def:</font> 
+Version string changed to indicate Tight Encoder version.</li></ul>
+<p><font color="#700000"><b>2001-01-16 11:17</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/rfbserver.c:</font> 
+Server-side priorities for XCursor vs. RichCursor encodings have been changed: now XCursor is used for any client supporting this encoding even if it sends request for RichCursor encoding first.</li></ul>
+<p><font color="#700000"><b>2001-01-16 08:10</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/rfbproto.c:</font> 
+Minor cosmetic change.</li></ul>
+<p><font color="#700000"><b>2001-01-16 07:45</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/: cursor.c, rfbproto.c, vncviewer.h:</font> 
+RichCursor encoding support is finished.</li></ul>
+<p><font color="#700000"><b>2001-01-15 22:34</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/cursor.c:</font> 
+Code cleanups.</li></ul>
+<p><font color="#700000"><b>2001-01-15 09:54</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/: argsresources.c, cursor.c, rfbproto.c, sockets.c, tight.c, tunnel.c, vncviewer.c, vncviewer.h:</font> 
+Coding style fixes, spaces -> tabs (mostly in my own code).</li></ul>
+<p><font color="#700000"><b>2001-01-15 04:55</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/: cursor.c, rfbproto.c, vncviewer.h:</font> 
+Preliminary client-side RichCursor encoding support. Currently it works but the way to prevent collisions between framebuffer updates and cursor drawing operations is not reliable enough.</li></ul>
+<p><font color="#700000"><b>2001-01-15 04:51</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/cursor.c:</font> 
+Bug with XCursor->RichCursor format translation fixed.</li></ul>
+<p><font color="#700000"><b>2001-01-12 06:36</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/rfbproto.c:</font> 
+Requesting RichCursor encoding, processing RichCursor updates.</li></ul>
+<p><font color="#700000"><b>2001-01-12 06:35</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/vncviewer.h:</font> 
+MAX_ENCODINGS raised to 20.</li></ul>
+<p><font color="#700000"><b>2001-01-12 06:19</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/: Imakefile, cursor.c, rfbproto.c, vncviewer.h:</font> 
+All XCursor stuff moved from rfbproto.c to a new file, cursor.c.</li></ul>
+<p><font color="#700000"><b>2001-01-06 21:00</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/cursor.c:</font> 
+Xvnc bit-order problems in XCursor/RichCursor encodings hopefully fixed.</li></ul>
+<p><font color="#700000"><b>2001-01-06 01:05</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/tight.c:</font> 
+Constant sets for compression levels 0 and 1 changed. Minor code cleanups and optimizations. Comments clarified, typos in comments fixed.</li></ul>
+<p><font color="#700000"><b>2001-01-06 01:02</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/tight.c:</font> 
+Tiny typo fixed in comment.</li></ul>
+<p><font color="#700000"><b>2000-12-09 05:28</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/tight.c:</font> 
+Bugfix: viewer crashed in rare situations after inflate() call when decompressed data filled the whole output buffer but there was no more input data. Additionally, one more sprintf(stderr, ...) added to inflate() error processing code to catch such kind of errors in the future.</li></ul>
+<p><font color="#700000"><b>2000-12-01 02:22</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/rfbproto.c:</font> 
+Buffer size for incoming compressed data decreased to lower latencies.</li></ul>
+<p><font color="#700000"><b>2000-11-21 00:18</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/cursor.c:</font> 
+Minor change in comment.</li></ul>
+<p><font color="#700000"><b>2000-11-17 09:02</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/tight.c:</font> 
+Unused variable removed.</li></ul>
+<p><font color="#700000"><b>2000-11-14 20:07</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/tight.c:</font> 
+Code cleanups. No logic changes.</li></ul>
+<p><font color="#700000"><b>2000-11-10 16:20</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncconnect/vncconnect.c:</font> 
+Tiny patch from Tim Waugh applied to correct typo in a message text.</li></ul>
+<p><font color="#700000"><b>2000-11-10 16:18</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/cfb/cfbcmap.c:</font> 
+Order and priority of color components in default pixel format have been changed. This should resolve problems with imlib renderer and get rid of unneeded pixel format translations in many cases.</li></ul>
+<p><font color="#700000"><b>2000-11-03 03:55</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/: rfbproto.c, tunnel.c, vncviewer.h:</font> 
+When -tunnel option was specified in the command line, special rules are used to choose preferred encoding. Now viewer does not think that server is running on the same machine when tunneling is on and preferred encoding is &quot;tight&quot; with default compression instead of raw.</li></ul>
+<p><font color="#700000"><b>2000-11-03 03:05</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/cfb/cfbcmap.c:</font> 
+Rules to set default pixel formats have been changed: if depth/3 is not integral number, then red component will take (depth+1)/3 bits instead of (depth+2)/3 bits. So default pixel format for 16bpp is BGR565 instead of BGR556.</li></ul>
+<p><font color="#700000"><b>2000-11-01 01:57</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/Imakefile, Xvnc/programs/Xserver/hw/vnc/cursor.c, Xvnc/programs/Xserver/hw/vnc/rfb.h, Xvnc/programs/Xserver/hw/vnc/rfbserver.c, Xvnc/programs/Xserver/hw/vnc/stats.c, include/rfbproto.h, vncviewer/rfbproto.c:</font> 
+New &quot;RichCursor&quot; encoding implemented.  Background and foreground colors are not sent for empty XCursor updates any more. Note: compatibility with previous XCursor code lost. Actual bit order in X11 bitmaps did not correspond to XCursor encoding specification. Note: compatibility with previous XCursor code lost.</li></ul>
+<p><font color="#700000"><b>2000-10-31 16:13</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/rfbserver.c: <font color="#700070">(rfbSendXCursorShape)</font>:</font> 
+XCursor encoding change: order in which transparency and data bitmaps follow is now opposite (first data, then mask).</li></ul>
+<p><font color="#700000"><b>2000-10-31 15:46</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/rfbproto.c: <font color="#700070">(HandleXCursor)</font>:</font> 
+XCursor encoding change: order in which transparency and data bitmaps follow is now opposite (first data, then mask).</li></ul>
+<p><font color="#700000"><b>2000-10-31 15:43</b></font> <b>const</b></p>
+<ul><li><font color="#007000">include/rfbproto.h:</font> 
+Description for XCursor encoding changed, order in which transparency and data bitmaps follow is now opposite (first data, then mask).</li></ul>
+<p><font color="#700000"><b>2000-10-31 15:31</b></font> <b>const</b></p>
+<ul><li><font color="#007000">include/rfbproto.h:</font> 
+Preparing for RichCursor encoding implementation.</li></ul>
+<p><font color="#700000"><b>2000-10-31 15:20</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/kbdptr.c:</font> 
+META key fix -- still not sure if this solution is correct.</li></ul>
+<p><font color="#700000"><b>2000-10-30 18:44</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/rfb.h, Xvnc/programs/Xserver/hw/vnc/rfbserver.c, Xvnc/programs/Xserver/hw/vnc/sprite.c, Xvnc/programs/Xserver/hw/vnc/sprite.h, Xvnc/programs/Xserver/hw/vnc/spritest.h, Xvnc/programs/Xserver/hw/vnc/stats.c, include/rfbproto.h, vncviewer/argsresources.c, vncviewer/desktop.c, vncviewer/rfbproto.c, vncviewer/vncviewer.h:</font> 
+&quot;XCursor&quot; encoding implemented. It's used to send X-style cursor shape information from server to clients so cursor movement can be processed at client side.</li></ul>
+<p><font color="#700000"><b>2000-10-30 01:30</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/: argsresources.c, vncviewer.h:</font> 
+Vncviewer's -nolocalcursor option removed.</li></ul>
+<p><font color="#700000"><b>2000-10-27 03:42</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/argsresources.c:</font> 
+Version string changed.</li></ul>
+<p><font color="#700000"><b>2000-10-27 03:02</b></font> <b>const</b></p>
+<ul><li><font color="#007000">include/rfbproto.h:</font> 
+Additions and cleanups on comment regarding XCursor encoding.</li></ul>
+<p><font color="#700000"><b>2000-10-27 02:26</b></font> <b>const</b></p>
+<ul><li><font color="#007000">classes/: rfbProto.class, vncviewer.jar:</font> 
+Changes from AT&amp;T merged into the sourse, now the code is based on version 3.3.3r2, not on 3.3.3r1.</li></ul>
+<p><font color="#700000"><b>2000-10-27 02:19</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Imakefile, README, vncinstall, vncserver, Xvnc/config/cf/vnc.def, Xvnc/programs/Xserver/hw/vnc/Imakefile, Xvnc/programs/Xserver/hw/vnc/cutpaste.c, Xvnc/programs/Xserver/hw/vnc/draw.c, Xvnc/programs/Xserver/hw/vnc/hextile.c, Xvnc/programs/Xserver/hw/vnc/init.c, Xvnc/programs/Xserver/hw/vnc/kbdptr.c, Xvnc/programs/Xserver/hw/vnc/rfb.h, Xvnc/programs/Xserver/hw/vnc/rfbserver.c, Xvnc/programs/Xserver/hw/vnc/sockets.c, vncconnect/Imakefile, vncconnect/vncconnect.c, vncviewer/dialogs.c:</font> 
+Changes from AT&amp;T merged into the sourse, now the code is based on version 3.3.3r2, not on 3.3.3r1.</li></ul>
+<p><font color="#700000"><b>2000-10-27 01:56</b></font> <b>const</b></p>
+<ul><li><font color="#007000">include/rfbproto.h:</font> 
+Preparing for local cursor implementation. New constants and comments.</li></ul>
+<p><font color="#700000"><b>2000-10-26 18:59</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/tight.c: <font color="#700070">(PaletteReset)</font>:</font> 
+Minor speed optimization.</li></ul>
+<p><font color="#700000"><b>2000-10-26 18:15</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/tight.c: <font color="#700070">(SendIndexedRect)</font>:</font> 
+The function has been split into two functions: SendIndexedRect and SendMonoRect.</li></ul>
+<p><font color="#700000"><b>2000-10-26 04:27</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/rfbserver.c, include/rfbproto.h, vncviewer/argsresources.c, vncviewer/rfbproto.c, vncviewer/vncviewer.h:</font> 
+Setting compression levels in Xvnc tight encoder. New &quot;-compresslevel&quot; option added to vncviewer. New &quot;-nolocalcursor&quot; option added to vncviewer, but it's not used yet.</li></ul>
+<p><font color="#700000"><b>2000-10-26 04:24</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/translate.c: <font color="#700070">(rfbSetTranslateFunction)</font>:</font> 
+Small cleanup in log message.</li></ul>
+<p><font color="#700000"><b>2000-10-26 02:57</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/: rfb.h, rfbserver.c, tight.c:</font> 
+Compression level made configurable in tight encoder.</li></ul>
+<p><font color="#700000"><b>2000-10-17 16:43</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/dialogs.c:</font> 
+A patch by Tim Waugh to correct misuse of XawDialogGetValueString function in vncviewer has been applied.</li></ul>
+<p><font color="#700000"><b>2000-10-17 15:51</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/tight.c:</font> 
+Encoding of indexed rectangles mostly rewritten for speed optimization. Usual code cleanups.</li></ul>
+<p><font color="#700000"><b>2000-10-04 04:25</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/hextile.c:</font> 
+Fix for &quot;0 bpp&quot; problem from Michael A. Fetterman has been applied.</li></ul>
+<p><font color="#700000"><b>2000-09-29 23:03</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/tight.c: <font color="#700070">(FillPaletteNN)</font>:</font> 
+Unused arguments removed.</li></ul>
+<p><font color="#700000"><b>2000-09-29 22:56</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/tight.c:</font> 
+Hash function for palette lookups has been changed to address byte-order issues.</li></ul>
+<p><font color="#700000"><b>2000-09-27 22:08</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/tight.c:</font> 
+Obsolete comment removed.</li></ul>
+<p><font color="#700000"><b>2000-09-26 18:46</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/tight.c:</font> 
+Rules to identify rectangles as suitable for ``gradient'' filter were not strict enough.</li></ul>
+<p><font color="#700000"><b>2000-09-25 18:59</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/: init.c, rfb.h, tight.c:</font> 
+``-lazytight'' option added to Xvnc to disable ``gradient'' filter in tight encoding.</li></ul>
+<p><font color="#700000"><b>2000-09-25 09:25</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/tight.c:</font> 
+New code to determine image type. It is used to guess is it helpful to use ``gradient'' filter on full-color rectangle. Byte order problems have been hopefully fixed. Various code cleanups and optimizations.</li></ul>
+<p><font color="#700000"><b>2000-09-07 10:49</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/rfbproto.c:</font> 
+Bell volume for XBell changed from 100 to 0.</li></ul>
+<p><font color="#700000"><b>2000-09-04 03:32</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/tight.c:</font> 
+``Gradient'' filter implemented, but currently it's very inefficient.</li></ul>
+<p><font color="#700000"><b>2000-09-04 03:30</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/tight.c: <font color="#700070">(FilterGradientBPP)</font>:</font> 
+Bug in the ``gradient'' filter code fixed.</li></ul>
+<p><font color="#700000"><b>2000-09-01 16:04</b></font> <b>const</b></p>
+<ul><li><font color="#007000">include/rfbproto.h, vncviewer/tight.c:</font> 
+Minor code cleanups.</li></ul>
+<p><font color="#700000"><b>2000-08-30 17:15</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/: rfb.h, rfbserver.c, tight.c:</font> 
+Better way to split rectangle into smaller parts.</li></ul>
+<p><font color="#700000"><b>2000-08-30 14:08</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/tight.c:</font> 
+Hash function for palette lookups simplified.</li></ul>
+<p><font color="#700000"><b>2000-08-30 01:05</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/tight.c, include/rfbproto.h:</font> 
+Stupid bug fixed: extra unused color was included in palettes in many cases; compression ratios used to be smaller than they should be.  Parts of code rewritten or reorganized for speed optimization. Code cleanups.</li></ul>
+<p><font color="#700000"><b>2000-08-18 12:13</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/rfbproto.c:</font> 
+Telling the server that we support tight encoding.</li></ul>
+<p><font color="#700000"><b>2000-08-18 12:12</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/rfb.h:</font> 
+Constants moved back to header file.</li></ul>
+<p><font color="#700000"><b>2000-08-18 12:12</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/rfbserver.c:</font> 
+Tuning for better compression ratios.</li></ul>
+<p><font color="#700000"><b>2000-08-18 12:12</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/tight.c:</font> 
+Prevention of compressing very small updates. Tuning for better compression ratios.</li></ul>
+<p><font color="#700000"><b>2000-08-18 12:11</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/tight.c:</font> 
+Prevention of compressing very small updates.</li></ul>
+<p><font color="#700000"><b>2000-08-18 11:03</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/: rfb.h, tight.c:</font> 
+Constants moved from rfb.h to tight.c. One nasty bug fixed.</li></ul>
+<p><font color="#700000"><b>2000-08-18 01:42</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/tight.c:</font> 
+Statistics about bytes sent was not computed correctly.</li></ul>
+<p><font color="#700000"><b>2000-08-18 01:25</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/tight.c:</font> 
+Debugging messages removed or changed.</li></ul>
+<p><font color="#700000"><b>2000-08-18 01:25</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/tight.c:</font> 
+Support for 24-bit color samples implemented. Debugging messages removed.</li></ul>
+<p><font color="#700000"><b>2000-08-18 01:24</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/rfb.h:</font> 
+Unused constant removed.</li></ul>
+<p><font color="#700000"><b>2000-08-18 00:00</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/tight.c:</font> 
+Palette for 8-bit samples restricted to 2 colors. Other code cleanups.</li></ul>
+<p><font color="#700000"><b>2000-08-17 22:51</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/stats.c, Xvnc/programs/Xserver/hw/vnc/tight.c, include/rfbproto.h, vncviewer/tight.c:</font> 
+Working version of tight encoding. The only thing still missed is support for 24-bit samples in Xnvc.</li></ul>
+<p><font color="#700000"><b>2000-08-17 16:35</b></font> <b>const</b></p>
+<ul><li><font color="#007000">Xvnc/programs/Xserver/hw/vnc/: Imakefile, rfb.h, rfbserver.c, tight.c:</font> 
+Interim version of tight encoding.</li></ul>
+<p><font color="#700000"><b>2000-08-16 12:23</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/tight.c:</font> 
+Debugging finished for 24-bit mode, several bugs fixed. Some debugging messages added.</li></ul>
+<p><font color="#700000"><b>2000-08-16 04:44</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/tight.c:</font> 
+Support for 24-bit RGB background color for solid areas was missing.</li></ul>
+<p><font color="#700000"><b>2000-08-16 03:09</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/tight.c:</font> 
+Fixed bug in ``gradient'' filter.</li></ul>
+<p><font color="#700000"><b>2000-08-15 23:11</b></font> <b>const</b></p>
+<ul><li><font color="#007000">include/rfbproto.h, vncviewer/rfbproto.c, vncviewer/tight.c:</font> 
+Filters ``gradient'' and ``palette'' added to the ``tight'' encoding implementation.</li></ul>
+<p><font color="#700000"><b>2000-08-15 04:24</b></font> <b>const</b></p>
+<ul><li><font color="#007000">include/rfbproto.h, vncviewer/rfbproto.c, vncviewer/tight.c:</font> 
+Redesigned implementation of the ``tight'' encoding.</li></ul>
+<p><font color="#700000"><b>2000-08-08 15:34</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/: argsresources.c, listen.c, tunnel.c, vncviewer.c, vncviewer.h:</font> 
+Working support for SSH tunneling.</li></ul>
+<p><font color="#700000"><b>2000-08-08 04:46</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/: Imakefile, argsresources.c, sockets.c, tunnel.c, vncviewer.c, vncviewer.h:</font> 
+First snapshot of support for SSH-tunneled connections; not works yet.</li></ul>
+<p><font color="#700000"><b>2000-08-02 23:26</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/tight.c:</font> 
+First working snapshot of pre-``tight'' encoding. Currently it's equivalent to pure zlib compression.</li></ul>
+<p><font color="#700000"><b>2000-08-02 21:07</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/tight.c:</font> 
+Fixed one typo, partially fixed incorrect FilterHdiff implementation.</li></ul>
+<p><font color="#700000"><b>2000-08-02 17:58</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/: rfbproto.c, tight.c:</font> 
+Draft version of ``tight'' encoding finished.</li></ul>
+<p><font color="#700000"><b>2000-08-02 03:23</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/: Imakefile, rfbproto.c, tight.c:</font> 
+Next non-working snapshot of ``tight'' encoding which. It's the first version which can be compiled.</li></ul>
+<p><font color="#700000"><b>2000-08-01 18:24</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/: rfbproto.c, tight.c:</font> 
+Next unfinished snapshot of ``tight'' encoding implementation.</li></ul>
+<p><font color="#700000"><b>2000-08-01 02:03</b></font> <b>const</b></p>
+<ul><li><font color="#007000">include/rfbproto.h, vncviewer/tight.c:</font> 
+Half-finished snapshot of ``tight'' encoding.</li></ul>
+<p><font color="#700000"><b>2000-06-11 19:00</b></font> <b>const</b></p>
+<ul><li><font color="#007000">[MANY FILES]:</font> 
+Initial revision</li></ul>
+            </td></tr>
+          </table>
+        </td><td width="2" bgcolor="#C49A82">
+          <img src="brpixel.jpg" width="2" height="1" alt="">
+        </td><td width="6" valign="top" bgcolor="#F8EECB">
+          &nbsp;
+        </td><td width="128" valign="top" bgcolor="#F8EECB">
+          <table border="0" width="100%" cellspacing="0" cellpadding="8">
+            <tr><td align="center"><a href="http://www.tightvnc.com/"><img
+              src="tightvnc-logo.jpg" width="128" height="128" border="0"
+              alt="[LOGO]"></a></td></tr>
+            <tr><td align="center">
+              <table align="center" border="0"><tr><td nowrap>
+  <p><b>TightVNC:</b><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="index.html">main page</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="download.html"><b>download</b></a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="support.html">get support</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="contribute.html">contribute</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="contact.html">contact us</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="people.html">people</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="sitemap.html">site map</a><br>
+  <p><b>Information:</b><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="intro.html">introduction</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="http://www.tightvnc.com/screenshots.html">screenshots</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="docs.html">documentation</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="faq.html">FAQ</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="lists.html">mailing lists</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="changelogs.html">change logs</a><br>
+  <p><b>Development:</b><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="bugs.html">report bugs</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="rfe.html">suggest features</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="http://sourceforge.net/tracker/?func=add&group_id=14067&atid=314067">submit patches</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="http://sourceforge.net/cvs/?group_id=14067">CVS</a><br>
+  <p><b>Links:</b><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="http://www.tightvnc.com/">primary site</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="othersites.html">other sites</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="related.html">related software</a><br>
+              </td></tr></table>
+            </td></tr>
+          </table>
+        </td><td width="6" bgcolor="#F8EECB">
+          &nbsp;
+        </td></tr>
+    </table> 
+  </body>
+</html>
+<!-- Guava tools by Steve Morphet 1999-2001. -->
