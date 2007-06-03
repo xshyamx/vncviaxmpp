@@ -1,0 +1,333 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>TightVNC Documentation, Win32 Version</title>
+    <link rel="stylesheet" href="tightvnc.css">
+    <meta name="author" content="Constantin Kaplinsky">
+    <meta name="generator" content="XEmacs + Ruby + Guava tools">
+    <meta name="description"
+          content="TightVNC - An enhanced VNC version with many new features, improvements,
+                   optimizations and bugfixes.">
+    <meta name="keywords"
+          content="vnc, remote desktop, remote control, remote administration, compression">
+  </head>
+  <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="#FDFAEC"
+    link="#9A1614" alink="#FF4040" vlink="#8A7634">
+    <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="8">
+          &nbsp;
+        </td><td valign="top">
+          <table width="100%" border="0" cellspacing="0" cellpadding="16">
+            <tr><td valign="top">
+  <table width="100%" border="0" align="center" cellspacing="0" cellpadding="0">
+    <tr><td width="99%">
+      <table width="100%" bgcolor="#C49A82" border="0" cellspacing="0" cellpadding="2">
+        <tr><td align="center" valign="middle">
+          <table width="100%" border="0" bgcolor="#F8EECB" align="center" cellspacing="0"
+            cellpadding="6">
+            <tr><td align="center" valign="middle">
+              <font size="+2"><b>TightVNC Documentation [Win32]</b></font>
+            </td></tr>
+          </table>
+        </td></tr>
+      </table>
+    </td><td width="1%">&nbsp;
+    </td><td align="right" valign="middle">
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td align="right" valign="middle"><a href="http://www.tightvnc.com/donate.html"><img
+            border="0" hspace="8" src="donate.jpg" width="96" height="32"
+            alt="[DONATE]"></a></td>
+          <td nowrap align="center" valign="middle"><b>Improve TightVNC:</b><br><a
+            href="http://www.tightvnc.com/donate.html">Make a Donation</a>!</td>
+        </tr>
+      </table>
+    </td></tr>
+  </table>
+  <br>
+  <h3>Contents</h3>
+  <ul>
+    <li><a href="#inst">Installation</a></li>
+    <li><a href="#upgr">Remote Upgrade</a></li>
+    <li><a href="#start"><b>Getting Started</b></a>
+      <ul>
+        <li><a href="#start_serv">Running a Server (WinVNC)</a></li>
+        <li><a href="#start_view">Running a Viewer</a></li>
+        <li><a href="#start_java">Using a Web Browser as a Viewer</a></li>
+      </ul></li>
+    <li><a href="#uninst">Uninstalling TightVNC</a></li>
+    <li><a href="#refs">References</a></li>
+  </ul>
+  <a name="inst"></a>
+  <h3>Installation</h3>
+  <p>
+    TightVNC is available in the self-installing form. Just run the executable to perform the
+    installation. You will see a familiar installation wizard which will allow you to read the
+    license, choose the installation directory, choose a name for the TightVNC group under the
+    Start-&gt;Programs menu etc.
+  </p>
+  <p>
+    After running the setup program, a new &quot;TightVNC&quot; section will appear in the
+    Start-&gt;Programs menu. If you would like to have TightVNC start automatically and run even
+    if there is no active user, you should install it as a service using the corresponding menu
+    item from the TightVNC Administration section. Note that installing the WinVNC service is the
+    only way to make Ctrl-Alt-Del work remotely (applicable only to Windows NT/2000/XP systems).
+  </p>
+  <p>
+    TightVNC defaults to install to the <tt>Program Files\TightVNC</tt> directory, but you can
+    choose any other location during the installation. Note that TightVNC does not install
+    anything in the system directory so an alternative way to install TightVNC is to just copy
+    the executable and DLL files into any directory you like (but in this case you'll have
+    to create shortcuts to the programs yourself).
+  </p>
+  <p>
+    If you want to install TightVNC on a number of computers, and do not want to repeatedly enter
+    the same password on each machine, install TightVNC once and set the password, then copy the
+    registry settings under <tt>HKEY_CURRENT_USER\Software\ORL\WinVNC3</tt> to other machines.
+  </p>
+  <p>
+    The TightVNC installer can work in silent mode and not ask questions during installation (but
+    it's possible that it might show message boxes if there are any errors). In this mode
+    TightVNC will be installed into the default directory, that is, the <tt>TightVNC</tt>
+    subdirectory in the <tt>Program Files</tt>). Here is the command line to install TightVNC in
+    silent mode:
+    <pre>
+tightvnc-1.2.9-setup.exe /sp- /verysilent</pre>
+  <a name="upgr"></a>
+  <h3>Remote Upgrade</h3>
+  </p>
+  <p>
+    TightVNC servers can be upgraded remotely. This means that you can perform the TightVNC
+    installation working in an active TightVNC session. While the TightVNC service is running,
+    it's impossible to replace its executable files in place, so the installer will copy new
+    files into a temporary location, and these new files will replace older versions during the
+    next reboot. The installer will prompt for reboot if it was not able to replace the
+    executables.
+  </p>
+  <p>
+    Before using this feature, you should read and understand the following:
+  </p>
+  <ul>
+    <li>Remote upgrade requires rebooting the computer. If you want to be able to access
+      your computer after the reboot, make sure you're running WinVNC as a service,
+      not in the application mode.</li>
+    <li>If you're running WinVNC service from some another VNC distribution, this
+      installation procedure won't replace it with the TightVNC service by default. 
+      This is a limitation that may be solved in future versions. However, there is a way
+      to perform such an upgrade: install TightVNC into the same directory where old VNC
+      files (<tt>WinVNC.exe</tt> and <tt>VNCHooks.dll</tt>) are installed. In this case,
+      old binaries will be replaced by the new ones during the reboot, and there will be no
+      need to re-install the service. Please note that the installer should show you the
+      reboot prompt at the end of the installation, otherwise you probably selected wrong
+      installation directory.</li>
+    <li>There is a number of things that can prevent the machine to reboot correctly, and
+      that can cause losing the control over the computer. In other words, there is NO
+      WARRANTY that the remote upgrade procedure is absolutely reliable. To minimize
+      possible risks, close all the running applications (besides the WinVNC service
+      itself) before launching the TightVNC installer.</li>
+  </ul>
+  <a name="start"></a>
+  <h3>Getting Started</h3>
+  <p>
+    TightVNC, like normal VNC, has two parts: the server (WinVNC), which shares the screen of
+    the machine it's running on, and the viewer which shows the remote screen received
+    from the server. So to get started, you need to run a server on the machine you want to
+    access remotely, and connect to it with a viewer. TightVNC Win32 distribution includes
+    both the server and viewer parts.
+  </p>
+  <a name="start_serv"></a>
+  <h4><font color="#007000">Running a Server (WinVNC)</font></h4>
+  <p>
+    WinVNC can be running in two ways: in the application mode and as a Windows service. In
+    the application mode, the server can be running only during the current user session, and
+    will close on the logout. To start WinVNC in the application mode, choose the shortcut
+    <b>Programs-&gt;TightVNC-&gt;Launch TightVNC Server</b> from the Start menu.
+  </p>
+  <p>
+    To make a machine accessible even if there is no user logged in, and to make the server
+    start automatically after reboot, the TightVNC server should be running as a Windows
+    service. To install WinVNC service, choose
+    <b>Programs-&gt;TightVNC-&gt;Administration-&gt;Install VNC Service</b>. In Windows
+    95/98/ME that will start the service immediately, while in Windows NT/2000/XP you'll
+    have to start the service manually using the Services item in the Control Panel (or it
+    will be started automatically on the next system reboot). Note that if the VNC service
+    was started manually, you may have to run
+    <b>Programs-&gt;TightVNC-&gt;Administration-&gt;Run Service Helper</b>, to make WinVNC
+    display its tray icon (see below).
+  </p>
+  <p>
+    Regardless of the way WinVNC was started, it will show the Properties window on the first
+    startup, to let you enter the password you will use in the viewer to access the machine. 
+    In default configuration, each user can have his own separate WinVNC password, and there
+    is a special default password which should be used when nobody is logged in on the server
+    machine. To set the user password, just access the Properties dialog the usual way, as
+    described below. However, to set the default password, you will have to run
+    <b>Programs-&gt;TightVNC-&gt;Administration-&gt;Show Default Settings</b>.
+  </p>
+  <p>
+    On successful startup, TightVNC will add a small icon to the tray in the system task bar.
+    The icon has white background if there is no viewers connected, and inverted colors when
+    at least one viewer accesses the desktop. Moving the mouse over this icon shows the IP
+    address of the machine (which can be entered in the remote viewer to access the server).
+  </p>
+  <table border="0" align="center" cellspacing="0" cellpadding="8">
+    <tr align="center">
+      <td nowrap><img src="images/winvnc-icon-normal.png" width="162" height="59" hspace="18"
+        vspace="4" alt="[WinVNC tray icon]"><br><font size="-1"><i>A normal icon of the<br>TightVNC
+        server</i></font></td>
+      <td nowrap><img src="images/winvnc-icon-ip.png" width="162" height="59" hspace="18"
+        vspace="4" alt="[WinVNC tray icon]"><br><font size="-1"><i>Mouse over the icon<br>shows IP
+        addresses</i></font></td>
+    </tr>
+    <tr align="center">
+      <td nowrap><img src="images/winvnc-icon-connected.png" width="162" height="59" hspace="18"
+        vspace="4" alt="[WinVNC tray icon]"><br><font size="-1"><i>Inverted colors when<br>a viewer is
+        connected</i></font></td>
+      <td nowrap><img src="images/winvnc-icon-disabled.png" width="162" height="59" hspace="18"
+        vspace="4" alt="[WinVNC tray icon]"><br><font size="-1"><i>New client connections<br>are
+        disabled</i></font></td>
+    </tr>
+  </table>
+  <p>
+    Right-clicking on the tray icon will bring up a menu with the following options on it:
+  </p>
+  <ul>
+    <li><b>Properties</b> - This will cause the Properties dialog to be displayed, allowing
+      the user to change various WinVNC parameters. This dialog will also be displayed on
+      double-clicking the tray icon.</li>
+    <li><b>Add New Client</b> - This allows outgoing connections to be made from the server
+      to any viewer started in the &quot;listening&quot; mode. The name of the target viewer
+      machine and optional display number can be entered in the dialog. Connections created
+      this way are treated as shared. Such so called &quot;reverse connections&quot; can also
+      be initiated from the command line using the <tt>-connect</tt> option.</li>
+    <li><b>Kill All Clients</b> - This will disconnect all currently connected clients from
+      the server.</li>
+    <li><b>Disable New Clients</b> - This will disable new client connection to the server,
+      and a red border will appear around the WinVNC icon. Choose the same menu item to
+      re-enable new client connections.
+    <li><b>About WinVNC</b> - Show the &quot;About...&quot; box.</li>
+    <li><b>Close</b> - Shutdown the server.</li>
+  </ul>
+  <p>
+    Most of the options found in the Properties dialog are documented in the <a
+    href="http://www.realvnc.com/products/free/3.3.7/winvnc.html">official VNC documentation</a>. 
+    In TightVNC Properties dialog, you can find an additional &quot;Advanced&quot; button. Unlike
+    the standard VNC, TightVNC allows you to set a number of advanced settings directly from the
+    WinVNC GUI, and to apply changed settings immediately. There is no need to launch regedit to
+    set query options, connection priority, allow loopback connections, or disable the HTTP
+    server etc.
+  </p>
+  <a name="start_view"></a>
+  <h4><font color="#007000">Running a Viewer</font></h4>
+  <p>
+    To view and control a remote desktop where a TightVNC server is running, you need to run
+    the TightVNC viewer. Choose one of the following shortcuts under
+    <b>Start-&gt;Programs-&gt;TightVNC</b> to run the viewer:
+  </p>
+  <ul>
+    <li><b>TightVNC Viewer (Best Compression)</b> - Use this shortcut if your network
+      connection to the server is slow, e.g. in the case of 56Kbps modem connection. This
+      will enable Tight encoding with JPEG compression at the lowest image quality,
+      consuming minimum of the bandwidth available. Note that you can edit the shortcut to
+      tune the compression and JPEG quality levels.</li>
+    <li><b>TightVNC Viewer (Fast Compression)</b> - This shortcut is more suitable for
+      high-speed networks, e.g. when using TightVNC over a 10Mbit or 100Mbit LAN.</li>
+    <li><b>TightVNC Viewer (Listen Mode)</b> - This starts the viewer in the listen
+      mode. The viewer's icon will appear in the system tray, and it will accept
+      reverse connections from TightVNC servers (see above the description of the WinVNC
+      &quot;Add New Client&quot; menu item). The rest of this document does not cover the
+      listen mode.</li>
+  </ul>
+  <p>
+    After you have started the viewer, you will be prompted for the host name and optional
+    display number of the remote server you want to access. The display number typically will
+    be :0 if the remote server is WinVNC and you did not change its default settings. If
+    there was no display number entered, the viewer assumes it to be :0. After entering the
+    host name and the display number, click OK, and you will be prompted for your password,
+    after which you should see the remote display. If the machine running the server does not
+    have a proper DNS entry, you probably won't be able to use the computer name and
+    will have to type in its IP address. (Note that the TightVNC server displays the IP
+    address when the mouse is passing over its tray icon.)
+  </p>
+  <a name="start_java"></a>
+  <h4><font color="#007000">Using a Web Browser as a Viewer</font></h4>
+  <p>
+    The VNC servers also contain a small Web server. If you connect to it with a web browser,
+    the Java version of the viewer will be downloaded automatically, allowing you to access
+    the remote desktop. Obviously, your Web browser must support Java applets. Also, you
+    should not use a proxy, to let the Java applet access the remote server directly.
+  </p>
+  <p>
+    The server listens for HTTP connections on port 5800 + display number. (Remember a WinVNC
+    machine defaults to the display 0.) So to connect to the display 2 on machine
+    &quot;myhost&quot;, you would point your web browser at: http://myhost:5802/ . The applet
+    will prompt you for your password, and should then display the desktop.
+  </p>
+  <a name="uninst"></a>
+  <h3>Uninstalling TightVNC</h3>
+  <p>
+    TightVNC can be uninstalled using the Add/Remove Programs utility under the Control
+    Panel, but it's also ok to remove the directory you have installed it into
+    (typically, <tt>C:\Program Files\TightVNC</tt>). Note that the TightVNC installation
+    program does not copy any files into the system directory. Before uninstalling TightVNC,
+    make sure WinVNC is not running and not installed as a service.
+  </p>
+  <a name="refs"></a>
+  <h3>References</h3>
+  <p>
+    For additional information on installation and configuration, see the <a
+    href="http://www.realvnc.com/documentation.html">official VNC documentation</a> and <a
+    href="http://www.realvnc.com/faq.html">FAQ</a>.
+  </p>
+  <p>
+    If you would like to compile the source yourself, please read instructions in the
+    BUILDING.txt file included in the source archive.
+  </p>
+            </td></tr>
+          </table>
+        </td><td width="2" bgcolor="#C49A82">
+          <img src="brpixel.jpg" width="2" height="1" alt="">
+        </td><td width="6" valign="top" bgcolor="#F8EECB">
+          &nbsp;
+        </td><td width="128" valign="top" bgcolor="#F8EECB">
+          <table border="0" width="100%" cellspacing="0" cellpadding="8">
+            <tr><td align="center"><a href="http://www.tightvnc.com/"><img
+              src="tightvnc-logo.jpg" width="128" height="128" border="0"
+              alt="[LOGO]"></a></td></tr>
+            <tr><td align="center">
+              <table align="center" border="0"><tr><td nowrap>
+  <p><b>TightVNC:</b><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="index.html">main page</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="download.html"><b>download</b></a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="support.html">get support</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="contribute.html">contribute</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="contact.html">contact us</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="people.html">people</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="sitemap.html">site map</a><br>
+  <p><b>Information:</b><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="intro.html">introduction</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="http://www.tightvnc.com/screenshots.html">screenshots</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="docs.html">documentation</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="faq.html">FAQ</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="lists.html">mailing lists</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="changelogs.html">change logs</a><br>
+  <p><b>Development:</b><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="bugs.html">report bugs</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="rfe.html">suggest features</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="http://sourceforge.net/tracker/?func=add&group_id=14067&atid=314067">submit patches</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="http://sourceforge.net/cvs/?group_id=14067">CVS</a><br>
+  <p><b>Links:</b><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="http://www.tightvnc.com/">primary site</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="othersites.html">other sites</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="related.html">related software</a><br>
+              </td></tr></table>
+            </td></tr>
+          </table>
+        </td><td width="6" bgcolor="#F8EECB">
+          &nbsp;
+        </td></tr>
+    </table> 
+  </body>
+</html>
+<!-- Guava tools by Steve Morphet 1999-2001. -->

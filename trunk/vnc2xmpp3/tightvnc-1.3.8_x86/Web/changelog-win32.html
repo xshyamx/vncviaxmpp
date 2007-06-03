@@ -1,0 +1,1932 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>TightVNC: Change Log, Win32 Version</title>
+    <link rel="stylesheet" href="tightvnc.css">
+    <meta name="author" content="Constantin Kaplinsky">
+    <meta name="generator" content="XEmacs + Ruby + Guava tools">
+    <meta name="description"
+          content="TightVNC - An enhanced VNC version with many new features, improvements,
+                   optimizations and bugfixes.">
+    <meta name="keywords"
+          content="vnc, remote desktop, remote control, remote administration, compression">
+  </head>
+  <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="#FDFAEC"
+    link="#9A1614" alink="#FF4040" vlink="#8A7634">
+    <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="8">
+          &nbsp;
+        </td><td valign="top">
+          <table width="100%" border="0" cellspacing="0" cellpadding="16">
+            <tr><td valign="top">
+  <table width="100%" border="0" align="center" cellspacing="0" cellpadding="0">
+    <tr><td width="99%">
+      <table width="100%" bgcolor="#C49A82" border="0" cellspacing="0" cellpadding="2">
+        <tr><td align="center" valign="middle">
+          <table width="100%" border="0" bgcolor="#F8EECB" align="center" cellspacing="0"
+            cellpadding="6">
+            <tr><td align="center" valign="middle">
+              <font size="+2"><b>Change Log, Win32 Version</b></font>
+            </td></tr>
+          </table>
+        </td></tr>
+      </table>
+    </td><td width="1%">&nbsp;
+    </td><td align="right" valign="middle">
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td align="right" valign="middle"><a href="http://www.tightvnc.com/donate.html"><img
+            border="0" hspace="8" src="donate.jpg" width="96" height="32"
+            alt="[DONATE]"></a></td>
+          <td nowrap align="center" valign="middle"><b>Improve TightVNC:</b><br><a
+            href="http://www.tightvnc.com/donate.html">Make a Donation</a>!</td>
+        </tr>
+      </table>
+    </td></tr>
+  </table>
+  <br>
+  <p>See the <a href="Win32-ChangeLog.txt">text version</a> from which this document was generated.</p>
+<p><font color="#700000"><b>2006-08-15 20:37</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">BUILDING.txt:</font> 
+Building information had to be updated to reflect including libraries in the source distribution.</li></ul>
+<p><font color="#700000"><b>2006-08-15 10:50</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncMenu.cpp, vncProperties.cpp, vncProperties.h:</font> 
+In certain cases we do not want to remember or restore current tab selection in the Properties dialog. In particular, tab selection is not restored or saved when editing the default properties. Also, tab selection is reset when connecting or disconnecting clients.</li></ul>
+<p><font color="#700000"><b>2006-08-14 16:20</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/WinVNC.rc:</font> 
+Improved labels for tray menu commands.</li></ul>
+<p><font color="#700000"><b>2006-08-10 17:03</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: InputHandlingControls.cpp, InputHandlingControls.h:</font> 
+Fixed a minor issue with keyboard focus initially set to &quot;Inactivity timeout&quot; control, in the Properties dialog, Server tab. Normally, keyboard focus should be set to the Password control instead.</li></ul>
+<p><font color="#700000"><b>2006-08-10 16:35</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">BUILDING.txt, README-bin.txt, README.txt, TightVNC.iss, vncviewer/res/vncviewer.rc, winvnc/WinVNC.rc, winvnc/VNCHooks/VNCHooks.rc:</font> 
+Version strings changed, version 1.3.8.</li></ul>
+<p><font color="#700000"><b>2006-08-10 15:27</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/res/vncviewer.rc:</font> 
+Copyright sign was missing in version info.</li></ul>
+<p><font color="#700000"><b>2006-08-10 15:07</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">BUILDING.txt, InstInfo.rtf, README-bin.txt, README.txt, TightVNC.iss, vncviewer/res/vncviewer.rc, winvnc/WinVNC.rc, winvnc/VNCHooks/VNCHooks.rc:</font> 
+Preparing for stable version numbering - replaced 1.3dev7 with 1.3.7, removed &quot;unstable&quot; labels etc.</li></ul>
+<p><font color="#700000"><b>2006-08-05 13:19</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncDesktop.cpp:</font> 
+Disabling mirror driver support under NT4 completely. Driver support was broken under NT4, it detected the driver and &quot;used&quot; it even if it was not installed. Thus, updates were not detected properly.</li></ul>
+<p><font color="#700000"><b>2006-08-05 12:12</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncClient.cpp, vncClient.h:</font> 
+Reverted changes to vncClient::m_inputblocked incremental semantics introduced in a previously applied patch from Lev Kazarkin of Demoforge, LLC. This should fix LocalInputsPriority feature that was broken by that patch.</li></ul>
+<p><font color="#700000"><b>2006-08-02 12:51</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/WinVNC.h:</font> 
+WinVNC usage help did not include information about the argument of the -sharearea option.</li></ul>
+<p><font color="#700000"><b>2006-08-02 12:36</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.cpp, vncMenu.cpp, vncProperties.h, vncService.cpp, vncService.h:</font> 
+New -sharearea command-line option of WInVNC is now fully functional.</li></ul>
+<p><font color="#700000"><b>2006-08-01 23:27</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.cpp, WinVNC.h, vncMenu.cpp, vncMenu.h, vncService.cpp, vncService.h:</font> 
+New -shareall and -shareprimary command-line options have been implemented. They work similar to -sharewindow but do not require arguments. These options do not start WinVNC - they control already running WinVNC instance instead. These modification also introduce the -sharearea option, but it's not fully functional at the moment.</li></ul>
+<p><font color="#700000"><b>2006-08-01 22:25</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/SharedDesktopArea.cpp:</font> 
+Restoring correct state of the area selection window on cancelling the Properties dialog.</li></ul>
+<p><font color="#700000"><b>2006-08-01 20:09</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: SharedDesktopArea.cpp, SharedDesktopArea.h, vncProperties.cpp, vncProperties.h:</font> 
+Improved and simplified the SharedDesktopArea class, removed related stuff from the Properties class. Now the changes are applied directly to the server object, and only on pressing Apply or Ok. Previously, the changes in the Display tab of the Properties dialog were applied immediately and remained active even on pressing Cancel. Obviously, that was incorrect.</li></ul>
+<p><font color="#700000"><b>2006-07-30 16:27</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/SharedDesktopArea.cpp:</font> 
+Changes only in code formatting and comments.</li></ul>
+<p><font color="#700000"><b>2006-06-15 20:57</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/res/: AuthPanel.class, OptionsFrame.class, RfbProto.class, VncCanvas.class, VncViewer.class, VncViewer.jar:</font> 
+Built-in Java viewer updated to the latest version.</li></ul>
+<p><font color="#700000"><b>2006-06-15 11:49</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.rc, resource.h:</font> 
+GUI improvements in the Administration tab of the Properties dialog.</li></ul>
+<p><font color="#700000"><b>2006-06-15 11:04</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncProperties.cpp:</font> 
+The &quot;Sharing&quot; tab of the Properties dialog renamed to &quot;Desktop&quot;.</li></ul>
+<p><font color="#700000"><b>2006-06-15 10:57</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.rc, resource.h:</font> 
+GUI improvements in the Query tab of the Properties dialog.</li></ul>
+<p><font color="#700000"><b>2006-06-15 10:34</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.rc, resource.h:</font> 
+GUI improvements in the Hooks tab of the Properties dialog.</li></ul>
+<p><font color="#700000"><b>2006-06-15 09:55</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: VideoDriver.cpp, VideoDriver.h:</font> 
+Updated heading comment and copyright strings.</li></ul>
+<p><font color="#700000"><b>2006-06-14 23:42</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.sln, VNCHooks/VNCHooks.vcproj, libjpeg/libjpeg.vcproj, omnithread/omnithread.vcproj, WinVNC.vcproj, zlib/zlib.vcproj:</font> 
+From Lev Kazarkin (DemoForge LLC): <BR> - fixed WinVNC *.vcproj files for MSVC 7.1.</li></ul>
+<p><font color="#700000"><b>2006-06-14 23:28</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/vncviewer.dsw, vncviewer/vncviewer.sln, vncviewer/vncviewer.vcproj, vncviewer/libjpeg/libjpeg.vcproj, vncviewer/omnithread/omnithread.vcproj, vncviewer/zlib/zlib.vcproj, winvnc/WinVNC.dsw, winvnc/WinVNC.sln, winvnc/WinVNC.vcproj, winvnc/VNCHooks/VNCHooks.dsp, winvnc/VNCHooks/VNCHooks.vcproj, winvnc/libjpeg/libjpeg.vcproj, winvnc/omnithread/omnithread.vcproj, winvnc/zlib/zlib.vcproj:</font> 
+Fixed end-of-line characters.</li></ul>
+<p><font color="#700000"><b>2006-06-14 22:43</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: SharedDesktopArea.cpp, VideoDriver.cpp, VideoDriver.h, vncDesktop.cpp, vncDesktop.h, vncEncoder.cpp, vncServer.cpp, vncServer.h:</font> 
+Another set of changes by Lev Kazarkin (DemoForge LLC): - fixed bug with lost notifications from Mirage driver; - fixed bugs with CopyRect processing; - added support for CopyRect notifications from Mirage driver (more accurate and more powerful); - added support for NT4 version of Mirage driver.</li></ul>
+<p><font color="#700000"><b>2006-06-14 21:32</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: IncomingConnectionsControls.cpp, vncClient.cpp, vncMenu.h, vncProperties.cpp, vncProperties.h, vncServer.cpp, vncServer.h:</font> 
+More accurate password handling - now the server code tries to distinguish between &quot;empty&quot; and &quot;unset&quot; passwords better.</li></ul>
+<p><font color="#700000"><b>2006-04-23 18:42</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">rfb/rfbproto.h, vncviewer/ClientConnection.cpp, vncviewer/ClientConnection.h, vncviewer/ClientConnectionFile.cpp, winvnc/vncClient.cpp, winvnc/vncProperties.cpp, winvnc/vncProperties.h, winvnc/vncServer.cpp, winvnc/vncServer.h:</font> 
+Removed the code for &quot;UnixLogin&quot; and &quot;External&quot; authentication. These two were never officially supported in the mainstream version anyway.</li></ul>
+<p><font color="#700000"><b>2006-04-23 13:46</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: IncomingConnectionsControls.cpp, WinVNC.rc, vncProperties.cpp, vncProperties.h:</font> 
+Now we remember and restore previously selected tab of the Properties dialog. Also, keyboard focus handling in the same dialog is slightly improved.</li></ul>
+<p><font color="#700000"><b>2006-04-23 11:57</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/WinVNC.rc:</font> 
+Improved layout of the &quot;Sharing&quot; tab of the Properties dialog. Added a context help message for the &quot;Share primary display&quot; option.</li></ul>
+<p><font color="#700000"><b>2006-04-23 10:31</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/resource.h:</font> 
+Made control IDs unique, to resolve problems with context help.</li></ul>
+<p><font color="#700000"><b>2006-04-22 21:45</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: MatchWindow.cpp, PollControls.cpp, SharedDesktopArea.cpp, SharedDesktopArea.h, VSocket.cpp, VideoDriver.cpp, VideoDriver.h, WinVNC.dsp, WinVNC.rc, resource.h, vncBuffer.cpp, vncBuffer.h, vncClient.cpp, vncClient.h, vncDesktop.cpp, vncDesktop.h, vncEncodeZlibHex.cpp, vncEncoder.cpp, vncKeymap.cpp, vncMenu.cpp, vncProperties.cpp, vncProperties.h, vncRegion.cpp, vncRegion.h, vncServer.cpp, vncServer.h, vncService.cpp:</font> 
+Applied a set of changes by Lev Kazarkin (DemoForge LLC): - added support for DfMirage driver direct screen access mode; - added support for multiple monitors; - added workaround for Windows bug with &quot;wrong order of monitors&quot;; - extended GUI for screen sharing area; - fixed some minor bugs.</li></ul>
+<p><font color="#700000"><b>2006-04-20 12:04</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">BUILDING.txt:</font> 
+Typos fixed.</li></ul>
+<p><font color="#700000"><b>2006-04-10 21:09</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp:</font> 
+Fixed a problem with not setting proper window size/position revealed while testing under Win95.</li></ul>
+<p><font color="#700000"><b>2006-04-10 20:19</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnectionFullScreen.cpp:</font> 
+Better values for scrolling parameters in the full-screen mode.</li></ul>
+<p><font color="#700000"><b>2006-04-10 19:35</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/VNCOptions.cpp:</font> 
+Fixed a problem with not enabling JPEG compression by default.</li></ul>
+<p><font color="#700000"><b>2006-04-05 10:18</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.h, vncDesktop.cpp, vncMenu.cpp, vncServer.cpp, vncServer.h:</font> 
+Finally, the problem <a href="http://sourceforge.net/tracker/index.php?func=detail&aid=1104846&group_id=14067&atid=114067">#1104846</a> with wallpaper removal has been solved, hopefully without side effects this time.</li></ul>
+<p><font color="#700000"><b>2005-08-06 14:36</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncDesktop.cpp, WallpaperUtils.cpp, WallpaperUtils.h, vncMenu.cpp, vncMenu.h:</font> 
+Fixed major problem with disconnecting on screen locking, user logoff/logon, in the service mode. Also, this fixes the problem with restoring wallpaper. The bugs fixed are those reported in <a href="http://sourceforge.net/tracker/index.php?func=detail&aid=1250353&group_id=14067&atid=114067">#1250353</a>, <a href="http://sourceforge.net/tracker/index.php?func=detail&aid=1243405&group_id=14067&atid=114067">#1243405</a>, <a href="http://sourceforge.net/tracker/index.php?func=detail&aid=1242752&group_id=14067&atid=114067">#1242752</a>, <a href="http://sourceforge.net/tracker/index.php?func=detail&aid=1242689&group_id=14067&atid=114067">#1242689</a>, <a href="http://sourceforge.net/tracker/index.php?func=detail&aid=1233397&group_id=14067&atid=114067">#1233397</a> and maybe others. From the other side, the fix reverts the behavior described in <a href="http://sourceforge.net/tracker/index.php?func=detail&aid=1104846&group_id=14067&atid=114067">#1104846</a>.</li></ul>
+<p><font color="#700000"><b>2005-07-06 01:04</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">InstInfo.rtf:</font> 
+Changed year in the copyright statement.</li></ul>
+<p><font color="#700000"><b>2005-07-05 19:57</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">BUILDING.txt, README-bin.txt, README.txt, TightVNC.iss, vncviewer/res/vncviewer.rc, winvnc/WinVNC.rc, winvnc/VNCHooks/VNCHooks.rc:</font> 
+Version strings changed, version 1.3dev7.</li></ul>
+<p><font color="#700000"><b>2005-07-03 14:09</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/res/: OptionsFrame.class, VncCanvas.class, VncViewer.jar:</font> 
+Updated built-in Java viewer to its latest version.</li></ul>
+<p><font color="#700000"><b>2005-02-17 23:49</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">InstInfo.rtf:</font> 
+From the head branch - &quot;A typo fixed.&quot;</li></ul>
+<p><font color="#700000"><b>2005-02-10 14:08</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: IncomingConnectionsControls.cpp, VNCHelp.cpp, WinVNC.rc, resource.h:</font> 
+Fixed minor issues in the Properties dialog - added context help for controls that did not have it, removed unused resource constants etc.</li></ul>
+<p><font color="#700000"><b>2005-02-10 12:57</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/res/vncviewer.rc:</font> 
+Added context help messages in the file transfers dialog.</li></ul>
+<p><font color="#700000"><b>2005-02-10 12:32</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/res/vncviewer.rc:</font> 
+Fixed the file transfer dialog - made path edit controls read-only, disabled made multiple selection in file lists, fixed group and tab stop attributes for controls, changed the caption of the Browse dialog.</li></ul>
+<p><font color="#700000"><b>2005-02-09 22:37</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncDesktop.cpp, vncDesktop.h:</font> 
+Fixed the problem with carriage return/linefeed conversion for clipboard data, bug <a href="http://sourceforge.net/tracker/index.php?func=detail&aid=875016&group_id=14067&atid=114067">#875016</a>.</li></ul>
+<p><font color="#700000"><b>2005-02-09 19:30</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncClient.cpp:</font> 
+Disallowing clipboard transfers when &quot;Block remote input events&quot; is set. This fixes bug <a href="http://sourceforge.net/tracker/index.php?func=detail&aid=1033570&group_id=14067&atid=114067">#1033570</a>.</li></ul>
+<p><font color="#700000"><b>2005-02-09 18:46</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncDesktop.cpp, vncDesktop.h:</font> 
+Removed the code for &quot;desktop optimizations&quot; that was rather harmful than useful. This should fix the bugs <a href="http://sourceforge.net/tracker/index.php?func=detail&aid=987546&group_id=14067&atid=114067">#987546</a> and <a href="http://sourceforge.net/tracker/index.php?func=detail&aid=1082899&group_id=14067&atid=114067">#1082899</a>.</li></ul>
+<p><font color="#700000"><b>2005-02-09 17:37</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: WallpaperUtils.cpp, WallpaperUtils.h, vncDesktop.cpp, vncDesktop.h, vncMenu.cpp, vncMenu.h:</font> 
+Fixed a problem with wallpaper and ActiveDesktop removal, bug <a href="http://sourceforge.net/tracker/index.php?func=detail&aid=1104846&group_id=14067&atid=114067">#1104846</a>.</li></ul>
+<p><font color="#700000"><b>2005-02-02 20:34</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: VNCHelp.cpp, VNCHelp.h, WinVNC.cpp, vncProperties.cpp:</font> 
+From the head branch - &quot;Simplified interface to HtmlHelp. This should fix the bug <a href="http://sourceforge.net/tracker/index.php?func=detail&aid=944429&group_id=14067&atid=114067">#944429</a>.&quot;</li></ul>
+<p><font color="#700000"><b>2004-12-24 23:59</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp:</font> 
+From the head branch - &quot;Fixed toolbar background color and toolbar position.&quot;</li></ul>
+<p><font color="#700000"><b>2004-12-18 16:27</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/WinVNC.rc:</font> 
+From the head branch - &quot;Fixed the issue with port number edit boxes that were labeled incorrectly in the Properties dialog.&quot;</li></ul>
+<p><font color="#700000"><b>2004-11-18 21:33</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">BUILDING.txt, README-bin.txt, README.txt, TightVNC.iss, winvnc/VNCHooks/VNCHooks.rc, vncviewer/res/vncviewer.rc, winvnc/WinVNC.rc:</font> 
+Version strings changed, version 1.3dev6.</li></ul>
+<p><font color="#700000"><b>2004-11-18 21:00</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: FileTransfer.cpp, VNCviewerApp32.cpp, VNCviewerApp32.h, vncviewer.cpp, res/vncviewer.rc:</font> 
+Enabled keyboard navigation in the file transfer dialog. Also, now it's possible to close the dialog with the Escape key. Finally, the tab order was slightly changed in the same dialog.</li></ul>
+<p><font color="#700000"><b>2004-11-18 18:54</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/FileTransfer.cpp:</font> 
+Improved texts for messages in file transfer in the viewer, and slightly improved error analysis.</li></ul>
+<p><font color="#700000"><b>2004-11-18 16:12</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp, vncviewer/FileTransfer.cpp, vncviewer/FileTransfer.h, winvnc/vncClient.cpp:</font> 
+Added processing for rfbFileUploadCancel and rfbFileDownloadFailed messages. Added checking for CreateFile() return value, in both file upload and download.</li></ul>
+<p><font color="#700000"><b>2004-11-18 13:13</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/FileTransfer.cpp:</font> 
+Fixes in code fofmatting only.</li></ul>
+<p><font color="#700000"><b>2004-11-17 11:58</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncClient.cpp:</font> 
+Improved texts for messages in file transfer, on the server side.</li></ul>
+<p><font color="#700000"><b>2004-11-17 01:28</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.cpp, FileTransfer.cpp:</font> 
+Now the viewer checks server's capabilities and does not ever use non-standard protocol messages not supported by the server. This change affects file transfers only, as other features do not use non-standard protocol messages.</li></ul>
+<p><font color="#700000"><b>2004-11-17 00:00</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnectionFullScreen.cpp:</font> 
+From the head branch - &quot;Changed text message shown on switching to the full-screen mode. Now the message list all the basic methods to return from full screen.&quot;</li></ul>
+<p><font color="#700000"><b>2004-11-16 23:55</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/FileTransfer.cpp, winvnc/vncClient.cpp:</font> 
+Modified patch from the head branch - &quot;Changed the way the list of drives is read, in both server and viewer. New code does not filter out any disk types. This should fix the file transfers bug described in <a href="http://sourceforge.net/tracker/index.php?func=detail&aid=865272&group_id=14067&atid=114067">#865272</a> and <a href="http://sourceforge.net/tracker/index.php?func=detail&aid=1042557&group_id=14067&atid=114067">#1042557</a>.&quot;</li></ul>
+<p><font color="#700000"><b>2004-11-16 23:38</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncClient.cpp, vncClient.h:</font> 
+From the head branch - &quot;Added locking to prevent sending partial framebuffer updates mixed with other messages.&quot;</li></ul>
+<p><font color="#700000"><b>2004-11-16 23:09</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncDesktop.cpp, VNCHooks/VNCHooks.cpp, VNCHooks/VNCHooks.h:</font> 
+From the head branch: <BR> - updated vnchooks to allow for separate target window handles for local keyboard and mouse event hooks <BR> - updated vnchooks api so setting priority hooks needs window handle to be passed in <BR> - updated version of vnchooks in vnchooks.rc to indicate api change</li></ul>
+<p><font color="#700000"><b>2004-11-16 22:45</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncClient.cpp:</font> 
+From the head branch - &quot;applied jeffg's patch to vncClient which fixes the one pixel mouse movement&quot;.</li></ul>
+<p><font color="#700000"><b>2004-11-16 22:36</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: AdministrationControls.cpp, AdministrationControls.h, IncomingConnectionsControls.cpp, IncomingConnectionsControls.h, InputHandlingControls.cpp, InputHandlingControls.h, PollControls.cpp, PollControls.h, QuerySettingsControls.cpp, QuerySettingsControls.h, SharedDesktopArea.cpp, SharedDesktopArea.h:</font> 
+From the head branch - added heading comments in files appeared recently.</li></ul>
+<p><font color="#700000"><b>2004-11-16 19:59</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncProperties.cpp:</font> 
+From the head branch - &quot;Fixed a bug with setting incorrect default values for properties if the user has no write access to the HKEY_LOCAL_MACHINE registry hive&quot;.</li></ul>
+<p><font color="#700000"><b>2004-10-11 12:32</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/res/: VncCanvas.class, VncViewer.jar:</font> 
+New version of the Java viewer.</li></ul>
+<p><font color="#700000"><b>2004-08-31 20:20</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: PollControls.cpp, vncDesktop.h, vncServer.cpp, vncServer.h:</font> 
+From the head branch - &quot;Implemented an indicator of the mirror driver status.&quot;</li></ul>
+<p><font color="#700000"><b>2004-08-31 20:17</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/WinVNC.rc:</font> 
+From the head branch - &quot;Layout changes in the Hooks tab of the Properties dialog.&quot;</li></ul>
+<p><font color="#700000"><b>2004-08-31 20:04</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/WinVNC.rc:</font> 
+From the head branch - &quot;Minor layout changes in the Administration tab of the Properties dialog.&quot;</li></ul>
+<p><font color="#700000"><b>2004-08-31 19:56</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncDesktop.cpp, vncDesktop.h, vncServer.cpp, vncServer.h:</font> 
+Merged redesigned and bugfixed version of the BlankScreen feature from the head branch. Also from the head branch - &quot;Moved m_polling_flag from vncServer to vncDesktop, and chose a better name for one variable in vncServer.&quot;</li></ul>
+<p><font color="#700000"><b>2004-08-31 19:40</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncServer.cpp:</font> 
+From the head branch - &quot;Minor memory leak has been fixed.&quot;</li></ul>
+<p><font color="#700000"><b>2004-08-24 17:44</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.rc, vncProperties.cpp, vncProperties.h:</font> 
+From the head branch - &quot;Reduced the number of tabs in the Properties dialog.&quot;</li></ul>
+<p><font color="#700000"><b>2004-08-22 15:58</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: VNCHelp.cpp, WinVNC.rc:</font> 
+Context help for the Properties dialog controls, merged from the head branch.</li></ul>
+<p><font color="#700000"><b>2004-08-22 15:54</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncProperties.cpp:</font> 
+From the head branch - Changed &quot;WinVNC&quot; to &quot;TightVNC Server&quot; in the caption of the Properties dialog.</li></ul>
+<p><font color="#700000"><b>2004-08-22 15:40</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: IncomingConnectionsControls.cpp, vncClient.cpp, vncDesktop.cpp, vncProperties.cpp, vncProperties.h, vncServer.cpp, vncServer.h:</font> 
+Ported the &quot;blank screen&quot; feature from the head branch.</li></ul>
+<p><font color="#700000"><b>2004-08-07 19:30</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.cpp, VNCOptions.cpp, VNCOptions.h, res/vncviewer.rc:</font> 
+Ported the auto scaling mode from the head branch.</li></ul>
+<p><font color="#700000"><b>2004-08-01 14:25</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.rc, resource.h:</font> 
+From the head branch - In the Properties dialog, added new option &quot;Blank screen on client connections&quot; (non-functional yet).</li></ul>
+<p><font color="#700000"><b>2004-07-31 17:45</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: resource.h, WinVNC.rc:</font> 
+From the head branch - &quot;Fixed a problems with previous commit, and added a missing label in the Query Settings tab in Properties.&quot;</li></ul>
+<p><font color="#700000"><b>2004-07-31 16:12</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.rc, resource.h, vncDesktop.cpp:</font> 
+From the head branch - Implemented support for the option &quot;Don't use mirror display driver even if available&quot;.</li></ul>
+<p><font color="#700000"><b>2004-07-30 20:18</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: AdministrationControls.cpp, resource.h, vncProperties.cpp, WinVNC.rc:</font> 
+From the head branch - Removed unused checkbox &quot;Enable built-in Java viewer&quot;, implemented new checkbox &quot;Enable applet params in URLs&quot; corresponding to EnableURLParams registry setting.</li></ul>
+<p><font color="#700000"><b>2004-07-29 17:12</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: SharedDesktopArea.cpp, SharedDesktopArea.h:</font> 
+From the head branch - &quot;Added MatchWindow as an optional member pointer.  Reduced duplicate code via changes to Init(). Normalized FullScreen(), SharedWindow() and SharedScreen(). A modified patch from HorizonLive.&quot;</li></ul>
+<p><font color="#700000"><b>2004-07-28 17:34</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncProperties.cpp, vncProperties.h:</font> 
+From the head branch - &quot;Removed HORIZONLIVE ifdefs, removed m_pref_LiveShareKey. A patch from HorizonLive.&quot;</li></ul>
+<p><font color="#700000"><b>2004-07-28 16:36</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncClient.cpp:</font> 
+From the head branch - &quot;Removed HORIZONLIVE ifdefs in favor of server settings, a patch from HorizonLive.</li></ul>
+<p><font color="#700000"><b>2004-07-28 16:30</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncServer.cpp, vncServer.h:</font> 
+From the head branch - &quot;Moved GetLiveShareKey(), SetLiveShareKey() to horizonProperties, added initialization for m_enable_file_transfers. A patch from HorizonLive.&quot;</li></ul>
+<p><font color="#700000"><b>2004-07-28 16:14</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/stdhdrs.cpp:</font> 
+From the head branch - &quot;Changed HORIZONLIVE Log() so that a file is not created in C:\, a patch from HorizonLive.&quot;</li></ul>
+<p><font color="#700000"><b>2004-07-28 16:05</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.cpp, WinVNC.h:</font> 
+From the head branch - &quot;Removed HORIZONLIVE ifdefs in favor of separate main function, a patch from HorizonLive.&quot;</li></ul>
+<p><font color="#700000"><b>2004-07-28 15:45</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncMenu.cpp, WallpaperUtils.cpp, WallpaperUtils.h, WinVNC.dsp, vncMenu.h:</font> 
+From the head branch - &quot;Moved wallpaper functions to new WallpaperUtils files, removed HORIZONLIVE ifdefs. A patch from HorizonLive.&quot;</li></ul>
+<p><font color="#700000"><b>2004-07-28 15:42</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/WinVNC.h:</font> 
+From the head branch - &quot;Solving possible problems with multiple inclusions of WinVNC.h, a patch from HorizonLive.&quot;</li></ul>
+<p><font color="#700000"><b>2004-07-28 15:09</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: WallpaperUtils.cpp, WallpaperUtils.h:</font> 
+Moved wallpaper functions to new WallpaperUtils files, removed HORIZONLIVE ifdefs. A patch from HorizonLive.</li></ul>
+<p><font color="#700000"><b>2004-07-28 14:20</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: Log.cpp, Log.h:</font> 
+From the head branch - &quot;Made SetFile() accept const char, a patch from HorizonLive.&quot;</li></ul>
+<p><font color="#700000"><b>2004-07-28 12:44</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: VSocket.cpp, VSocket.h, VTypes.h:</font> 
+From the head branch - &quot;Applied fixes to type declarations from HorizonLive.&quot;</li></ul>
+<p><font color="#700000"><b>2004-07-22 14:37</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp:</font> 
+From the head branch - &quot;Minor cleanups in the viewer's system menu labels.&quot;</li></ul>
+<p><font color="#700000"><b>2004-07-22 14:35</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/BUILDING.txt:</font> 
+From the head branch - &quot;Removed an outdated file.&quot;</li></ul>
+<p><font color="#700000"><b>2004-07-22 14:33</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/VNCOptions.cpp:</font> 
+From the head branch - &quot;Fixed the bug <a href="http://sourceforge.net/tracker/index.php?func=detail&aid=975886&group_id=14067&atid=114067">#975886</a> - the setting &quot;Allow JPEG Compression&quot; was not saved in .vnc files.&quot;</li></ul>
+<p><font color="#700000"><b>2004-07-22 14:28</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/QuerySettingsControls.cpp:</font> 
+From the head branch - &quot;Fixed the bug <a href="http://sourceforge.net/tracker/index.php?func=detail&aid=965499&group_id=14067&atid=114067">#965499</a> - Query timeout was never updated.&quot;</li></ul>
+<p><font color="#700000"><b>2004-05-30 23:22</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/WinVNC.rc:</font> 
+The setting &quot;Don't use mirror driver even if available&quot; has been disabled, because it's not handled yet anyway.</li></ul>
+<p><font color="#700000"><b>2004-05-27 14:03</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">BUILDING.txt, README-bin.txt, README.txt, TightVNC.iss, vncviewer/res/vncviewer.rc, winvnc/VNCHooks/VNCHooks.rc, winvnc/WinVNC.rc:</font> 
+Version strings changed, version 1.3dev5.</li></ul>
+<p><font color="#700000"><b>2004-05-27 13:37</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">BUILDING-bcc32.txt:</font> 
+Changes in the README files reflecting the fact that Borland C++ compilation is not supported any more.</li></ul>
+<p><font color="#700000"><b>2004-05-27 13:32</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">BUILDING.txt, README.txt:</font> 
+Changes in the README files reflecting the fact that Borland C++ compilation is not supported any more.</li></ul>
+<p><font color="#700000"><b>2004-05-27 12:54</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncClient.cpp, vncClient.h:</font> 
+Fixed a problem with mouse pointer jumping, especially on slow connections, bug <a href="http://sourceforge.net/tracker/index.php?func=detail&aid=696135&group_id=14067&atid=114067">#696135</a>.</li></ul>
+<p><font color="#700000"><b>2004-05-26 11:59</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncDesktop.cpp, vncDesktop.h:</font> 
+Tiny code cleanups only.</li></ul>
+<p><font color="#700000"><b>2004-05-25 20:16</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncClient.cpp, vncClient.h, vncDesktop.cpp, vncDesktop.h, vncServer.cpp, vncServer.h:</font> 
+The polling mode &quot;on event received only&quot; has been fixed - it did not work correctly.</li></ul>
+<p><font color="#700000"><b>2004-05-19 17:22</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncClient.cpp:</font> 
+Fixed a race condition with vncClient::m_cursor_pos_changed variable, bug <a href="http://sourceforge.net/tracker/index.php?func=detail&aid=902170&group_id=14067&atid=114067">#902170</a>.</li></ul>
+<p><font color="#700000"><b>2004-05-13 14:32</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncProperties.cpp:</font> 
+Tiny code cleanups.</li></ul>
+<p><font color="#700000"><b>2004-05-13 14:29</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncClient.cpp, WinVNC.rc, vncClient.h, vncDesktop.cpp, vncServer.cpp, vncServer.h:</font> 
+Fixed a problem with view-only clients that were enabled full control on just opening the Properties dialog of the server, bug <a href="http://sourceforge.net/tracker/index.php?func=detail&aid=928961&group_id=14067&atid=114067">#928961</a>.</li></ul>
+<p><font color="#700000"><b>2004-05-13 13:13</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncClient.cpp:</font> 
+Code formatting changes only. Hopefully, recovered from a disaster with code indentation.</li></ul>
+<p><font color="#700000"><b>2004-05-04 20:40</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncClient.cpp:</font> 
+A fix for mouse movement handling. It looks like mouse handling is still broken/inefficient, so other fixes will follow this one.</li></ul>
+<p><font color="#700000"><b>2004-04-24 02:36</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">winvnc/: PollControls.cpp, vncProperties.cpp, vncProperties.h, vncServer.cpp, vncServer.h:</font> 
+The code which supports job of an &quot;Don't use mirror video driver even if available&quot; control in the &quot;Update Handling&quot; tab of &quot;Properties&quot; dialog box is added.</li></ul>
+<p><font color="#700000"><b>2004-04-23 21:03</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp:</font> 
+Bug fix for previous bug fix</li></ul>
+<p><font color="#700000"><b>2004-04-23 20:10</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp:</font> 
+Bug fix for previous bug fix.</li></ul>
+<p><font color="#700000"><b>2004-04-23 17:11</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp:</font> 
+Division of space of a desktop and toolbar in a window of vncviewer.</li></ul>
+<p><font color="#700000"><b>2004-04-23 14:32</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp:</font> 
+Moving of dialog boxes of vncviewer in foreground in full screen a mode.</li></ul>
+<p><font color="#700000"><b>2004-04-23 01:39</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp:</font> 
+Hiding horizontal or vertical scrollbar if is possible to not use them. It is applied when the sizes of a window of vncviewer are calculated.</li></ul>
+<p><font color="#700000"><b>2004-04-21 23:27</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncDesktop.cpp:</font> 
+Applied a bugfix from HorizonLive solving the problem with crashes or incorrect operation after color depth changes on the server's desktop.</li></ul>
+<p><font color="#700000"><b>2004-04-21 20:46</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncDesktop.cpp:</font> 
+Fixed a bug with wrong initial framebuffer size in the ServerInit message.</li></ul>
+<p><font color="#700000"><b>2004-04-21 18:08</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp:</font> 
+Fixed a bug with updating a window of vncviewer, when atop of him other window moves .</li></ul>
+<p><font color="#700000"><b>2004-04-16 18:58</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.cpp, ClientConnection.h, ClientConnectionFullScreen.cpp:</font> 
+Changes in positioning and setting of the sizes of a window of vncviewer, when the scaling factor is changes, and a window is minimized or maximized.</li></ul>
+<p><font color="#700000"><b>2004-04-15 01:12</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: SharedDesktopArea.cpp, vncProperties.cpp:</font> 
+Fixed a bug - when no window to share was selected, AppShare showed a warning but then still tried to initiate connection.</li></ul>
+<p><font color="#700000"><b>2004-04-15 00:37</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.cpp, vncMenu.cpp, vncProperties.cpp:</font> 
+Minor fixes and cleanups in processing of the -connect command-line option.  Also, now the same formats are used in WinVNC and AppShare to specify display or port numbers for reverse connections: &quot;host&quot;, &quot;host:display&quot; and &quot;host::port&quot;.</li></ul>
+<p><font color="#700000"><b>2004-04-14 22:36</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/VNCHooks/VNCHooks.cpp:</font> 
+Bugfix for the previous commit.</li></ul>
+<p><font color="#700000"><b>2004-04-14 22:29</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncProperties.cpp, VNCHooks/VNCHooks.cpp:</font> 
+By default, use hooks DLL in the HorizonLive configuration. But disable deferred updates by default, to make sure hooks won't break some application.</li></ul>
+<p><font color="#700000"><b>2004-04-14 22:03</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncClient.cpp:</font> 
+Applied a bugfix from HorizonLive - old mouse position was not included in updates when cursor shape updates were not used.</li></ul>
+<p><font color="#700000"><b>2004-04-14 16:27</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncDesktop.cpp, vncProperties.cpp:</font> 
+Two minor fixes specific to HorizonLive build configuration.</li></ul>
+<p><font color="#700000"><b>2004-04-14 14:49</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncDesktop.cpp, vncDesktop.h:</font> 
+Implemented new polling algorithm, similar to that found in x0rfbserver. New algorithm uses minimum CPU time when there is no changes on the screen, and detects major changes very quickly, resulting in greatly improved responsiveness on the client side. The time period specified in the &quot;polling cycle&quot; parameter now corresponds to 16 polling cycles (each of them polls 1/32 number of scan lines on the screen).</li></ul>
+<p><font color="#700000"><b>2004-04-09 16:14</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/KeyMap.cpp:</font> 
+Implemented a special mode for Unix users - when ScrollLock is on, the viewer will send Meta on pressing Alt keys.</li></ul>
+<p><font color="#700000"><b>2004-04-09 14:46</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncDesktop.cpp, vncDesktop.h:</font> 
+The polling algorithm has been simplified and concentrated in new PollArea function, to prepare for new polling algorithm implementation.</li></ul>
+<p><font color="#700000"><b>2004-04-08 19:53</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: .cvsignore, Log.cpp, VNCHelp.cpp, WinVNC.cpp, WinVNC.dsp, WinVNC.h, WinVNC.rc, stdhdrs.cpp, vncInstHandler.cpp, vncInstHandler.h, vncMenu.cpp, vncProperties.cpp:</font> 
+Applied a number of changes from HorizonLive. Most of the changes are specific to HorizonLive build configuration.</li></ul>
+<p><font color="#700000"><b>2004-04-08 18:03</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/Log.cpp:</font> 
+One special case for the Debug configuration, to workaround the 381 directive returning file names in lower case for some files.</li></ul>
+<p><font color="#700000"><b>2004-04-08 18:00</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: VSocket.cpp, VSocket.h, vncHTTPConnect.cpp, vncSockConnect.cpp:</font> 
+Fixed a problem with blocking accept() call causing us to initiate dummy connections to quit from accept().</li></ul>
+<p><font color="#700000"><b>2004-04-08 17:44</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/WinVNC.dsp:</font> 
+Enabling source browsing in the Debug configuration.</li></ul>
+<p><font color="#700000"><b>2004-04-08 14:21</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: Log.cpp, Log.h, stdhdrs.h:</font> 
+Logging improvements inspired by a patch from HorizonLive.</li></ul>
+<p><font color="#700000"><b>2004-04-07 23:16</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnectionFile.cpp:</font> 
+A fix for the bug <a href="http://sourceforge.net/tracker/index.php?func=detail&aid=930992&group_id=14067&atid=114067">#930992</a>. Now the viewer chooses more reasonable file names for saved sessions.</li></ul>
+<p><font color="#700000"><b>2004-04-07 13:38</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.rc, resource.h:</font> 
+New checkbox in the Update Hnadling tab in WinVNC Properties: &quot;Don't use mirror video driver even if available&quot;.</li></ul>
+<p><font color="#700000"><b>2004-04-07 04:10</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.cpp, ClientConnection.h:</font> 
+The system of scrolling in a vncviewers window is changed. Scrollbar controls are removed, instead of it the additional window with WS_HSCROLL and WS_VSCROLL style is added.</li></ul>
+<p><font color="#700000"><b>2004-04-07 00:55</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/WinVNC.dsp:</font> 
+Generating a map file in the Profile configuration.</li></ul>
+<p><font color="#700000"><b>2004-04-07 00:19</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncBuffer.cpp, vncDesktop.cpp, vncDesktop.h, vncServer.cpp, vncServer.h:</font> 
+Code refactoring, cleanups and bugfixes affecting performance of the message loop of the desktop object.</li></ul>
+<p><font color="#700000"><b>2004-04-02 10:47</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncMenu.cpp:</font> 
+Bugfix for the bug <a href="http://sourceforge.net/tracker/index.php?func=detail&aid=876309&group_id=14067&atid=114067">#876309</a> - recovered the RemoveWallpaper setting.</li></ul>
+<p><font color="#700000"><b>2004-04-02 02:12</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncDesktop.cpp:</font> 
+Tiny code cleanup - unused function removed.</li></ul>
+<p><font color="#700000"><b>2004-04-02 01:43</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncMenu.cpp:</font> 
+Bugfix for the bug <a href="http://sourceforge.net/tracker/index.php?func=detail&aid=866919&group_id=14067&atid=114067">#866919</a> - recovered the DisableTrayIcon setting.</li></ul>
+<p><font color="#700000"><b>2004-04-01 20:46</b></font> <b>mrdennis</b></p>
+<ul><li><font color="#007000">vncviewer/FileTransfer.cpp, vncviewer/FileTransfer.h, winvnc/WinVNC.cpp, winvnc/vncClient.cpp, winvnc/vncClient.h, winvnc/vncMenu.cpp, winvnc/vncMenu.h, winvnc/vncServer.cpp, winvnc/vncServer.h, winvnc/vncService.h:</font> 
+Now its possible cancel download and start new transfer. Fixed some little bugs.</li></ul>
+<p><font color="#700000"><b>2004-04-01 17:38</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncDesktop.cpp, vncDesktop.h:</font> 
+Finished highly-optimized version of the GetChangedRegion function. Now its functionality is in three functions representing three stages of detecting framebuffer changes. New version not only works faster (verified using a profiler), but it also detects changes much more accurately, leaving less work to encoders.</li></ul>
+<p><font color="#700000"><b>2004-03-30 14:14</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncDesktop.h:</font> 
+Code cleanup - two unused function prototypes removed.</li></ul>
+<p><font color="#700000"><b>2004-03-30 00:50</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp:</font> 
+Fixed the bug with positioning scroll bar controls in vncviewers window .</li></ul>
+<p><font color="#700000"><b>2004-03-29 20:40</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.cpp, ClientConnection.h:</font> 
+The method of scrolling which uses styles WS_VSCROLL and WS_HSCROLL when windows in vncviewer are created is changed to a method which uses scroll bar controls. Also the style of toolbar and color of a window is changed.</li></ul>
+<p><font color="#700000"><b>2004-03-27 18:24</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp:</font> 
+Restriction of the size of a vncviewers window is removed. Fixed the bugs with positioning child windows in a vncviewers window.</li></ul>
+<p><font color="#700000"><b>2004-03-27 12:55</b></font> <b>mrdennis</b></p>
+<ul><li><font color="#007000">rfb/rfbproto.h, vncviewer/res/vncviewer.rc, winvnc/vncClient.cpp:</font> 
+Code improvements. Fixed bug with wrong size of FileUploadData message.</li></ul>
+<p><font color="#700000"><b>2004-03-26 15:36</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: VideoDriver.cpp, VideoDriver.h, vncDesktop.cpp, vncDesktop.h:</font> 
+Applied a set of code improvements in the driver interface code from Vladimir Vologzhanin.</li></ul>
+<p><font color="#700000"><b>2004-03-26 13:52</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncDesktop.cpp:</font> 
+Recovered the vncDesktop::GetChangedRegion function that was completely broken.</li></ul>
+<p><font color="#700000"><b>2004-03-26 11:27</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncClient.h, vncDesktop.cpp:</font> 
+Tiny cleanups.</li></ul>
+<p><font color="#700000"><b>2004-03-26 11:18</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncClient.cpp, vncClient.h:</font> 
+Removed two unused variables that were moved to vncDesktop a long time ago. Also, a number of minor code cleanups.</li></ul>
+<p><font color="#700000"><b>2004-03-26 11:01</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncDesktop.cpp, vncDesktop.h:</font> 
+Moved the polling stuff into a separate method, in the vncDesktop class.</li></ul>
+<p><font color="#700000"><b>2004-03-25 19:47</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncDesktop.cpp:</font> 
+Minor changes in comments.</li></ul>
+<p><font color="#700000"><b>2004-03-25 17:32</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncDesktop.cpp, vncDesktop.h:</font> 
+Code cleanup - HandleDriverChanges() method has been moved from vncDesktopThread to vncDesktop class.</li></ul>
+<p><font color="#700000"><b>2004-03-25 17:00</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/WinVNC.dsp:</font> 
+Removed unused vncDesktopDX.cpp from the project configurations.</li></ul>
+<p><font color="#700000"><b>2004-03-25 16:39</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: PollControls.cpp, SharedDesktopArea.cpp, resource.h, vncClient.cpp, vncClient.h, vncDesktop.cpp, VNCHelp.cpp, WinVNC.rc, vncDesktop.h, vncProperties.cpp, vncServer.cpp, vncServer.h:</font> 
+Minor code cleanups, e.g. more reasonable names for variables and functions related to polling.</li></ul>
+<p><font color="#700000"><b>2004-03-25 14:11</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/VideoDriver.cpp:</font> 
+Don't log debug info on INTERR log level.</li></ul>
+<p><font color="#700000"><b>2004-03-20 21:54</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: VideoDriver.cpp, VideoDriver.h, WinVNC.dsp, vncDesktop.cpp, vncDesktop.h:</font> 
+Added initial support for mirror video driver.</li></ul>
+<p><font color="#700000"><b>2004-03-20 17:10</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">winvnc/vncProperties.cpp:</font> 
+Fixed the bug <a href="http://sourceforge.net/tracker/index.php?func=detail&aid=918597&group_id=14067&atid=114067">#918597</a>-when changing Query Timeout does not write to registry.</li></ul>
+<p><font color="#700000"><b>2004-03-19 18:29</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/IncomingConnectionsControls.cpp:</font> 
+Warning messages have been changed.</li></ul>
+<p><font color="#700000"><b>2004-03-19 16:57</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp:</font> 
+Bugfix for the previous bugfix. ;-)</li></ul>
+<p><font color="#700000"><b>2004-03-19 14:04</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp:</font> 
+Fixed the bug <a href="http://sourceforge.net/tracker/index.php?func=detail&aid=865363&group_id=14067&atid=114067">#865363</a> - the viewer crashed when long passwords were entered in the authentication dialog.</li></ul>
+<p><font color="#700000"><b>2004-03-18 14:15</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.cpp, ClientConnection.h:</font> 
+Change in logic of positioning of vncviewer windows in cases when the maximize button is switched and when toolbar is switched.</li></ul>
+<p><font color="#700000"><b>2004-03-17 12:48</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp:</font> 
+Change of a method of restriction of the size of a vncviewer window, when it changes. Also minor improvement of a code.</li></ul>
+<p><font color="#700000"><b>2004-03-17 00:10</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/omnithread/omnithread.h:</font> 
+A compilation fix. This change was missing in recent commits for some reason.</li></ul>
+<p><font color="#700000"><b>2004-03-16 17:46</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp:</font> 
+Change in logic of positioning of a vncviewer window, when changing the size of the buffer .</li></ul>
+<p><font color="#700000"><b>2004-03-11 22:43</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: omnithread/nt.cpp, omnithread/nt.h, omnithread/omnithread.dsp, WinVNC.dsp:</font> 
+Build configurations were changed to link omnithread library to WinVNC statically. Also, the omnithread library source was copied from the vncviewer sources.</li></ul>
+<p><font color="#700000"><b>2004-03-11 22:41</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: libjpeg/libjpeg.dsp, omnithread/omnithread.dsp:</font> 
+Minor cleanups in build configurations.</li></ul>
+<p><font color="#700000"><b>2004-03-11 21:41</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: libjpeg/libjpeg.dsp, zlib/zlib.dsp:</font> 
+Minor cleanups in build configurations.</li></ul>
+<p><font color="#700000"><b>2004-03-11 21:01</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/libjpeg/jmorecfg.h:</font> 
+Eliminated a compilation warning.</li></ul>
+<p><font color="#700000"><b>2004-03-11 20:43</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.dsp, libjpeg/libjpeg.dsp, zlib/.cvsignore, zlib/zlib.dsp, zlib/zlib.vcproj:</font> 
+Build configurations have changed to link zlib library to WinVNC statically.</li></ul>
+<p><font color="#700000"><b>2004-03-11 20:17</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/vncviewer.dsp:</font> 
+Minor cleanups in the project file.</li></ul>
+<p><font color="#700000"><b>2004-03-11 18:01</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: vncviewer.dsp, libjpeg/libjpeg.dsp, omnithread/omnithread.dsp, zlib/zlib.dsp:</font> 
+Another set of changed that should be included in the previous commit.</li></ul>
+<p><font color="#700000"><b>2004-03-11 17:58</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: .cvsignore, libjpeg/.cvsignore, libjpeg/libjpeg.dsp, omnithread/.cvsignore, omnithread/omnithread.dsp, zlib/.cvsignore, zlib/zlib.dsp:</font> 
+Now all the oject files and libraries will go to the same directories vncviewer/Debug and vncviewer/Release, not into separate directories per each library.</li></ul>
+<p><font color="#700000"><b>2004-03-10 21:44</b></font> <b>mrdennis</b></p>
+<ul><li><font color="#007000">winvnc/vncClient.cpp:</font> 
+Fixed bug with wrong data in FileListData message.</li></ul>
+<p><font color="#700000"><b>2004-03-09 00:27</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncInstHandler.cpp, vncMenu.cpp:</font> 
+Changes in menu class and mutex names.</li></ul>
+<p><font color="#700000"><b>2004-03-09 00:07</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/res/resource.h:</font> 
+Changed the order of constants in resource.h, corrected the _APS_NEXT_CONTROL_VALUE constant.</li></ul>
+<p><font color="#700000"><b>2004-03-08 18:18</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">vncviewer/: FileTransfer.cpp, res/resource.h, res/vncviewer.rc:</font> 
+The context help in &quot;TightVNC File Transfers&quot; dialog box in vncviewer is added.</li></ul>
+<p><font color="#700000"><b>2004-03-06 22:21</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.h, vncDesktop.cpp, vncInstHandler.cpp, vncMenu.cpp, vncProperties.cpp:</font> 
+LiveShare and WinVNC are made as independent appendices. Now it is possible to start them simultaneously.</li></ul>
+<p><font color="#700000"><b>2004-03-06 13:38</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">winvnc/: VNCHelp.cpp, WinVNC.rc, resource.h, vncProperties.cpp:</font> 
+Codes of help system are completely adapted for the HorizonLive project.</li></ul>
+<p><font color="#700000"><b>2004-03-05 16:16</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">winvnc/vncHTTPConnect.cpp:</font> 
+The bug in &quot;vncHTTPListenThread&quot; class which repeats a bug in &quot;vncSockConnectThread&quot; class is fixed. This bug resulted in lag of a server if repeatedly to switch &quot;Allow only loopback connections&quot; control.</li></ul>
+<p><font color="#700000"><b>2004-03-05 12:13</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">winvnc/vncSockConnect.cpp:</font> 
+Bug, which resulted in lag of a server, when was repeatedly switched &quot;Allow only loopback connections&quot;control is fixed.</li></ul>
+<p><font color="#700000"><b>2004-03-04 22:45</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">InstInfo.rtf, TightVNC-donate.url, TightVNC.iss:</font> 
+Packaging updates for the 1.3dev4 version.</li></ul>
+<p><font color="#700000"><b>2004-03-04 22:25</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: Makefile.bcc32, WinVNC.rc:</font> 
+Fixed compilation problems under Borland C++ 5.5.</li></ul>
+<p><font color="#700000"><b>2004-03-04 21:49</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">BUILDING.txt, README-bin.txt, README.txt, TightVNC.iss, vncviewer/res/vncviewer.rc, winvnc/WinVNC.rc, winvnc/VNCHooks/VNCHooks.rc:</font> 
+Version strings changed, version 1.3dev4.</li></ul>
+<p><font color="#700000"><b>2004-03-04 21:36</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp:</font> 
+Minor change to support rfbAuthNone in authentication capabilities.</li></ul>
+<p><font color="#700000"><b>2004-03-04 21:17</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: res/AuthPanel.class, res/AuthUnixLoginPanel.class, res/CapabilityInfo.class, res/CapsContainer.class, res/RfbProto.class, res/VncCanvas.class, WinVNC.dsp, WinVNC.rc, resource.h, vncHTTPConnect.cpp, res/VncViewer.class, res/VncViewer.jar:</font> 
+Built-in Java viewer upgraded to the latest version.</li></ul>
+<p><font color="#700000"><b>2004-03-04 13:07</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncClient.cpp, vncDesktop.cpp:</font> 
+Fixes for CopyRect handling on the server side. Now CopyRect support is enabled again, and seems to work fine. This is a patch from Vladimir Vologjanin.</li></ul>
+<p><font color="#700000"><b>2004-03-03 21:51</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">BUILDING.txt:</font> 
+Minor grammar fix.</li></ul>
+<p><font color="#700000"><b>2004-03-03 16:46</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">BUILDING-bcc32.txt, BUILDING.txt:</font> 
+Improved compilation notes. This should fix the bug tracker item <a href="http://sourceforge.net/tracker/index.php?func=detail&aid=900393&group_id=14067&atid=114067">#900393</a>.</li></ul>
+<p><font color="#700000"><b>2004-03-01 00:00</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">winvnc/: AdministrationControls.cpp, vncProperties.cpp:</font> 
+The logic of switchings of &quot;Allow loopback connections&quot; and &quot;Allow only loopback connections&quot; controls in &quot;Administration&quot; tab in &quot;Properties&quot; dialog box is changed.</li></ul>
+<p><font color="#700000"><b>2004-02-29 20:57</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">winvnc/: IncomingConnectionsControls.cpp, IncomingConnectionsControls.h:</font> 
+The code for installation of the password in &quot;Properties&quot; dialog box is transformed into &quot;SetPasswordSettings&quot; separate function. The warning message box is added when is length of the password more than eight symbols.</li></ul>
+<p><font color="#700000"><b>2004-02-29 13:50</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">winvnc/: IncomingConnectionsControls.cpp, IncomingConnectionsControls.h:</font> 
+The logic of behaviour of &quot;Display or port numbers to use&quot; group of controls, in &quot;Incoming Connections&quot; tab, in &quot;Properties&quot; dialog box, is corrected.</li></ul>
+<p><font color="#700000"><b>2004-02-28 16:50</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncClient.cpp, vncProperties.cpp:</font> 
+Minor code cleanups, and a few clarifications in comments.</li></ul>
+<p><font color="#700000"><b>2004-02-27 20:44</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncServer.cpp:</font> 
+Don't start the HTTP daemon if its TCP port number is the same as that of the RFB server.</li></ul>
+<p><font color="#700000"><b>2004-02-27 16:39</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">winvnc/: IncomingConnectionsControls.cpp, IncomingConnectionsControls.h, vncProperties.cpp:</font> 
+Display of real values of ports in a mode &quot;auto&quot; is restored, when the &quot;Apply&quot; button is pressed and at initialization of &quot;Properties&quot; dialog box .</li></ul>
+<p><font color="#700000"><b>2004-02-26 21:58</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">rfb/rfbproto.h:</font> 
+Added signature for &quot;no authentication&quot; capability, together with minor code formatting changes. These modification were copied from the Unix version.</li></ul>
+<p><font color="#700000"><b>2004-02-20 15:50</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/IncomingConnectionsControls.cpp:</font> 
+Minor changes in the warning message.</li></ul>
+<p><font color="#700000"><b>2004-02-20 15:49</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.rc, resource.h:</font> 
+Removed unnecessary changes from the previous commit.</li></ul>
+<p><font color="#700000"><b>2004-02-20 14:06</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">winvnc/: IncomingConnectionsControls.cpp, WinVNC.rc, resource.h:</font> 
+Check on equality of RFB and HTTP ports is added.</li></ul>
+<p><font color="#700000"><b>2004-02-17 15:42</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">winvnc/IncomingConnectionsControls.cpp:</font> 
+The logic of behaviour of group of controls &quot; Display or port numbers to use &quot; in tab &quot; Incoming Connections &quot; is restored. This has been lost when &quot;Properties&quot; dialog box has been transformed into a tabcontrol box.</li></ul>
+<p><font color="#700000"><b>2004-02-16 19:55</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/WinVNC.rc:</font> 
+First few strings of context help for the WinVNC Properties dialog.</li></ul>
+<p><font color="#700000"><b>2004-02-16 00:35</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncService.cpp:</font> 
+The message box &quot;The WinVNC service has been unregistered&quot; won't be shown when running WinVNC -reinstall. For some reason, if the user did not close that dialog, WinVNC could not install the service.</li></ul>
+<p><font color="#700000"><b>2004-02-15 23:08</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.dsp, WinVNC.rc:</font> 
+Corrected the tab order in HorizonLive-specific dialogs, and fixed broken link step in the HorizonLive configuration.</li></ul>
+<p><font color="#700000"><b>2004-02-15 20:40</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncDesktop.cpp:</font> 
+A bugfix from Vladimir Vologjanin to resolve the issue with crashing on a remote Ctrl-Alt-Del in the service mode.</li></ul>
+<p><font color="#700000"><b>2004-01-29 19:54</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: .cvsignore, WinVNC.dsp:</font> 
+Linking with htmlhelp.lib in Debug and Profile configurations.</li></ul>
+<p><font color="#700000"><b>2004-01-13 20:07</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp:</font> 
+Bugfix for the previous bugfix. ;-)</li></ul>
+<p><font color="#700000"><b>2004-01-13 19:18</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp:</font> 
+Minor bugfix -- an error condition was not checked properly.</li></ul>
+<p><font color="#700000"><b>2004-01-12 16:31</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">vncviewer/VNCOptions.cpp, winvnc/VNCHelp.cpp, winvnc/VNCHelp.h, winvnc/WinVNC.cpp, winvnc/WinVNC.dsp, winvnc/WinVNC.h, winvnc/WinVNC.rc, winvnc/resource.h, winvnc/vncProperties.cpp:</font> 
+In the dialog box Properties is added the context-sensitive help. For this purpose in the project WinVNC the new class is added. It the description is in files VNCHelp.cpp and VNCHelp.h.The code of a class vncProperties is accordingly changed. Also the strings appropriate to each control of the dialog box are added.</li></ul>
+<p><font color="#700000"><b>2004-01-06 17:15</b></font> <b>mrdennis</b></p>
+<ul><li><font color="#007000">vncviewer/: FileTransfer.cpp, FileTransferItemInfo.cpp, FileTransferItemInfo.h:</font> 
+Minor code improvements.</li></ul>
+<p><font color="#700000"><b>2004-01-06 15:20</b></font> <b>mrdennis</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp, vncviewer/FileTransfer.cpp, vncviewer/FileTransfer.h, winvnc/FileTransferItemInfo.h, winvnc/WinVNC.dsp, winvnc/vncClient.cpp, winvnc/vncClient.h:</font> 
+Small code improvement. Resolve problems with terminate file transfer after &quot;Kill All Clients&quot; pushed on server side.</li></ul>
+<p><font color="#700000"><b>2004-01-04 03:32</b></font> <b>mrdennis</b></p>
+<ul><li><font color="#007000">winvnc/vncClient.cpp:</font> 
+Small code improvement. Stoping download when pushed &quot;Kill All Clients&quot; on server side.</li></ul>
+<p><font color="#700000"><b>2003-12-24 18:26</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp:</font> 
+Fixed bug with positioning the image in a window vncviewer, when toolbar is switched - off.</li></ul>
+<p><font color="#700000"><b>2003-12-23 05:38</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/Makefile.bcc32:</font> 
+The Borland C++ makefile did not include Java classes into WinVNC.exe.</li></ul>
+<p><font color="#700000"><b>2003-12-17 21:25</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">InstInfo.rtf, TightVNC.iss:</font> 
+Packaging fixes for the 1.3dev3 release.</li></ul>
+<p><font color="#700000"><b>2003-12-16 03:24</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.dsp, WinVNC.rc, resource.h, vncProperties.cpp, vncProperties.h:</font> 
+Dialog box &quot;Advanced Properties &quot; is removed from project WinVNC. Groups of controls of this dialog box are placed in separate tabs in dialog box &quot;Properties&quot;, &quot;Administration&quot; and &quot; Query Settings &quot;. Changes are accordingly brought in the description of a class &quot;vncProperties&quot;, and the description of a class &quot;vncAdvancedProperties&quot; is removed.</li></ul>
+<p><font color="#700000"><b>2003-12-15 20:14</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">TightVNC.url:</font> 
+TightVNC.url added from BRANCH_1_2_STABLE.</li></ul>
+<p><font color="#700000"><b>2003-12-12 17:46</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: Makefile.bcc32, WinVNC.rc:</font> 
+Fixed compilation under Borland C++ 5.5.</li></ul>
+<p><font color="#700000"><b>2003-12-12 17:28</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncClient.cpp:</font> 
+CopyRect handling temporarily disabled on the server side. It should have been fixed in future versions.</li></ul>
+<p><font color="#700000"><b>2003-12-08 15:50</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">winvnc/: AdministrationControls.cpp, AdministrationControls.h, QuerySettingsControls.h, WinVNC.dsp:</font> 
+Code for controls of groups &quot;Administration&quot;, &quot;Temporary&quot; and &quot;Connection Priority&quot;, in dialog box &quot; Advanced Properties &quot;, is selected in separate class &quot;AdministrationControls&quot;. The description of a class is in files AdministrationControls.cpp and AdministrationControls.h. The code  in the description of a class &quot;vncAdvancedProperties&quot; is accordingly changed.</li></ul>
+<p><font color="#700000"><b>2003-12-07 03:09</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">winvnc/: IncomingConnectionsControls.h, QuerySettingsControls.cpp, QuerySettingsControls.h, WinVNC.dsp, WinVNC.rc, resource.h:</font> 
+Code for elements of management of group &quot; Query Settings &quot; in dialogue &quot; Advanced Properties &quot; is selected in separate class QuerySettingsControls. The description of a class is in files QuerySettingsControls.cpp and QuerySettingsControls.h. The code in the description of a class &quot;vncAdvancedProperties&quot; is accordingly changed.</li></ul>
+<p><font color="#700000"><b>2003-11-29 09:50</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncProperties.cpp:</font> 
+External authentication support turned off.</li></ul>
+<p><font color="#700000"><b>2003-11-28 21:22</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">BUILDING.txt, README-bin.txt, README.txt, TightVNC.iss, winvnc/VNCHooks/VNCHooks.rc, vncviewer/res/vncviewer.rc, winvnc/WinVNC.rc:</font> 
+Version strings changed, version 1.3dev3.</li></ul>
+<p><font color="#700000"><b>2003-11-28 20:07</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/FileTransfer.cpp:</font> 
+Uncommented code that was commented out by mistake.</li></ul>
+<p><font color="#700000"><b>2003-11-28 00:46</b></font> <b>mrdennis</b></p>
+<ul><li><font color="#007000">rfb/rfbproto.h, vncviewer/FileTransfer.cpp:</font> 
+Fixed bug with wrong length of FileUploadDataMsg. Small code impovements for right show sizes of files in FileTransfer dialog.</li></ul>
+<p><font color="#700000"><b>2003-11-21 13:37</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">vncviewer/VNCOptions.cpp, winvnc/IncomingConnectionsControls.cpp, winvnc/vncProperties.cpp:</font> 
+The setting of a focus of input in tab &quot;Incoming Connections&quot; for of initialization of the dialog box &quot;Properties&quot; is fixed.</li></ul>
+<p><font color="#700000"><b>2003-11-17 03:47</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">winvnc/: vncProperties.cpp, vncProperties.h:</font> 
+The wholeness of the project &quot;HorizonLive&quot; is restored. It was lost in a during of transformation of dialogues in the project &quot;WinVNC&quot;.</li></ul>
+<p><font color="#700000"><b>2003-11-15 02:40</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">winvnc/: IncomingConnectionsControls.cpp, WinVNC.rc:</font> 
+In tab &quot;Incoming Connections&quot; of the &quot;Properties&quot; dialog box the setting of a focus of input in fields of input &quot;Primary password&quot;, &quot;display&quot; and &quot;main port&quot; is made when the switches &quot;Accept socket connections&quot;, &quot;display&quot; and &quot;ports&quot; are checked accordingly .</li></ul>
+<p><font color="#700000"><b>2003-11-10 14:26</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">vncviewer/VNCOptions.cpp:</font> 
+Fixed a bug with operation of scaling for significance of scale 100 %</li></ul>
+<p><font color="#700000"><b>2003-11-05 23:25</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.cpp, ConnectingDialog.cpp:</font> 
+Fixed race conditions in the ConnDlgThread class implementation.</li></ul>
+<p><font color="#700000"><b>2003-11-05 01:58</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp:</font> 
+A small bugfix - the window did not redraw itself correctly after applying new scaling settings.</li></ul>
+<p><font color="#700000"><b>2003-11-05 01:53</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.cpp, ConnectingDialog.cpp, ConnectingDialog.h:</font> 
+The &quot;Connecting...&quot; dialog is fully functional now, it works in a separate thread. Also, a few fixes in other places were made.</li></ul>
+<p><font color="#700000"><b>2003-11-04 22:28</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: LoginAuthDialog.cpp, res/vncviewer.rc:</font> 
+The &quot;Close&quot; button renamed to &quot;Hide&quot; in the &quot;Connecting...&quot; dialog. Also, now the keyboard focus will be moved to the password field if there is a username pre-set in the LoginAuth dialog.</li></ul>
+<p><font color="#700000"><b>2003-11-04 03:28</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.h, vncviewer/Makefile.bcc32, vncviewer/VNCviewerApp32.cpp, vncviewer/res/vncviewer.rc, winvnc/WinVNC.rc:</font> 
+If a config file was used, the viewer won't continuously retry authentication any more. Instead, it will show the &quot;New Connection&quot; dialod box after the first authentication failure.</li></ul>
+<p><font color="#700000"><b>2003-11-03 21:49</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.cpp, ClientConnection.h, ClientConnectionFile.cpp, LoginAuthDialog.cpp, LoginAuthDialog.h:</font> 
+Implemented a possibility to save a username without password in .vnc files, for the &quot;external&quot; authentication.</li></ul>
+<p><font color="#700000"><b>2003-11-03 21:15</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.cpp, ClientConnection.h, ConnectingDialog.cpp, ConnectingDialog.h, vncviewer.dsp, res/resource.h, res/vncviewer.rc:</font> 
+Implemented new &quot;Connecting...&quot; dialog box showing connection progress. This version is not fully functional yet -- it does not handle messages of the dialog window correctly.</li></ul>
+<p><font color="#700000"><b>2003-10-30 22:41</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.rc, resource.h:</font> 
+Unused resources have been removed.</li></ul>
+<p><font color="#700000"><b>2003-10-30 22:39</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/WinVNC.dsp:</font> 
+Linking WinVNC with comctl32.lib in Debug and Profile build configurations.</li></ul>
+<p><font color="#700000"><b>2003-10-30 11:44</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.dsp, WinVNC.rc, resource.h, vncProperties.cpp, vncProperties.h:</font> 
+The Properties dialog box is transformed into a property sheet dialog box.</li></ul>
+<p><font color="#700000"><b>2003-10-27 22:41</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">build-bcc32.bat:</font> 
+Line endings corrected.</li></ul>
+<p><font color="#700000"><b>2003-10-27 22:39</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: Makefile.bcc32, WinVNC.rc:</font> 
+Fixes for Borland C++ 5.5 compilation.</li></ul>
+<p><font color="#700000"><b>2003-10-27 22:20</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.cpp, ClientConnection.h, ClientConnectionFile.cpp:</font> 
+Implemented a possibility to save encrypted username/password pair for &quot;external&quot; authentication in .vnc files, just like the standard VNC password is saved. Also, &quot;do you want to save the password?&quot; prompt is now skipped if the viewer did not perform authentication.</li></ul>
+<p><font color="#700000"><b>2003-10-27 20:34</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.cpp, ClientConnection.h, ClientConnectionFile.cpp, LoginAuthDialog.cpp, LoginAuthDialog.h, res/resource.h, res/vncviewer.rc:</font> 
+On connection failures, error message boxes will include hostname/display information. Also, the same information will be shown in the External Authentication dialog.</li></ul>
+<p><font color="#700000"><b>2003-10-25 17:25</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncClient.cpp:</font> 
+Minor code enhancements.</li></ul>
+<p><font color="#700000"><b>2003-10-25 17:17</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncClient.cpp, vncClient.h:</font> 
+Added new vncClient::GetServerName() function.</li></ul>
+<p><font color="#700000"><b>2003-10-25 14:35</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncClient.cpp:</font> 
+Fixed a bug in the &quot;external&quot; authentication with calling functions returning results in the same static memory area.</li></ul>
+<p><font color="#700000"><b>2003-10-12 19:13</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">winvnc/: IncomingConnectionsControls.cpp, IncomingConnectionsControls.h, WinVNC.dsp, WinVNC.rc, resource.h, vncProperties.cpp, vncProperties.h:</font> 
+The code for controls of group &quot;Incoming Connections&quot; in &quot;Property Page&quot; dialog box is transformed into a separate class IncomingConnectionsControls. The description of a class is added in separate files IncomingConnectionsControls.h and IncomingConnectionsControls.cpp.</li></ul>
+<p><font color="#700000"><b>2003-10-09 16:10</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: AuthDialog.cpp, ClientConnectionZlib.cpp, ClientConnectionZlibHex.cpp, LoginAuthDialog.cpp, Makefile.mingw, stdhdrs.h, vncviewer.h, omnithread/Makefile.mingw, res/Makefile.mingw, res/vncviewer.rc:</font> 
+Applied a patch from Peter Astrand to enable building the viewer with the MinGW compiler.</li></ul>
+<p><font color="#700000"><b>2003-10-09 15:50</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: KeyMap.cpp, keysymdef.h:</font> 
+Applied a patch from Peter Astrand to fix deadkeys handling.</li></ul>
+<p><font color="#700000"><b>2003-10-09 15:14</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">rfb/rfbproto.h, vncviewer/ClientConnection.cpp, vncviewer/ClientConnection.h, vncviewer/LoginAuthDialog.cpp, vncviewer/LoginAuthDialog.h, winvnc/vncClient.cpp, winvnc/vncProperties.cpp, winvnc/vncProperties.h, winvnc/vncServer.cpp, winvnc/vncServer.h:</font> 
+Experimental support for an alternative &quot;external&quot; authentication. This is the first step to the pluggable authentication architecture.</li></ul>
+<p><font color="#700000"><b>2003-10-09 14:45</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">.cvsignore, winvnc/libjpeg/.cvsignore:</font> 
+Ignoring intermediate files and directories created on compilation.</li></ul>
+<p><font color="#700000"><b>2003-09-17 16:53</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/FileTransfer.cpp:</font> 
+Two text messages have been changed.</li></ul>
+<p><font color="#700000"><b>2003-09-15 17:36</b></font> <b>mrdennis</b></p>
+<ul><li><font color="#007000">vncviewer/FileTransfer.cpp, winvnc/vncClient.cpp:</font> 
+Small code improvements.</li></ul>
+<p><font color="#700000"><b>2003-09-14 18:30</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">rfb/rfbproto.h:</font> 
+Minor code cleanups.</li></ul>
+<p><font color="#700000"><b>2003-09-09 18:37</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/FileTransfer.cpp, winvnc/vncClient.cpp:</font> 
+Minor improvements and fixes in the file transfer implementation.</li></ul>
+<p><font color="#700000"><b>2003-09-09 16:46</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/FileTransfer.cpp, winvnc/vncClient.cpp:</font> 
+Fixed a few issues in the file transfer implementation.</li></ul>
+<p><font color="#700000"><b>2003-09-08 22:01</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: Makefile.bcc32, vncClient.cpp:</font> 
+Fixes for Borland C++ 5.5 compilation.</li></ul>
+<p><font color="#700000"><b>2003-09-08 20:24</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncClient.cpp, vncClient.h:</font> 
+A quick fix for the problem with incorrect initial client framebuffer size.</li></ul>
+<p><font color="#700000"><b>2003-09-08 03:25</b></font> <b>mrdennis</b></p>
+<ul><li><font color="#007000">rfb/rfbproto.h, vncviewer/FileTransfer.cpp, vncviewer/FileTransfer.h, vncviewer/FileTransferItemInfo.cpp, vncviewer/FileTransferItemInfo.h, winvnc/vncClient.cpp, winvnc/vncClient.h:</font> 
+Preliminary release of new version FileTransfer protocol.</li></ul>
+<p><font color="#700000"><b>2003-09-04 02:37</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp, rfb/rfbproto.h, vncviewer/ClientConnection.h, winvnc/vncClient.cpp, winvnc/vncClient.h:</font> 
+Support for the latest RealVNC's RFB protocol 3.7 has been added. TightVNC protocol extensions are now enabled via a special &quot;security type&quot; sent by the server prior to authentication. These protocol changes ensure maximum possible protocol compatibility with all the standard VNC versions (and with all stable TightVNC releases, too).</li></ul>
+<p><font color="#700000"><b>2003-09-04 01:45</b></font> <b>mrdennis</b></p>
+<ul><li><font color="#007000">rfb/rfbproto.h, vncviewer/FileTransfer.cpp, vncviewer/FileTransfer.h, vncviewer/FileTransferItemInfo.cpp, vncviewer/FileTransferItemInfo.h, winvnc/FileTransferItemInfo.cpp, winvnc/FileTransferItemInfo.h, winvnc/WinVNC.dsp, winvnc/vncClient.cpp:</font> 
+ATTENTION!!! This version of FileTransfer allow compile all project, BUT FileTransfer feature not work, sorry... Added new class FileTransferItemInfo in VNCServer. This class is different of FileransferItemInfo in VNCviewer.</li></ul>
+<p><font color="#700000"><b>2003-08-28 02:07</b></font> <b>mrdennis</b></p>
+<ul><li><font color="#007000">rfb/rfbproto.h:</font> 
+Change rfb-protocol. Added new version of FileTransfer protocol.</li></ul>
+<p><font color="#700000"><b>2003-08-23 18:55</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/FileTransferItemInfo.cpp, vncviewer/Makefile.bcc32, vncviewer/res/vncviewer.rc, winvnc/Makefile.bcc32, winvnc/WinVNC.rc:</font> 
+Minor fixes for Borland C++ compatibility.</li></ul>
+<p><font color="#700000"><b>2003-08-23 18:25</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: PollControls.cpp, PollControls.h, vncProperties.cpp:</font> 
+Major code improvements in the PollControls class, and a fix for the problem with two incorrectly enabled checkboxes.</li></ul>
+<p><font color="#700000"><b>2003-08-23 17:08</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.cpp, vncService.cpp, vncService.h:</font> 
+If the command line includes both -sharewindow and -connect options, then the -connect option will take effect only if there was a valid window to share found.</li></ul>
+<p><font color="#700000"><b>2003-08-23 14:40</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: resource.h, vncClient.cpp, vncProperties.cpp, vncProperties.h, vncServer.h, WinVNC.rc:</font> 
+Implemented an option to enable/disable file transfers.</li></ul>
+<p><font color="#700000"><b>2003-08-23 14:05</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncProperties.cpp:</font> 
+Fixed a bug -- a pointer to the CMatchWindow object was not properly initialized.</li></ul>
+<p><font color="#700000"><b>2003-08-23 13:25</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: SharedDesktopArea.cpp, SharedDesktopArea.h, vncProperties.cpp:</font> 
+Minor code improvements in the SharedDesktopArea class.</li></ul>
+<p><font color="#700000"><b>2003-08-22 21:37</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/VNCOptions.cpp:</font> 
+A quick fix for the problem with not loading settings in the listening mode, when the viewer was started with the -listen command-line option.</li></ul>
+<p><font color="#700000"><b>2003-07-31 20:52</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">InstInfo.rtf:</font> 
+file InstInfo.rtf was initially added on branch BRANCH_1_2_STABLE.</li></ul>
+<p><font color="#700000"><b>2003-07-30 00:33</b></font> <b>mrdennis</b></p>
+<ul><li><font color="#007000">vncviewer/FileTransfer.cpp, winvnc/vncClient.cpp:</font> 
+Some code improvevments. Now, FileTransfer feature can operates with removable, remote, fixed and CD-ROM drives.</li></ul>
+<p><font color="#700000"><b>2003-07-25 18:50</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncAcceptReverseDlg.cpp, vncMenu.cpp:</font> 
+A set of minor changes specific to the HorizonLive build configuration, merged from the BRANCH_HL_JUL2003.</li></ul>
+<p><font color="#700000"><b>2003-07-23 11:28</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">winvnc/: SharedDesktopArea.cpp, SharedDesktopArea.h, WinVNC.dsp, vncProperties.cpp, vncProperties.h:</font> 
+The plots of a code in vncProperties.cpp which work with Shared Desktop Area controls are transformed into a separate class SharedDesktopArea. Now manipulations with Shared Desktop Area controls happen by means of methods of a class SharedDesktopArea.</li></ul>
+<p><font color="#700000"><b>2003-07-21 03:48</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">winvnc/: InputHandlingControls.cpp, InputHandlingControls.h, WinVNC.dsp, vncProperties.cpp, vncProperties.h:</font> 
+The plots of a code in vncProperties.cpp which work with input handling controls are transformed into a separate class InputHandlingControls. Now manipulations with input handling controls will be realized by means of methods of a class InputHandlingControls.</li></ul>
+<p><font color="#700000"><b>2003-07-20 14:35</b></font> <b>oleg_sh</b></p>
+<ul><li><font color="#007000">winvnc/: PollControls.cpp, PollControls.h, WinVNC.dsp, WinVNC.rc, resource.h, vncProperties.cpp, vncProperties.h:</font> 
+The plots of a code in vncProperties.cpp which work with polling controls are transformed into a separate class PollControls. Now manipulations with polling controls will be realized by means of methods of a class PollControls</li></ul>
+<p><font color="#700000"><b>2003-07-17 23:12</b></font> <b>mrdennis</b></p>
+<ul><li><font color="#007000">vncviewer/: FileTransfer.cpp, FileTransfer.h, FileTransferItemInfo.cpp, FileTransferItemInfo.h, vncviewer.dsp:</font> 
+Added new class FileTransferItemInfo, which hold information about ListView items in FileTransfer dialog. Small code improvement for ProgressBar in FileTransfer dialog.</li></ul>
+<p><font color="#700000"><b>2003-07-15 20:35</b></font> <b>mrdennis</b></p>
+<ul><li><font color="#007000">vncviewer/FileTransfer.cpp:</font> 
+Added LVS_EX_FULLROWSELECT window style to ListView controls in the File Transfer dialog. Now, when an item is selected, the item and all its subitems are highlighted.</li></ul>
+<p><font color="#700000"><b>2003-07-12 01:23</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/VNCOptions.cpp:</font> 
+On specifying an invalid server name, showing a message box instead of the usage help message.</li></ul>
+<p><font color="#700000"><b>2003-07-11 18:17</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: AboutBox.cpp, AboutBox.h, VNCOptions.cpp, VNCOptions.h, res/vncviewer.rc:</font> 
+Improved the layout of the dialog box with the usage help. Now the same dialog appears both on specifying the /? option, or on specifying an incorrect host name.</li></ul>
+<p><font color="#700000"><b>2003-07-11 05:14</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncDesktop.cpp:</font> 
+Closing HKEY_CURRENT_USER properly on restoring display settings. This change should solve problems with reading the registry in the service mode.</li></ul>
+<p><font color="#700000"><b>2003-07-11 05:10</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncProperties.cpp:</font> 
+Debugging output removed.</li></ul>
+<p><font color="#700000"><b>2003-07-10 19:18</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/res/: filereload.ico, fileup.ico, vncviewer.rc:</font> 
+Images changed for &quot;up&quot; and &quot;reload&quot; icons in the File Transfer dialog.</li></ul>
+<p><font color="#700000"><b>2003-07-10 19:16</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncClient.cpp:</font> 
+Disabling file transfers if the client has authenticated against a view-only password.</li></ul>
+<p><font color="#700000"><b>2003-07-10 19:03</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncClient.cpp:</font> 
+Writing into the log on receiving an invalid client message.</li></ul>
+<p><font color="#700000"><b>2003-07-10 18:12</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: FileTransfer.cpp, FileTransfer.h:</font> 
+Minor GUI improvements in the File Transfer dialog.</li></ul>
+<p><font color="#700000"><b>2003-07-10 18:08</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/.cvsignore:</font> 
+Ignoring vncviewer.log.</li></ul>
+<p><font color="#700000"><b>2003-07-10 18:04</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncClient.cpp:</font> 
+Implemented logging on file uploads/downloads.</li></ul>
+<p><font color="#700000"><b>2003-07-10 18:01</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/FileTransfer.cpp:</font> 
+Fixed a bug with not closing directory handles in file transfers.</li></ul>
+<p><font color="#700000"><b>2003-07-10 17:57</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncClient.cpp:</font> 
+Fixed a bug with not closing file handles after uploading in file transfers.</li></ul>
+<p><font color="#700000"><b>2003-07-10 17:51</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncBuffer.h:</font> 
+Unused function prototype has been removed.</li></ul>
+<p><font color="#700000"><b>2003-07-05 00:53</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.rc, resource.h, vncDesktop.cpp, vncDesktop.h, vncProperties.cpp, vncProperties.h, vncServer.cpp, vncServer.h:</font> 
+Implemented a possibility to turn off hooking via VNCHooks.dll when full screen polling is in use, and added a corresponding option to the Properties dialog (that is Advanced Properties in the HorizonLive configuration).</li></ul>
+<p><font color="#700000"><b>2003-07-02 00:19</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.cpp, WinVNC.h:</font> 
+Fixed a number of minor problems with -connect and -sharewindow options. Added the possibility to use the -connect option without arguments, to bring up the &quot;Add New Client&quot; dialog.</li></ul>
+<p><font color="#700000"><b>2003-07-02 00:14</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/WinVNC.cpp:</font> 
+Implemented a possibility to specify -sharewindow argument without quotes, and fixed a problem with not counting the last character of that argument.</li></ul>
+<p><font color="#700000"><b>2003-07-02 00:11</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncService.cpp, vncService.h:</font> 
+Fixed broken case-insensitive comparison, and the problem with restoring windows that were maximized. Also, general code improvements were made.</li></ul>
+<p><font color="#700000"><b>2003-07-01 23:57</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.rc, vncProperties.cpp:</font> 
+Removed the code that searched a window by comparing window titles with the substrings entered in window selection edit controls. The code was broken in two ways -- it did not respect actual sharing mode (window, full desktop or screen area), and it tried to find a window even if one was already selected using the target icon (in the latter case, the string in the edit control was not always a valid window title). Also, window selection edit controls in both HorizonLive and public configurations have been made read-only.</li></ul>
+<p><font color="#700000"><b>2003-07-01 23:49</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncService.cpp:</font> 
+Showing an error message in cases when the window with a specified title is not found, for the -sharewindow option. This is a patch from Oleg Sheikin.</li></ul>
+<p><font color="#700000"><b>2003-06-25 23:35</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/VNCOptions.cpp:</font> 
+Now the usage help message lists nearly all the supported options.</li></ul>
+<p><font color="#700000"><b>2003-06-25 23:31</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/WinVNC.h:</font> 
+Improved output of the WinVNC -help option.</li></ul>
+<p><font color="#700000"><b>2003-06-25 20:53</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncClient.cpp:</font> 
+Fixed the CopyRect handling that was completely broken. Basically, the code from the version 1.2.8 has been copied, with minor changes to respect variable framebuffer size.</li></ul>
+<p><font color="#700000"><b>2003-06-25 20:49</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/.cvsignore, vncviewer/ClientConnection.cpp, vncviewer/Makefile.bcc32, vncviewer/SessionDialog.cpp, vncviewer/VNCOptions.cpp, winvnc/Makefile.bcc32, winvnc/WinVNC.rc:</font> 
+The code ported to the Borland C++ compiler.</li></ul>
+<p><font color="#700000"><b>2003-06-25 20:46</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp:</font> 
+Fixed a bug with incorrect deletion of FileTransfer objects.</li></ul>
+<p><font color="#700000"><b>2003-06-25 20:43</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/WinVNC.cpp:</font> 
+Solved a problem with parsing command line option names. Older versions would treat -killANYTHING as -kill, and that could cause problems if options like -killallclients were misspeled. Now only -kill and -killallclients will work, -killsomething will result showing the help message.</li></ul>
+<p><font color="#700000"><b>2003-06-25 20:40</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.cpp, WinVNC.h, vncMenu.cpp, vncMenu.h, vncService.cpp, vncService.h:</font> 
+Implemented new -killallclients command-line option in WinVNC.</li></ul>
+<p><font color="#700000"><b>2003-06-15 02:04</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncMenu.cpp, vncProperties.cpp, vncService.cpp:</font> 
+A bugfix for the &quot;-sharewindow&quot; option implementation, from Oleg Sheikin.</li></ul>
+<p><font color="#700000"><b>2003-06-15 02:02</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.cpp, Daemon.cpp, SessionDialog.cpp, VNCOptions.cpp, VNCOptions.h:</font> 
+Minor code improvements from Oleg Sheikin.</li></ul>
+<p><font color="#700000"><b>2003-06-15 01:59</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.cpp, WinVNC.h, vncMenu.cpp, vncMenu.h, vncProperties.cpp, vncService.cpp, vncService.h:</font> 
+Implemented new &quot;-sharewindow&quot; command-line option in WinVNC. It allows identifying a window to share, by specifying a substring of its title. Similar function is added in the Properties dialog. This is a patch from Oleg Sheikin.</li></ul>
+<p><font color="#700000"><b>2003-06-05 02:51</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.rc, vncClient.cpp, vncDesktop.cpp:</font> 
+A set of minor changes from HorizonLive to synchronize versions. This includes enabling loopback connections in the HorizonLive configuration, a minor change in a text message, and one bugfix.</li></ul>
+<p><font color="#700000"><b>2003-06-05 02:47</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.dsp, WinVNC.rc:</font> 
+Now the Java classes will not be included in the HorizonLive configuration.</li></ul>
+<p><font color="#700000"><b>2003-06-05 02:43</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncProperties.cpp:</font> 
+Restored the code closing the HKCU registry hive. This code was removed to workaround a password reset problem, but had introduced another issue that can be considered even worse. Now we should find other ways to fix old password reset problem.</li></ul>
+<p><font color="#700000"><b>2003-05-29 13:33</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.cpp, Daemon.cpp, SessionDialog.cpp, VNCOptions.cpp, VNCOptions.h:</font> 
+Chosen more appropriate names for the registry settings.</li></ul>
+<p><font color="#700000"><b>2003-05-23 13:39</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: HotKeys.cpp, HotKeys.h, VNCHelp.cpp, VNCHelp.h, vncviewer.cpp:</font> 
+Minor improvements in VNCHelp and HotKeys class implementations.</li></ul>
+<p><font color="#700000"><b>2003-05-23 11:18</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/res/vncviewer.rc:</font> 
+Changed the titles of the dialog boxes.</li></ul>
+<p><font color="#700000"><b>2003-05-22 13:34</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.cpp, Daemon.cpp, Flasher.cpp, HotKeys.cpp, HotKeys.h, VNCviewerApp.cpp, vncviewer.cpp, vncviewer.dsp, vncviewer.h:</font> 
+The code for keyboard accelerator handling has been moved to a separate HotKeys class.</li></ul>
+<p><font color="#700000"><b>2003-05-21 23:13</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/VNCHelp.cpp:</font> 
+Fixed a problem with context help for spin controls, a patch from Oleg Sheikin.</li></ul>
+<p><font color="#700000"><b>2003-05-21 13:54</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/VNCOptions.cpp:</font> 
+Changed the bounds of valid values in edit controls &quot;Verbosity level&quot;, &quot;Number of connections to remember&quot; and &quot;Accept reverse VNC connections on TCP port&quot;. This is a patch from Oleg Sheikin.</li></ul>
+<p><font color="#700000"><b>2003-05-21 00:39</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.cpp, VNCOptions.cpp, VNCOptions.h:</font> 
+Added the code to handle the &quot;Small dot cursor&quot; radio button, and introduced the new &quot;-smalldotcursor&quot; command-line option. Also, changing the local cursor shape now has immediate effect in all windows.</li></ul>
+<p><font color="#700000"><b>2003-05-20 23:30</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: VNCOptions.cpp, VNCOptions.h, res/vncviewer.rc:</font> 
+Added the code to handle the Browse button in the Global Options dialog. Also, there are minor code improvements. This is a patch from Oleg Sheikin.</li></ul>
+<p><font color="#700000"><b>2003-05-19 18:13</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: FileTransfer.cpp, FileTransfer.h, res/vncviewer.rc:</font> 
+Layout changes in the FileTransfer dialog box.</li></ul>
+<p><font color="#700000"><b>2003-05-19 08:51</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/res/vncviewer.rc:</font> 
+Corrected the order of controls in the Options dialog.</li></ul>
+<p><font color="#700000"><b>2003-05-19 08:47</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: vncviewer.dsp, res/cursor1.cur, res/resource.h, res/smalldot.cur, res/vncviewer.rc:</font> 
+Finished with the descriptions for controls in the Global Options. Also, added one more local cursor shape.</li></ul>
+<p><font color="#700000"><b>2003-05-19 08:40</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.cpp, ClientConnectionFullScreen.cpp:</font> 
+Changes in the full-screen mode handling.</li></ul>
+<p><font color="#700000"><b>2003-05-18 14:35</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: FileTransfer.cpp, FileTransfer.h:</font> 
+Code improvements from Dennis Syrovatsky.</li></ul>
+<p><font color="#700000"><b>2003-05-18 14:32</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp:</font> 
+Fixed a bug with showing Ctrl and Alt buttons on corresponding key presses with toolbar turned off. This is a patch from Oleg Sheikin.</li></ul>
+<p><font color="#700000"><b>2003-05-18 14:29</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: VNCOptions.cpp, VNCOptions.h:</font> 
+Minor code improvements from Oleg Sheikin.</li></ul>
+<p><font color="#700000"><b>2003-05-14 19:22</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: VNCHelp.cpp, VNCOptions.cpp, res/resource.h, res/vncviewer.rc:</font> 
+Layout changes in the Globals tab of the Options dialog.</li></ul>
+<p><font color="#700000"><b>2003-05-13 18:04</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: SessionDialog.cpp, SessionDialog.h, VNCOptions.cpp, VNCOptions.h:</font> 
+Minor code improvements from Oleg Sheikin.</li></ul>
+<p><font color="#700000"><b>2003-05-13 17:59</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: FileTransfer.cpp, FileTransfer.h:</font> 
+Code improvements. Also, fixed a bug with downloading files.</li></ul>
+<p><font color="#700000"><b>2003-05-13 17:32</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp:</font> 
+Fixed a problem with sockets not closed immediately on performing a disconnect or closing the window.</li></ul>
+<p><font color="#700000"><b>2003-05-13 14:43</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.cpp, ClientConnection.h, res/toolbar.bmp, res/vncviewer.rc:</font> 
+Improved menus, toolbar images, and toolbar tooltips. Also, there are few code improvements.</li></ul>
+<p><font color="#700000"><b>2003-05-07 12:37</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: SessionDialog.cpp, VNCOptions.cpp:</font> 
+Fixed an issue with removing the host name from the session dialog after visiting Options or after failed authentication. This is a patch from Oleg Sheikin.</li></ul>
+<p><font color="#700000"><b>2003-05-07 03:32</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp:</font> 
+Fixed a problem causing vncviewer shutdown on closing just one window; a patch from Oleg Sheikin.</li></ul>
+<p><font color="#700000"><b>2003-05-06 15:23</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/VNCOptions.cpp:</font> 
+Validating text fields on operations with corresponding spin controls, a patch from Oleg Sheikin.</li></ul>
+<p><font color="#700000"><b>2003-05-06 14:13</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/res/vncviewer.rc:</font> 
+Version information changed, version 1.3dev1.</li></ul>
+<p><font color="#700000"><b>2003-05-06 12:24</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.cpp, ClientConnection.h, FileTransfer.cpp:</font> 
+Fixed a bug with a non-initialized variable that used to enable the file transfer option when it should be disabled. There is a number of code improvements as well.</li></ul>
+<p><font color="#700000"><b>2003-05-06 05:24</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">rfb/rfbproto.h, vncviewer/ClientConnection.cpp, vncviewer/ClientConnection.h, vncviewer/LoginAuthDialog.cpp, vncviewer/LoginAuthDialog.h, vncviewer/vncviewer.dsp, vncviewer/res/resource.h, vncviewer/res/vncviewer.rc:</font> 
+Alternative Unix login authentication has been implemented in the viewer for Ki NETWORKS, Inc.</li></ul>
+<p><font color="#700000"><b>2003-05-05 23:38</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/VNCOptions.cpp:</font> 
+Checking lower bounds of values in edit controls with spins, a patch from Oleg Sheikin.</li></ul>
+<p><font color="#700000"><b>2003-05-05 15:15</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: FileTransfer.cpp, FileTransfer.h, res/resource.h, res/vncviewer.rc:</font> 
+Code enhancements. Also, now the same button is used both for upload and download actions. This is a patch from Dennis Syrovatsky.</li></ul>
+<p><font color="#700000"><b>2003-05-05 13:05</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/VNCviewerApp32.cpp:</font> 
+A long-standing bug has been fixed -- the logic to handle retries after authentication failures was flawed, and used to delete the same object twice under certain conditions.</li></ul>
+<p><font color="#700000"><b>2003-05-05 11:17</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/CapsContainer.h:</font> 
+Tiny code improvement - joined two overloaded constructors.</li></ul>
+<p><font color="#700000"><b>2003-05-05 04:51</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/res/toolbar.bmp:</font> 
+Enhanced toolbar images.</li></ul>
+<p><font color="#700000"><b>2003-05-05 01:40</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp:</font> 
+Another minor code improvement.</li></ul>
+<p><font color="#700000"><b>2003-05-04 15:50</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/SessionDialog.cpp:</font> 
+Minor code improvement.</li></ul>
+<p><font color="#700000"><b>2003-05-04 01:29</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: vncviewer.cpp, vncviewer.h:</font> 
+Minor code improvement.</li></ul>
+<p><font color="#700000"><b>2003-05-03 19:53</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/FileTransfer.cpp, winvnc/vncClient.cpp:</font> 
+Fixed a bug with access to empty folders in the file transfer interface. Now users can open empty folders and thus copy to empty folders. This is a patch from Dennis Syrovatsky.</li></ul>
+<p><font color="#700000"><b>2003-05-03 15:46</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/res/vncviewer.rc:</font> 
+More help descriptions, for static elements.</li></ul>
+<p><font color="#700000"><b>2003-05-03 11:34</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/res/: resource.h, vncviewer.rc:</font> 
+Help descriptions were added to static dialog elements -- a patch from Oleg Sheikin.</li></ul>
+<p><font color="#700000"><b>2003-05-03 03:44</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.cpp, res/resource.h, res/toolbar.bmp:</font> 
+Changed toolbar images, added new button for sending Ctrl-Esc -- a patch from Oleg Sheikin.</li></ul>
+<p><font color="#700000"><b>2003-05-02 17:46</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/SessionDialog.cpp:</font> 
+Using 8-bit colors in the &quot;Low-bandwidth connection&quot; profile -- a patch from Oleg Sheikin.</li></ul>
+<p><font color="#700000"><b>2003-05-02 00:37</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: VNCOptions.cpp, VNCOptions.h, res/vncviewer.rc:</font> 
+Inactivating JPEG compression option on setting color format to 8 bits. Making static labels gray together with related controls.  Changed the order of encodings in the combo box. This is a patch from Oleg Sheikin.</li></ul>
+<p><font color="#700000"><b>2003-05-01 21:20</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/VNCOptions.cpp:</font> 
+Validating edit controls after they loose the focus, instead of validation on each text change.</li></ul>
+<p><font color="#700000"><b>2003-04-15 20:50</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/res/vncviewer.rc:</font> 
+Finished help messages for the &quot;Connection options&quot; tab.</li></ul>
+<p><font color="#700000"><b>2003-04-15 20:43</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: VNCOptions.cpp, res/vncviewer.rc:</font> 
+Validating input in text fields made entering numbers nearly impossible; a quick fix from Oleg Sheikin.</li></ul>
+<p><font color="#700000"><b>2003-04-15 00:33</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/res/vncviewer.rc:</font> 
+More help messages for the &quot;Connection options&quot; dialog.</li></ul>
+<p><font color="#700000"><b>2003-04-15 00:28</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: VNCOptions.cpp, VNCOptions.h:</font> 
+&quot;General options&quot; renamed to &quot;global options&quot;.</li></ul>
+<p><font color="#700000"><b>2003-04-15 00:25</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: VNCOptions.cpp, res/vncviewer.rc:</font> 
+Layout improvements in the Options dialog.</li></ul>
+<p><font color="#700000"><b>2003-04-15 00:22</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: VNCOptions.cpp, VNCOptions.h, res/vncviewer.rc:</font> 
+A better way to set child dialogs' positions within the Tab control.  Minor layout changes in the Options dialog, and minor code improvements.</li></ul>
+<p><font color="#700000"><b>2003-04-14 14:55</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: SessionDialog.cpp, VNCHelp.cpp, res/resource.h, res/vncviewer.rc:</font> 
+Help messages for static controls in dialogs that will duplicate help messages for corresponding active controls. Also, compression level and quality level set to 6 by default, for all connection profiles. This is a patch from Oleg Sheikin.</li></ul>
+<p><font color="#700000"><b>2003-04-09 05:29</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/res/vncviewer.rc:</font> 
+Minor layout changes in the session dialog, improved help messages. This should be the final version of this dialog box.</li></ul>
+<p><font color="#700000"><b>2003-04-01 19:38</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncClient.cpp:</font> 
+Tiny code cleanups.</li></ul>
+<p><font color="#700000"><b>2003-04-01 01:58</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">rfb/rfbproto.h, vncviewer/ClientConnection.cpp, vncviewer/ClientConnection.h, winvnc/vncClient.cpp:</font> 
+Another set of changes in the protocol version 3.130. Now the client won't send tunneling or authentication type if the server does not support tunneling, or does not require authentication.</li></ul>
+<p><font color="#700000"><b>2003-04-01 01:27</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.cpp, ClientConnection.h:</font> 
+Minor code improvement. This patch and the previous patch were made by Oleg Sheikin.</li></ul>
+<p><font color="#700000"><b>2003-04-01 01:16</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.cpp, ClientConnection.h, VNCOptions.cpp, res/vncviewer.rc:</font> 
+New EnableFullControlOptions() function has been added to enable/disable commands and options that do not make sense in the view-only mode.</li></ul>
+<p><font color="#700000"><b>2003-03-31 04:54</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/res/vncviewer.rc:</font> 
+Minor change in the layout of the &quot;load connection&quot; button in the Session dialog, and a better help text for this button.</li></ul>
+<p><font color="#700000"><b>2003-03-29 20:10</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncClient.cpp:</font> 
+File transfers disabled in the HorizonLive build configuration.</li></ul>
+<p><font color="#700000"><b>2003-03-29 03:45</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: res/vncviewer.rc, res/resource.h, VNCOptions.h, VNCOptions.cpp:</font> 
+The &quot;Scale by&quot; check box has been deleted -- the scaling will be turned off on selecting 100%. Also, there is a number of code improvements. This is a patch from Oleg Sheikin.</li></ul>
+<p><font color="#700000"><b>2003-03-29 03:40</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">rfb/rfbproto.h, vncviewer/CapsContainer.cpp, vncviewer/CapsContainer.h, vncviewer/ClientConnection.cpp, vncviewer/ClientConnection.h, winvnc/vncClient.cpp:</font> 
+The protocol 3.130 has been changed once again. Now the authentication scheme is selected on the client side, and tunneling is established before the server advertises its authentication capabilities.</li></ul>
+<p><font color="#700000"><b>2003-03-25 00:33</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp:</font> 
+Connection-specific options will be saved in the registry after establishing the connection, and on each change during the active connection. This and previous patches came from Oleg Sheikin.</li></ul>
+<p><font color="#700000"><b>2003-03-25 00:30</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.cpp, SessionDialog.cpp:</font> 
+On pressing the &quot;Cancel&quot; button in the session window, the &quot;Options&quot; dialog now will be removed (if open) on closing the session window itself.</li></ul>
+<p><font color="#700000"><b>2003-03-25 00:25</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: SessionDialog.cpp, SessionDialog.h, res/vncviewer.rc:</font> 
+When using the &quot;load connection&quot; button, the connection to a server now will be established only on pressing the &quot;Connect&quot; button. The load button will only allow to load the connection parameters. This is a patch from Oleg Sheikin.</li></ul>
+<p><font color="#700000"><b>2003-03-24 03:50</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/WinVNC.cpp:</font> 
+Just a minor code formatting change.</li></ul>
+<p><font color="#700000"><b>2003-03-24 03:48</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.cpp, WinVNC.h:</font> 
+Forgot to apply a change from the BRANCH_1_2_STABLE -- a possibility to specify port numbers with winvnc -connect option, using the format &quot;host::port&quot;.</li></ul>
+<p><font color="#700000"><b>2003-03-24 03:41</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: AboutBox.cpp, ClientConnection.cpp, ClientConnectionFullScreen.cpp, SessionDialog.cpp, VNCHelp.cpp, VNCHelp.h, VNCOptions.cpp, VNCviewerApp32.cpp, vncviewer.cpp:</font> 
+Code formatting improvements from Oleg Sheikin.</li></ul>
+<p><font color="#700000"><b>2003-03-24 03:31</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/res/vncviewer.rc:</font> 
+A few more help hints in the options dialog.</li></ul>
+<p><font color="#700000"><b>2003-03-24 03:27</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/res/vncviewer.rc:</font> 
+Minor layout changes in the Session dialog.</li></ul>
+<p><font color="#700000"><b>2003-03-24 03:23</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.h, ClientConnectionFile.cpp, SessionDialog.cpp:</font> 
+The &quot;Open&quot; window now blocks the &quot;Connection details&quot; dialog box. This is a patch from Oleg Sheikin.</li></ul>
+<p><font color="#700000"><b>2003-03-24 03:19</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/FileTransfer.cpp, vncviewer/FileTransfer.h, winvnc/vncClient.cpp:</font> 
+Fixed a bug in the file upload code. Added checking for free disk space on downloads at the client side. Added checking client path correctness on downloads. Also, there are code formatting improvements. This is a patch from Dennis Syrovatsky.</li></ul>
+<p><font color="#700000"><b>2003-03-23 02:42</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.cpp, ClientConnectionFile.cpp, SessionDialog.cpp, VNCOptions.cpp, VNCOptions.h:</font> 
+Fixed a problem with &quot;Options&quot; and &quot;load connection&quot; buttons that made it possible to open several instances of corresponding dialog windows. This is a patch from Oleg Sheikin.</li></ul>
+<p><font color="#700000"><b>2003-03-23 02:38</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/res/vncviewer.rc:</font> 
+A tiny change in the layout of the &quot;load connection&quot; button.</li></ul>
+<p><font color="#700000"><b>2003-03-23 02:23</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: AboutBox.cpp, ClientConnection.cpp, ClientConnection.h, ClientConnectionFile.cpp, Daemon.cpp, Flasher.cpp, SessionDialog.cpp, VNCHelp.cpp, VNCOptions.cpp, VNCOptions.h, VNCviewerApp32.cpp, vncviewer.cpp, vncviewer.h:</font> 
+Minor code formatting improvements, from Oleg Sheikin.</li></ul>
+<p><font color="#700000"><b>2003-03-23 02:19</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.cpp, ClientConnection.h, ClientConnectionFile.cpp, SessionDialog.cpp, SessionDialog.h, VNCOptions.cpp, VNCOptions.h, vncviewer.cpp, vncviewer.h, res/resource.h, res/vncviewer.rc:</font> 
+In the &quot;Connection details&quot; dialog box, added the possibility to load connection parameters from a file. In the &quot;Options&quot; dialog box, added the possibility to set port number for the listening mode. This is a patch from Oleg Sheikin.</li></ul>
+<p><font color="#700000"><b>2003-03-23 02:14</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp:</font> 
+Fixed a bug with writing to the memory beyond the declared array size. This bug caused strange effects like strlen(&quot;&quot;) returning 1 :-) thus preventing file transfer interface from working correctly.</li></ul>
+<p><font color="#700000"><b>2003-03-23 02:11</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncClient.cpp:</font> 
+Fixed a bug - the code did not check the return value properly after calling FindFirstFile(). This bug crashed the server after a client requested the file list for a non-existing path.</li></ul>
+<p><font color="#700000"><b>2003-03-23 02:07</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/CapsContainer.h:</font> 
+Eliminated numerous warnings while compiling in the DEBUG configuration.</li></ul>
+<p><font color="#700000"><b>2003-03-18 04:11</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/FileTransfer.cpp, vncviewer/FileTransfer.h, vncviewer/res/vncviewer.rc, winvnc/vncClient.cpp:</font> 
+Fixes in the file transfer implementation, from Dennis Syrovatsky.</li></ul>
+<p><font color="#700000"><b>2003-03-12 23:35</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">rfb/rfbproto.h:</font> 
+Minor formatting change in a comment.</li></ul>
+<p><font color="#700000"><b>2003-03-12 23:27</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp:</font> 
+A tiny change in the comment text.</li></ul>
+<p><font color="#700000"><b>2003-03-12 16:10</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncClient.cpp:</font> 
+Minor code enhancements.</li></ul>
+<p><font color="#700000"><b>2003-03-12 00:11</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/VNCviewerApp32.cpp:</font> 
+Restored broken feature to listen for reverse connections on an arbitrary port.</li></ul>
+<p><font color="#700000"><b>2003-03-08 00:52</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: VNCOptions.cpp, res/vncviewer.rc:</font> 
+Minor bugfixes and cleanups from Oleg Sheikin.</li></ul>
+<p><font color="#700000"><b>2003-03-06 15:20</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/VNCOptions.cpp:</font> 
+Handling of the WM_HELP message in the Options dialog.</li></ul>
+<p><font color="#700000"><b>2003-03-06 15:14</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: VNCOptions.cpp, res/vncviewer.rc:</font> 
+Restrictions on entering incorrect values to the controls &quot;Scale by&quot;, &quot;Amount of connections&quot; and &quot;Log level&quot;, in the Options dialog; a change from Oleg Sheikin.</li></ul>
+<p><font color="#700000"><b>2003-03-06 15:10</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.cpp, vncviewer.cpp, res/toolbar.bmp:</font> 
+Added a button to the toolbar for file transfers, and an accelerator Ctrl-Alt-Shift-E; a change by Oleg Sheikin.</li></ul>
+<p><font color="#700000"><b>2003-03-06 15:04</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: FileTransfer.cpp, res/resource.h, res/vncviewer.rc:</font> 
+Changed width of columns in the FileTransfer dialog to get rid of a horizontal scroll bar; a patch from Dennis Syrovatsky.</li></ul>
+<p><font color="#700000"><b>2003-03-06 14:52</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: SessionDialog.cpp, VNCHelp.cpp, VNCHelp.h, VNCOptions.cpp, VNCOptions.h, vncviewer.cpp, vncviewer.dsp, vncviewer.h, res/resource.h, res/vncviewer.rc:</font> 
+The &quot;Connection Options&quot; dialog has been converted from a Property Sheet based solution to a modal dialog window with the Tab Control element. This solves the problem of double pressing the F1 key. The code has been transformed into a separate class, VNCHelp. This is a set of changes by Oleg Sheikin.</li></ul>
+<p><font color="#700000"><b>2003-03-06 13:47</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: libjpeg/libjpeg.dsp, zlib/zlib.dsp:</font> 
+MS-DOS style line endings converted to Unix linefeeds. Let CVS convert them when needed.</li></ul>
+<p><font color="#700000"><b>2003-03-06 13:40</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: FileTransfer.cpp, vncviewer.dsp, res/filereload.ico, res/fileup.ico, res/resource.h, res/vncviewer.rc:</font> 
+Various changes in the FileTransfer dialog, e.g. added &quot;Up&quot; and &quot;Reload&quot; buttons.</li></ul>
+<p><font color="#700000"><b>2003-02-28 17:33</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.cpp, res/vncviewer.rc:</font> 
+Improved system and tray menus of the vncviewer.</li></ul>
+<p><font color="#700000"><b>2003-02-27 01:33</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp, winvnc/vncClient.cpp:</font> 
+Added message type negotiation -- now all the protocol messages used in file transfers are properly advertised by the server. The client enables file transfers only if it knows they are supported by the server.</li></ul>
+<p><font color="#700000"><b>2003-02-26 17:36</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">rfb/rfbproto.h:</font> 
+Leading tabs replaced with spaces, to make the file suitable for inclusion into the Unix version of TightVNC.</li></ul>
+<p><font color="#700000"><b>2003-02-26 17:32</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">rfb/rfbproto.h, vncviewer/ClientConnection.cpp, winvnc/vncClient.cpp:</font> 
+Added signatures for non-standard messages and known encodings into rfbproto.h, to prevent duplication in server and viewer parts.</li></ul>
+<p><font color="#700000"><b>2003-02-25 20:33</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">rfb/rfbproto.h, vncviewer/ClientConnection.cpp, vncviewer/ClientConnection.h, winvnc/vncClient.cpp:</font> 
+Protocol version 3.130 has been changed once again. Now the server informs the client about all supported encodings, besides &quot;raw&quot;. The client can use this information to choose which encodings to request (although current viewer does not try to be that smart).</li></ul>
+<p><font color="#700000"><b>2003-02-25 20:28</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp, winvnc/vncClient.cpp, winvnc/vncClient.h:</font> 
+Both the server and the viewer were made interoperable with the RFB protocol 3.3 used in the standard VNC/RealVNC and in TightVNC 1.2.x versions.</li></ul>
+<p><font color="#700000"><b>2003-02-25 20:25</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: CapsContainer.cpp, CapsContainer.h, ClientConnection.cpp, ClientConnection.h, vncviewer.dsp:</font> 
+New CapsContainer class has been implemented. It is used to keep lists of protocol features (capabilities) advertised by the server in protocol version 3.130. The ClientConnection class maintains four capability lists: tunneling methods, authentication schemes, server->client protocol messages, and client->server messages.</li></ul>
+<p><font color="#700000"><b>2003-02-25 02:43</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">rfb/rfbproto.h, winvnc/vncClient.cpp:</font> 
+A typo fixed, and a questionable comment removed.</li></ul>
+<p><font color="#700000"><b>2003-02-25 02:40</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">rfb/rfbproto.h, vncviewer/ClientConnection.cpp, vncviewer/ClientConnection.h, winvnc/vncClient.cpp:</font> 
+For recent protocol changes (version 3.130), structure and field names have been changed. Also, corresponding functions in both server and client have been renamed.</li></ul>
+<p><font color="#700000"><b>2003-02-25 02:37</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">rfb/rfbproto.h, vncviewer/ClientConnection.cpp, vncviewer/ClientConnection.h, vncviewer/FileTransfer.cpp, vncviewer/FileTransfer.h, vncviewer/vncviewer.dsp, vncviewer/res/resource.h, vncviewer/res/vncviewer.rc, winvnc/vncClient.cpp:</font> 
+Initial file transfer implementation from Dennis Syrovatsky.</li></ul>
+<p><font color="#700000"><b>2003-02-23 12:51</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">rfb/rfbproto.h, vncviewer/rfb.h, vncviewer/vncviewer.dsp, winvnc/WinVNC.dsp, winvnc/rfb.h:</font> 
+The rfbproto.h file from both winvnc/ and vncviewer/ has been moved to the new rfb/ directory, to have just one copy instead of two.</li></ul>
+<p><font color="#700000"><b>2003-02-23 12:44</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncClient.h, vncServer.cpp, vncServer.h:</font> 
+Unused code has been removed -- m_capability and m_teleport fields in the vncClient class, and corresponding functions in both vncClient and vncServer.</li></ul>
+<p><font color="#700000"><b>2003-02-23 12:35</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/.cvsignore:</font> 
+Ignoring WinVNC.log.bak as well.</li></ul>
+<p><font color="#700000"><b>2003-02-23 00:31</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp, vncviewer/ClientConnection.h, winvnc/vncClient.cpp:</font> 
+The protocol has been changed, the protocol version is now 3.130. Protocol modification make it possible to negotiate &quot;tunneling&quot; (e.g. encryption) methods, authentication types and additional protocol messages. This version of the protocol is incompatible with 3.3, compatibility issues should be solved in the next commit.</li></ul>
+<p><font color="#700000"><b>2003-02-23 00:28</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/.cvsignore:</font> 
+Ignoring WinVNC.log.</li></ul>
+<p><font color="#700000"><b>2003-02-23 00:25</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.cpp, ClientConnection.h:</font> 
+Reverted from the protocol version 3.5 back to 3.3 in the viewer. Also, removed the &quot;inline&quot; modifier from the ClientConnection::ReadExact() function.</li></ul>
+<p><font color="#700000"><b>2003-02-19 14:40</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncProperties.cpp:</font> 
+A quick fix for the problem with &quot;QuerySetting&quot; and &quot;QueryTimeout&quot; options -- they could be copied from user to default settings without user's intention.</li></ul>
+<p><font color="#700000"><b>2003-02-19 14:39</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/VNCOptions.cpp:</font> 
+Removed an extra line causing a compilation failure.</li></ul>
+<p><font color="#700000"><b>2003-02-19 14:30</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">.cvsignore, vncviewer/.cvsignore, vncviewer/libjpeg/.cvsignore, vncviewer/omnithread/.cvsignore, vncviewer/res/.cvsignore, vncviewer/zlib/.cvsignore, winvnc/.cvsignore, winvnc/VNCHooks/.cvsignore, winvnc/libjpeg/.cvsignore, winvnc/zlib/.cvsignore:</font> 
+Added .cvsignore files, to make CVS ignore library and temporary files.</li></ul>
+<p><font color="#700000"><b>2003-02-19 14:16</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">.cvsignore, vncviewer/.cvsignore, vncviewer/libjpeg/.cvsignore, vncviewer/omnithread/.cvsignore, vncviewer/res/.cvsignore, vncviewer/zlib/.cvsignore, winvnc/.cvsignore, winvnc/VNCHooks/.cvsignore, winvnc/libjpeg/.cvsignore, winvnc/zlib/.cvsignore:</font> 
+file .cvsignore was initially added on branch BRANCH_1_2_STABLE.</li></ul>
+<p><font color="#700000"><b>2003-02-07 15:42</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/VNCOptions.cpp:</font> 
+Don't try to show a context help window if the control id is zero. Also, set popup.cbStruct to the correct value.</li></ul>
+<p><font color="#700000"><b>2003-02-07 15:30</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp:</font> 
+Reset keyboard modifiers' states on loosing focus.</li></ul>
+<p><font color="#700000"><b>2003-02-07 15:28</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: SessionDialog.cpp, VNCOptions.cpp, res/resource.h, res/vncviewer.rc:</font> 
+This patch from Oleg Sheikin sets correct default connection options, and adds an ability to show numberic trackbar positions for compression and JPEG quality levels.</li></ul>
+<p><font color="#700000"><b>2003-02-07 15:11</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnectionFullScreen.cpp, VNCOptions.cpp:</font> 
+The values of the VNCOptions::m_skipprompt variable were made correspond to its name; a patch from Oleg Sheikin.</li></ul>
+<p><font color="#700000"><b>2003-02-06 05:00</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncAcceptDialog.cpp, vncClient.cpp:</font> 
+Major bugfix -- handling of the QueryAllowNoPass option was seriously broken. In addition to solving this issue, this patch re-organizes and fixes the InitAuthenticate() function in several more ways. E.g. the order of checks is now different -- first it checks for disabled empty passwords and loopback connections, then it checks AuthHosts settings and shows the query dialog, and only after that it requests authentication if necessary. Now the InitAuthenticate() function is much more mature and its code is much more readable.</li></ul>
+<p><font color="#700000"><b>2003-02-06 04:25</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp:</font> 
+A compilation warning was eliminated, and a few obsolete comments were removed.</li></ul>
+<p><font color="#700000"><b>2003-02-05 23:42</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/VNCOptions.cpp:</font> 
+Applied a patch to save boolean configuration items as DWORD in the registry, instead of strings.</li></ul>
+<p><font color="#700000"><b>2003-02-05 23:38</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/SessionDialog.cpp:</font> 
+Minor cleanups.</li></ul>
+<p><font color="#700000"><b>2003-02-05 21:08</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncClient.cpp, vncDesktop.cpp, vncProperties.cpp, vncServer.cpp:</font> 
+A cleanup: &quot;#if !defined HORIZONLIVE&quot; -> &quot;#ifndef HORIZONLIVE&quot;.</li></ul>
+<p><font color="#700000"><b>2003-02-05 05:25</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: AboutBox.cpp, res/vncviewer.rc:</font> 
+The layout and functionality of the Help dialog has been improved. The Escape key handling has been implemented in Help and About dialogs.</li></ul>
+<p><font color="#700000"><b>2003-02-05 05:18</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/SessionDialog.cpp:</font> 
+A workaround for the problem with crashing on double-pressing F1 in the session dialog.</li></ul>
+<p><font color="#700000"><b>2003-02-05 05:14</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: vncviewer.dsp, omnithread/omnithread.dsp, zlib/zlib.dsp:</font> 
+MSVC++ project files updated -- non-working Profile configuration has been removed, Debug configuration has been corrected.</li></ul>
+<p><font color="#700000"><b>2003-02-05 00:43</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.cpp, vncviewer.cpp:</font> 
+Fixed a bug with window positioning when the toolbar is off, in the SizeWindow() method. Also, the &quot;centered&quot; parameter of the same function is now functional. These changes were sent by Oleg Sheikin.</li></ul>
+<p><font color="#700000"><b>2003-02-03 16:10</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.cpp, ClientConnectionFullScreen.cpp, SessionDialog.cpp, VNCOptions.cpp, vncviewer.cpp:</font> 
+Code formatting fixes from Oleg Sheikin.</li></ul>
+<p><font color="#700000"><b>2003-01-22 07:54</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.rc, resource.h, vncMenu.cpp, vncProperties.cpp, vncProperties.h, vncServer.cpp, vncService.cpp, vncService.h:</font> 
+Ported code from RealVNC 3.3.6: added RemoveWallpaper and LockSetting options to the Properties dialog; ported changes from vncMenu.cpp including AllowEditClients option, killing Active Desktop on removing wallpaper, and other less significant changes.</li></ul>
+<p><font color="#700000"><b>2003-01-22 05:42</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncProperties.cpp:</font> 
+Minor GUI improvement: moving initial keyboard focus in the Properties dialog to the password text field.</li></ul>
+<p><font color="#700000"><b>2003-01-22 05:37</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.cpp, WinVNC.h, WinVNC.rc, resource.h, vncClient.cpp, vncMenu.cpp, vncMenu.h, vncProperties.cpp, vncProperties.h, vncServer.cpp, vncServer.h, vncService.cpp, vncService.h:</font> 
+Ported support for two passwords from BRANCH_1_2_STABLE.</li></ul>
+<p><font color="#700000"><b>2003-01-22 05:34</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/WinVNC.dsp:</font> 
+Moved resource files to the Resource folder in the project filelist.</li></ul>
+<p><font color="#700000"><b>2003-01-16 20:03</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: vncviewer.dsp, res/resource.h, res/vncviewer.rc:</font> 
+Improved layout, text and help messages for the New Connection dialog, corrected the MSVC++ project file (only for the Release configuration yet).</li></ul>
+<p><font color="#700000"><b>2003-01-16 19:27</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: AboutBox.cpp, AboutBox.h, ClientConnection.cpp, ClientConnection.h, ClientConnectionClipboard.cpp, ClientConnectionFullScreen.cpp, Daemon.cpp, Flasher.cpp, SessionDialog.cpp, SessionDialog.h, VNCOptions.cpp, VNCOptions.h, VNCviewerApp.cpp, VNCviewerApp.h, VNCviewerApp32.cpp, VNCviewerApp32.h, vncviewer.cpp, vncviewer.dsp, vncviewer.h, res/resource.h, res/toolbar.bmp, res/vncviewer.rc:</font> 
+A set of major changes from Oleg Sheikin: toolbar, hotkeys, context help, more configuration options, saving per-connection options in the registry, other GUI improvements.</li></ul>
+<p><font color="#700000"><b>2002-12-26 18:28</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">BUILDING.txt:</font> 
+Removed the note about &quot;No_CORBA&quot; configuration which is now obsolete.</li></ul>
+<p><font color="#700000"><b>2002-12-26 18:26</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.dsp, VNCHooks/VNCHooks.dsp, libjpeg/libjpeg.dsp, omnithread/omnithread.dsp, zlib/zlib.dsp:</font> 
+Renamed &quot;No_CORBA&quot; build target to &quot;Release&quot;, removed build targets that were not used, and corrected project configurations for remaining targets.</li></ul>
+<p><font color="#700000"><b>2002-12-26 18:23</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncKeymap.cpp:</font> 
+Eliminated warnings caused by using std::map in the Debug build configuration.</li></ul>
+<p><font color="#700000"><b>2002-12-21 00:21</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncClient.cpp, vncDesktop.cpp:</font> 
+A fix for slow switching between local and remote cursor modes, from Vladimir Vologjanin.</li></ul>
+<p><font color="#700000"><b>2002-12-19 23:53</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncDesktop.cpp, vncDesktop.h:</font> 
+A CopyRect bug has been fixed. Now it works in any part of the screen. The method vncDesktop::GetChangedRegion has been improved. CPU load and bandwidth requirements should have been reduced.</li></ul>
+<p><font color="#700000"><b>2002-12-17 04:22</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncKeymap.cpp:</font> 
+Eliminated compilation warnings under MS VC++.</li></ul>
+<p><font color="#700000"><b>2002-12-17 03:34</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncDesktop.cpp, vncDesktop.h:</font> 
+CopyRect handling has been improved. Popup windows aren't processed anymore. Improved &quot;poll window&quot; subsystem. Reduced CPU load in polling modes.</li></ul>
+<p><font color="#700000"><b>2002-12-16 23:05</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncProperties.cpp:</font> 
+This change seems to solve the password reset problem. The password could get changed in the registry on opening Properties dialog and hitting the Ok button, without making any changes.</li></ul>
+<p><font color="#700000"><b>2002-12-13 20:10</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncMenu.cpp:</font> 
+A bugfix from HorizonLive.com: &quot;We had found a bug with the LiveShare build of tight-vnc. The app would crash if you attempted to '-connect' to an IP address that didn't resolve.&quot;</li></ul>
+<p><font color="#700000"><b>2002-12-11 17:36</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.rc, vncClient.cpp, vncDesktop.cpp, vncProperties.cpp, vncServer.cpp, vncServer.h:</font> 
+A number of GUI changes in HorizonLive version. Improvements in the code for blocking remote events on local activity (for MS Excel).</li></ul>
+<p><font color="#700000"><b>2002-12-11 17:27</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.rc, vncConnDialog.cpp:</font> 
+Allowing host::port format in the &quot;Add new client&quot; dialog.</li></ul>
+<p><font color="#700000"><b>2002-12-11 17:24</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnectionFile.cpp, VNCOptions.h:</font> 
+Registering .vnc extension on saving a .vnc file, a change from RealVNC 3.3.6.</li></ul>
+<p><font color="#700000"><b>2002-12-11 17:22</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: VNCOptions.cpp, VNCOptions.h, VNCviewerApp32.cpp:</font> 
+Now the viewer accepts a port number after the -listen command-line option. The changes were ported from RealVNC 3.3.6.</li></ul>
+<p><font color="#700000"><b>2002-12-11 17:20</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp:</font> 
+A macro to compare pixel formats, and better default formats for 8-bit and 16-bit modes. The changes were ported from RealVNC 3.3.6.</li></ul>
+<p><font color="#700000"><b>2002-12-11 17:18</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncService.cpp, vncService.h:</font> 
+Ported vncService changes from RealVNC 3.3.6. The modifications include a change in the service helper code -- now it tries to contact the service several times, waiting up to one minute.</li></ul>
+<p><font color="#700000"><b>2002-12-11 17:13</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/KeyMap.cpp, winvnc/keysymdef.h, winvnc/vncAbout.h, winvnc/vncClient.cpp, winvnc/vncClient.h, winvnc/vncKeymap.cpp, winvnc/vncKeymap.h:</font> 
+Ported improved keyboard handling from RealVNC 3.3.6.</li></ul>
+<p><font color="#700000"><b>2002-12-11 14:15</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncClient.cpp, vncClient.h, vncKeymap.cpp, vncKeymap.h, vncProperties.cpp:</font> 
+Bug in vncProperties (disabling &quot;polling cycle&quot; control when &quot;poll full screen&quot; control is enabled) have been fixed. Tracking of remote keyboard events in vncClient and vncKeymap has been improved.</li></ul>
+<p><font color="#700000"><b>2002-12-08 16:43</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncBuffer.cpp, vncClient.cpp, vncDesktop.cpp, vncDesktop.h, vncProperties.cpp:</font> 
+A set of changes from Vladimir Vologjanin: CopyRect stuff has been moved from vncClient to vncDesktop class and has been improved. Polling system has been improved (fixed some bugs in GetChangedRegion, CaptureScreen, CheckRects and main loop of the vncDesktop thread). Performance issue qith the &quot;poll full screen&quot; mode has been fixed. Issue with drawing the mouse pointer (on movement of the mouse on a server) has been fixed.</li></ul>
+<p><font color="#700000"><b>2002-11-30 22:11</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncDesktop.cpp:</font> 
+There was a compilation error in previous revision.</li></ul>
+<p><font color="#700000"><b>2002-11-28 19:23</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">TightVNC.url:</font> 
+file TightVNC.url was initially added on branch BRANCH_1_2_STABLE.</li></ul>
+<p><font color="#700000"><b>2002-11-27 22:24</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: tableinitcmtemplate.cpp, vncClient.cpp, vncDesktop.cpp, vncService.cpp:</font> 
+Improved some log messages on errors.</li></ul>
+<p><font color="#700000"><b>2002-11-27 22:15</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.cpp, WinVNC.h, vncService.cpp, vncService.h:</font> 
+Adopted new -reinstall option from RealVNC 3.3.5, together with a number of other changes from vncService.cpp.</li></ul>
+<p><font color="#700000"><b>2002-11-26 21:50</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/WinVNC.rc:</font> 
+Improved layouts of the &quot;Properties&quot; and &quot;Advanced Properties&quot; dialogs -- now &quot;OK&quot;, &quot;Apply&quot; and &quot;Cancel&quot; buttons on both dialogs look similarly.</li></ul>
+<p><font color="#700000"><b>2002-11-22 17:49</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncBuffer.cpp, vncClient.cpp, vncDesktop.cpp, vncProperties.cpp, vncProperties.h:</font> 
+A set of bug fixes, architecture changes and GUI improvments from Vladimir Vologjanin. Most improvements reflect new polling architecture.</li></ul>
+<p><font color="#700000"><b>2002-11-20 03:22</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.rc, resource.h, vncBuffer.cpp, vncBuffer.h, vncClient.cpp, vncClient.h, vncDesktop.cpp, vncDesktop.h, vncProperties.cpp, vncServer.cpp, vncServer.h:</font> 
+Another set of changes from Vladimir Vologjanin. Added an edit field to set polling cycle for new &quot;Poll full screen&quot; implementation. A number of bug fixes, performance fixes and architectural changes, especially in the polling implementation.</li></ul>
+<p><font color="#700000"><b>2002-11-20 03:01</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncHTTPConnect.cpp:</font> 
+A fix for a compilation problem introduced in the previous revision.</li></ul>
+<p><font color="#700000"><b>2002-11-13 20:21</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.dsp, WinVNC.rc, resource.h, vncHTTPConnect.cpp, res/OptionsFrame.class, res/RecordingFrame.class, res/ReloginPanel.class, res/RfbProto.class, res/SocketFactory.class, res/VncCanvas.class, res/VncViewer.class, res/VncViewer.jar:</font> 
+Java viewer updated to the most recent version.</li></ul>
+<p><font color="#700000"><b>2002-11-05 00:38</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncClient.cpp:</font> 
+Removed a piece of code from the previous revision that should not appear there at all.</li></ul>
+<p><font color="#700000"><b>2002-11-04 22:55</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncRegion.cpp, vncRegion.h:</font> 
+Minor optimization -- made the vncRegion::isEmpty() method inline.</li></ul>
+<p><font color="#700000"><b>2002-11-04 22:53</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncClient.cpp, vncClient.h:</font> 
+Added support for new CursorPos pseudo-encoding which allows to transmit pointer position from server to clients. Also, eliminated high CPU usage on sending cursor shape updates.</li></ul>
+<p><font color="#700000"><b>2002-11-04 13:39</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/VNCOptions.cpp:</font> 
+Enabling JPEG compression in Tight encoding by default, new /nojpeg option to disable JPEG compression.</li></ul>
+<p><font color="#700000"><b>2002-10-30 21:29</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.cpp, ClientConnection.h, ClientConnectionCursor.cpp:</font> 
+Added support for new CursorPos pseudo-encoding which allows to transmit pointer position from server to clients.</li></ul>
+<p><font color="#700000"><b>2002-10-29 14:51</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncProperties.cpp:</font> 
+Copyright strings updated.</li></ul>
+<p><font color="#700000"><b>2002-10-29 14:42</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncProperties.cpp:</font> 
+Minor GUI improvement -- on selecting radio buttons or checkboxes, move focus to the related edit controls.</li></ul>
+<p><font color="#700000"><b>2002-10-29 14:40</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/: vncviewer.cpp, res/vncviewer.rc:</font> 
+Added support for the format &quot;host::port&quot; in the connection dialog, in addition to the standard &quot;host:display&quot; format.</li></ul>
+<p><font color="#700000"><b>2002-10-27 18:04</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/WinVNC.rc:</font> 
+Minor layout changes in the Properties dialog.</li></ul>
+<p><font color="#700000"><b>2002-10-27 17:58</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">vncviewer/vncviewer.dsp:</font> 
+Two files were not included into the project for some reason.</li></ul>
+<p><font color="#700000"><b>2002-10-26 15:57</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncBuffer.cpp, vncBuffer.h, vncClient.cpp, vncClient.h, vncDesktop.cpp, vncDesktop.h, vncServer.cpp, vncServer.h:</font> 
+Applied patch from Vladimir Vologjanin to improve polling system of WinVNC.</li></ul>
+<p><font color="#700000"><b>2002-10-14 03:53</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.rc, resource.h, rfb.h, vncProperties.cpp, vncProperties.h, vncServer.cpp, vncServer.h:</font> 
+Major layout changes in &quot;Properties&quot; and &quot;Advanced Properties&quot; dialogs. New &quot;Properties&quot; dialog allows to specify arbitrary RFB and HTTP ports directly, in addition to display numbers.</li></ul>
+<p><font color="#700000"><b>2002-10-11 04:40</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncClient.cpp:</font> 
+Code formatting changes.</li></ul>
+<p><font color="#700000"><b>2002-10-11 04:35</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/MatchWindow.cpp:</font> 
+Hopefully fixed a problem with changing the position of shared area -- moving the selection window did not caused changes on the client side.</li></ul>
+<p><font color="#700000"><b>2002-10-11 00:00</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncClient.cpp, vncProperties.cpp:</font> 
+A bugfix from Vladimir Vologjanin, to solve the issue with high CPU load when the &quot;Poll Full Screen&quot; mode is on.</li></ul>
+<p><font color="#700000"><b>2002-10-10 23:35</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: vncBuffer.cpp, vncBuffer.h, vncClient.cpp, vncClient.h, vncDesktop.cpp, vncEncodeCoRRE.cpp, vncEncodeCoRRE.h, vncEncodeHexT.cpp, vncEncodeHexT.h, vncEncodeRRE.cpp, vncEncodeRRE.h, vncEncodeTight.cpp, vncEncodeTight.h, vncEncodeZlib.cpp, vncEncodeZlib.h, vncEncodeZlibHex.cpp, vncEncodeZlibHex.h, vncEncoder.cpp, vncEncoder.h, vncServer.cpp, vncServer.h:</font> 
+A patch from Vladimir Vologjanin. It includes major architectural changes in partial screen sharing, and a number of bugfixes.</li></ul>
+<p><font color="#700000"><b>2002-10-10 20:50</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.dsp, WinVNC.rc, resource.h, vncMenu.cpp, vncProperties.cpp, res/ico00004.ico:</font> 
+Applied a patch from HorizonLive -- &quot;The changes affect the icon that is displayed when the host is successfully connected. Also, the default setting for 'PollFullScreen' has been set to TRUE for LiveShare.&quot;</li></ul>
+<p><font color="#700000"><b>2002-10-01 01:18</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.cpp, WinVNC.h, WinVNC.rc, resource.h, vncAcceptReverseDlg.cpp, vncAcceptReverseDlg.h, vncClient.cpp, vncMenu.cpp, vncProperties.cpp, vncServer.cpp, vncServer.h, vncService.cpp, vncService.h, VNCHooks/VNCHooks.cpp:</font> 
+The &quot;-nosettings&quot; feature was added and some minor bugs were fixed, a patch from Vladimir Vologjanin.</li></ul>
+<p><font color="#700000"><b>2002-09-22 15:44</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: VSocket.cpp, vncDesktop.cpp:</font> 
+Reverted minor cleanups provided by Andrew van der Stock aimed to get rid of compilation warnings under Visual Studio 7. These changes in #include directives seemed to add dependencies to VC/MFC DLLs.</li></ul>
+<p><font color="#700000"><b>2002-09-12 18:55</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">README-bin.txt:</font> 
+Included a paragraph about donations.</li></ul>
+<p><font color="#700000"><b>2002-09-10 15:14</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncEncodeTight.cpp:</font> 
+Decreased JPEG quality factors for low quality levels.</li></ul>
+<p><font color="#700000"><b>2002-09-06 18:13</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncClient.cpp:</font> 
+Fixed a problem with processing of mouse events -- coordinates could be incorrect if mouse was moved on the server or by another client (a patch from Greg Breland).</li></ul>
+<p><font color="#700000"><b>2002-09-01 15:17</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">BUILDING.txt, InstInfo-unstable.txt, README-bin.txt, README.txt, TightVNC.iss, winvnc/WinVNC.rc, winvnc/VNCHooks/VNCHooks.rc:</font> 
+Version strings changed, version 1.3dev1. Added warnings about unstable version. Uninstall disabled in the installation script, to let unstable versions to co-exist with installed stable ones.</li></ul>
+<p><font color="#700000"><b>2002-09-01 13:04</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">[MANY FILES]:</font> 
+A LOT of changes. Committed the work of Vladimir Vologjanin performed for HorizonLive.com, Inc. This work includes implementation of partial screen sharing, variable desktop geometry, a possibility to disable remote input on local keyboard/mouse activity, changes in user interface etc. Also, added a special &quot;HorizonLive&quot; build target to build HorizonLive's LiveShare -- a specialized WinVNC version.</li></ul>
+<p><font color="#700000"><b>2002-08-30 20:51</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">BUILDING.txt, README-bin.txt, README.txt, TightVNC.iss, vncviewer/res/vncviewer.rc, winvnc/WinVNC.rc, winvnc/VNCHooks/VNCHooks.rc:</font> 
+Version strings changed, version 1.2.6.</li></ul>
+<p><font color="#700000"><b>2002-08-30 20:25</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/: VSocket.cpp, VSocket.h:</font> 
+Now checking if an address is in use before the bind() call is optional and turned off by default. This lets WinVNC to listen on specified port numbers regardless of is the address is used by another process. If the display number is set to &quot;auto&quot;, WinVNC will behave as usual -- it will find the lowest available display. One visible effect of this change is that the delay between starting up and showing the icon is greatly reduced.</li></ul>
+<p><font color="#700000"><b>2002-08-30 20:19</b></font> <b>const_k</b></p>
+<ul><li><font color="#007000">winvnc/vncauth.c:</font> 
+Minor cleanups.</li></ul>
+<p><font color="#700000"><b>2002-08-10 18:32</b></font> <b>const</b></p>
+<ul><li><font color="#007000">TightVNC.iss:</font> 
+Updates install script, to install a copy of the TightVNC Web site, and to create shortcuts to most important documentation pages.</li></ul>
+<p><font color="#700000"><b>2002-08-10 16:24</b></font> <b>const</b></p>
+<ul><li><font color="#007000">BUILDING.txt, README-bin.txt, README.txt, TightVNC.iss, vncviewer/res/vncviewer.rc, winvnc/WinVNC.rc, winvnc/VNCHooks/VNCHooks.rc:</font> 
+Version strings changed, version 1.2.5.</li></ul>
+<p><font color="#700000"><b>2002-08-05 22:56</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/: vncviewer.sln, libjpeg/libjpeg.vcproj, zlib/zlib.vcproj:</font> 
+Updated Visual Studio 7 files from Andrew van der Stock.</li></ul>
+<p><font color="#700000"><b>2002-08-05 15:22</b></font> <b>const</b></p>
+<ul><li><font color="#007000">InstInfo.txt:</font> 
+Formating fixes for variable-width fonts.</li></ul>
+<p><font color="#700000"><b>2002-08-05 15:08</b></font> <b>const</b></p>
+<ul><li><font color="#007000">InstInfo.txt:</font> 
+Updated notes on the remote upgrade.</li></ul>
+<p><font color="#700000"><b>2002-08-05 14:35</b></font> <b>const</b></p>
+<ul><li><font color="#007000">README-bin.txt:</font> 
+README for binary distributions.</li></ul>
+<p><font color="#700000"><b>2002-08-05 00:23</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/: vncviewer.sln, vncviewer.vcproj, libjpeg/libjpeg.vcproj, omnithread/omnithread.vcproj, zlib/zlib.vcproj:</font> 
+MS Visual Studio 7 solution and project files.</li></ul>
+<p><font color="#700000"><b>2002-08-05 00:15</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.dsp, WinVNC.rc, WinVNC.vcproj, resource.h, vncHTTPConnect.cpp, res/ButtonPanel.class, res/OptionsFrame.class, res/RecordingFrame.class, res/RfbProto.class, res/SessionRecorder.class, res/VncCanvas.class, res/VncViewer.class, res/VncViewer.jar:</font> 
+Java viewer updated to the most recent version.</li></ul>
+<p><font color="#700000"><b>2002-08-04 23:57</b></font> <b>const</b></p>
+<ul><li><font color="#007000">InstInfo.txt, TightVNC.iss:</font> 
+Enabled remote upgrade in the installation script.</li></ul>
+<p><font color="#700000"><b>2002-08-04 23:47</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/WinVNC.rc:</font> 
+&quot;Disable New Clients&quot; -> &quot;&amp;Disable New Clients&quot; in the menu.</li></ul>
+<p><font color="#700000"><b>2002-08-02 20:40</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.sln, WinVNC.vcproj, VNCHooks/VNCHooks-vc.def, VNCHooks/VNCHooks.def, VNCHooks/VNCHooks.vcproj, libjpeg/libjpeg.vcproj, omnithread/omnithread.vcproj, zlib/zlib.vcproj:</font> 
+Included solution and project files for MS Visual Studio 7, prepared by Andrew van der Stock.</li></ul>
+<p><font color="#700000"><b>2002-08-02 20:20</b></font> <b>const</b></p>
+<ul><li><font color="#007000">TightVNC.iss, vncviewer/ClientConnectionCursor.cpp, vncviewer/ClientConnectionTight.cpp, winvnc/vncBuffer.cpp, winvnc/vncBuffer.h, winvnc/vncClient.cpp, winvnc/vncClient.h, winvnc/vncDesktop.cpp, winvnc/vncEncodeTight.cpp, winvnc/vncEncodeTight.h, winvnc/vncEncoder.cpp, winvnc/vncEncoder.h, winvnc/VNCHooks/SharedData.cpp, winvnc/VNCHooks/SharedData.h:</font> 
+Corrected the spelling of my name in the copyright strings. :-)</li></ul>
+<p><font color="#700000"><b>2002-08-02 20:19</b></font> <b>const</b></p>
+<ul><li><font color="#007000">README.txt:</font> 
+Minor updates.</li></ul>
+<p><font color="#700000"><b>2002-08-02 20:03</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/: VSocket.cpp, WinVNC.cpp, tableinitcmtemplate.cpp, tableinittctemplate.cpp, tabletranstemplate.cpp, translate.cpp, vncBuffer.cpp, vncClient.cpp, vncDesktop.cpp, vncEncodeCoRRE.cpp, vncEncodeCoRRE.h, vncEncodeRRE.cpp, vncEncodeRRE.h, vncEncodeTight.h, vncHTTPConnect.cpp, vncRegion.cpp, vncServer.cpp, libjpeg/jconfig.h, libjpeg/jmorecfg.h:</font> 
+A set of minor fixes from Andrew van der Stock to suppress compilation warnings under MS Visual Studio 7.</li></ul>
+<p><font color="#700000"><b>2002-08-02 18:39</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/VSocket.cpp:</font> 
+Fixed a problem in I/O subsystem that was introduced in TightVNC 1.2.2 and caused major slowdown in communication with clients.</li></ul>
+<p><font color="#700000"><b>2002-08-02 18:31</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/VSocket.h:</font> 
+Fixed copyright strings.</li></ul>
+<p><font color="#700000"><b>2002-07-30 01:21</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp:</font> 
+Tiny formatting cleanup. The reason for this commit is that I forgot to fully describe the changes introduced in the previous commit. ;-] The viewer window now will be resized after changing the preferences only if new scaling factor was set. Also, the window won't be centered after such a size change -- it will try to preserve its current position. In the full-screen mode, the viewer won't show the prompt each time the window size is changing.</li></ul>
+<p><font color="#700000"><b>2002-07-30 01:02</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.cpp, ClientConnection.h, ClientConnectionFullScreen.cpp:</font> 
+Support for the NewFBSize pseudo-encoding allowing to change framebuffer geometry on server's request.</li></ul>
+<p><font color="#700000"><b>2002-07-30 00:59</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/: vncHTTPConnect.cpp, vncHTTPConnect.h, vncProperties.cpp, vncServer.cpp, vncServer.h:</font> 
+Support for the new &quot;EnableURLParams&quot; registry setting to make the possibility to specify applet parameters in the URLs optional and turned off by default.</li></ul>
+<p><font color="#700000"><b>2002-07-30 00:55</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/vncHTTPConnect.cpp:</font> 
+Implemented a possibility to specify applet parameters in the URL request for the HTTP server.</li></ul>
+<p><font color="#700000"><b>2002-05-21 23:29</b></font> <b>const</b></p>
+<ul><li><font color="#007000">TightVNC.iss:</font> 
+ChangeLog.txt file should be included into the distribution.</li></ul>
+<p><font color="#700000"><b>2002-05-19 20:35</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/res/: RfbProto.class, VncCanvas.class, VncViewer.class, VncViewer.jar:</font> 
+Updated Java viewer.</li></ul>
+<p><font color="#700000"><b>2002-05-09 10:23</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/WinVNC.cpp:</font> 
+Spelling correction for debug messages.</li></ul>
+<p><font color="#700000"><b>2002-04-25 18:44</b></font> <b>const</b></p>
+<ul><li><font color="#007000">BUILDING.txt, README.txt, TightVNC.iss, vncviewer/res/vncviewer.rc, winvnc/WinVNC.rc, winvnc/VNCHooks/VNCHooks.rc:</font> 
+Version numbers updated for version 1.2.4.</li></ul>
+<p><font color="#700000"><b>2002-04-25 18:43</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/res/vncviewer.rc:</font> 
+MS-DOS-style carriage returns stripped.</li></ul>
+<p><font color="#700000"><b>2002-04-25 18:40</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/res/: AuthPanel.class, ButtonPanel.class, OptionsFrame.class, VncCanvas.class, VncViewer.class, VncViewer.jar:</font> 
+Updated Java viewer.</li></ul>
+<p><font color="#700000"><b>2002-04-25 18:32</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/: tableinitcmtemplate.cpp, vncClient.cpp, vncDesktop.cpp, vncEncoder.cpp, vncServer.cpp, vncService.cpp:</font> 
+Improved logging on errors, code cleanups.</li></ul>
+<p><font color="#700000"><b>2002-04-25 18:29</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/: d3des.c, translate.cpp, vncauth.c:</font> 
+Minor cleanups to eliminate compilation warnings.</li></ul>
+<p><font color="#700000"><b>2002-04-25 18:28</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/: vncHTTPConnect.cpp, vncSockConnect.cpp:</font> 
+Minor bugfixes to improve handling of special pseudo-connections used to exit from accept() system calls.</li></ul>
+<p><font color="#700000"><b>2002-04-25 10:37</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/vncProperties.cpp:</font> 
+Real passwords are never placed into the password text control in the WinVNC Properties dialog any more. This should prevent grabbing plain-text passwords from that text control.</li></ul>
+<p><font color="#700000"><b>2002-04-09 14:31</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/vncHTTPConnect.cpp:</font> 
+Improved HTML pages and templates for the built-in HTTP server.</li></ul>
+<p><font color="#700000"><b>2002-04-02 21:05</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp:</font> 
+Fixed a problem with listening viewer: initiating multiple non-shared connections crashed the viewer application.</li></ul>
+<p><font color="#700000"><b>2002-04-02 21:03</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.cpp, Daemon.cpp, Flasher.cpp:</font> 
+Fixed a problem with reporting error messages in the listening viewer, appeared when the sources were compiled with Borland C++ 5.5.</li></ul>
+<p><font color="#700000"><b>2002-04-02 01:59</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/Log.cpp, winvnc/Log.cpp:</font> 
+Writing log files with MSDOS/Windows-style end-of-lines instead of Unix-style single '\n's.</li></ul>
+<p><font color="#700000"><b>2002-04-02 01:45</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/Log.cpp:</font> 
+Now WinVNC should be able to save backup copies of log files under Win95/98/Me.</li></ul>
+<p><font color="#700000"><b>2002-03-29 17:13</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/: vncBuffer.cpp, vncEncodeCoRRE.cpp, vncEncodeCoRRE.h, vncEncodeHexT.cpp, vncEncodeHexT.h, vncEncodeRRE.cpp, vncEncodeRRE.h, vncEncodeTight.cpp, vncEncodeTight.h, vncEncodeZlib.cpp, vncEncodeZlib.h, vncEncodeZlibHex.cpp, vncEncodeZlibHex.h, vncEncoder.cpp, vncEncoder.h:</font> 
+Fixed WinVNC crashes on reporting zero statistics. Fixed incorrect statistics in the Tight encoder. Added a call to log statistics when new requested encoder destroys old encoder object. Minor code cleanups.</li></ul>
+<p><font color="#700000"><b>2002-03-22 17:52</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/vncHTTPConnect.cpp:</font> 
+Fixed a problem with built-in HTTP server appeared in the previous version.</li></ul>
+<p><font color="#700000"><b>2002-03-21 15:24</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/vncDesktop.cpp:</font> 
+A fix to restore screen resolution correctly, from Boyd Ebsworthy.</li></ul>
+<p><font color="#700000"><b>2002-03-21 01:20</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/vncHTTPConnect.cpp:</font> 
+Made client HTTP thread detached.</li></ul>
+<p><font color="#700000"><b>2002-03-21 00:31</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/: vncHTTPConnect.cpp, vncHTTPConnect.h:</font> 
+Fixed problem with I/O blocking in built-in HTTP server that prevented concurrent client connections.</li></ul>
+<p><font color="#700000"><b>2002-03-08 02:27</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/vncAcceptReverseDlg.h:</font> 
+file vncAcceptReverseDlg.h was initially added on branch BRANCH_SW_1_2.</li></ul>
+<p><font color="#700000"><b>2002-03-08 02:27</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/vncAcceptReverseDlg.cpp:</font> 
+file vncAcceptReverseDlg.cpp was initially added on branch BRANCH_SW_1_2.</li></ul>
+<p><font color="#700000"><b>2002-03-07 23:29</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/res/: VncCanvas.class, VncViewer.jar:</font> 
+Java viewer update.</li></ul>
+<p><font color="#700000"><b>2002-03-05 02:40</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/res/ico00002.ico:</font> 
+file ico00002.ico was initially added on branch BRANCH_SW_1_2.</li></ul>
+<p><font color="#700000"><b>2002-03-05 02:28</b></font> <b>const</b></p>
+<ul><li><font color="#007000">TightVNC.iss:</font> 
+Creating associations for .vnc files in the installer.</li></ul>
+<p><font color="#700000"><b>2002-03-05 02:27</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.cpp, WinVNC.h, vncMenu.cpp, vncService.cpp, vncService.h:</font> 
+The winvnc's -connect command-line option now accepts a display number after a hostname.</li></ul>
+<p><font color="#700000"><b>2002-03-05 00:37</b></font> <b>const</b></p>
+<ul><li><font color="#007000">BUILDING.txt, README.txt, TightVNC.iss, vncviewer/res/vncviewer.rc, winvnc/WinVNC.rc, winvnc/VNCHooks/VNCHooks.rc:</font> 
+Version strings changed.</li></ul>
+<p><font color="#700000"><b>2002-03-05 00:12</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/: WinVNC.dsp, WinVNC.rc, resource.h, vncHTTPConnect.cpp, res/AuthPanel.class, res/ButtonPanel.class, res/ClipboardFrame.class, res/OptionsFrame.class, res/RfbProto.class, res/VncCanvas.class, res/VncViewer.class, res/VncViewer.jar:</font> 
+Updated version of the Java viewer.</li></ul>
+<p><font color="#700000"><b>2002-02-07 18:54</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp, vncviewer/stdhdrs.h, winvnc/vncClient.cpp:</font> 
+Added support for mouse wheel events. Such events are represented as button4 and button5 presses with immediate releases.</li></ul>
+<p><font color="#700000"><b>2001-12-03 22:10</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/res/cursor1.cur:</font> 
+file cursor1.cur was initially added on branch BRANCH_SW_1_2.</li></ul>
+<p><font color="#700000"><b>2001-12-03 22:10</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/res/bitmap3.bmp:</font> 
+file bitmap3.bmp was initially added on branch BRANCH_SW_1_2.</li></ul>
+<p><font color="#700000"><b>2001-12-03 22:10</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/res/bitmap1.bmp:</font> 
+file bitmap1.bmp was initially added on branch BRANCH_SW_1_2.</li></ul>
+<p><font color="#700000"><b>2001-12-03 22:10</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/MatchWindow.cpp:</font> 
+file MatchWindow.cpp was initially added on branch BRANCH_SW_1_2.</li></ul>
+<p><font color="#700000"><b>2001-12-03 22:10</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/MatchWindow.h:</font> 
+file MatchWindow.h was initially added on branch BRANCH_SW_1_2.</li></ul>
+<p><font color="#700000"><b>2001-12-03 22:10</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/res/bitmap2.bmp:</font> 
+file bitmap2.bmp was initially added on branch BRANCH_SW_1_2.</li></ul>
+<p><font color="#700000"><b>2001-11-28 12:43</b></font> <b>const</b></p>
+<ul><li><font color="#007000">BUILDING.txt, README.txt:</font> 
+Version strings and TightVNC intro were changed.</li></ul>
+<p><font color="#700000"><b>2001-11-27 20:34</b></font> <b>const</b></p>
+<ul><li><font color="#007000">TightVNC.iss:</font> 
+Installation script updated for 1.2.2 version.</li></ul>
+<p><font color="#700000"><b>2001-11-22 17:10</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/VSocket.cpp:</font> 
+Copyright string made correct.</li></ul>
+<p><font color="#700000"><b>2001-10-31 00:33</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/res/vncviewer.rc, winvnc/WinVNC.rc, winvnc/resource.h, winvnc/vncProperties.cpp, winvnc/vncServer.cpp, winvnc/vncServer.h, winvnc/VNCHooks/VNCHooks.rc:</font> 
+New EnableHTTPDaemon registry setting to disable HTTP daemon, and corresponding checkbox in Advanced Preferences dialog (this change was inspired by &quot;AllowHTTP&quot; patch made by Ph Marek). Layout changes in the Advanced Preferences dialog, and changes in version strings, version 1.2.2.</li></ul>
+<p><font color="#700000"><b>2001-10-29 20:07</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/: VSocket.cpp, VSocket.h, vncClient.cpp, vncEncodeTight.cpp, vncEncodeZlib.cpp, vncEncodeZlibHex.cpp, vncEncoder.cpp:</font> 
+A fix for a long-standing Win9x resource consumption problem. Now the server thread does not use blocking I/O, and therefore is always ready to process messages both from the VNCHooks DLL.</li></ul>
+<p><font color="#700000"><b>2001-10-11 13:35</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/WinVNC.rc:</font> 
+Typos fixed.</li></ul>
+<p><font color="#700000"><b>2001-09-24 19:46</b></font> <b>const</b></p>
+<ul><li><font color="#007000">TightVNC.iss:</font> 
+LICENSE.txt renamed to LICENCE.txt.</li></ul>
+<p><font color="#700000"><b>2001-09-24 16:16</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp:</font> 
+Changes in exception handling. Now warning exceptions causing disconnects are reported to user, except for the case when a user has closed the viewer window. These changes also should fix the problem with Borland C++ compilation resulting vncviewer crashes after closing one connection and opening another one, e.g. in the listen mode.</li></ul>
+<p><font color="#700000"><b>2001-09-16 22:40</b></font> <b>const</b></p>
+<ul><li><font color="#007000">BUILDING.txt, README.txt, TightVNC.iss, vncviewer/res/vncviewer.rc, winvnc/WinVNC.rc, winvnc/VNCHooks/VNCHooks.rc:</font> 
+Version strings changed, more text in the &quot;Reverse connection&quot; WinVNC dialog added.</li></ul>
+<p><font color="#700000"><b>2001-09-16 22:36</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/VNCOptions.cpp:</font> 
+New -encoding command-line option has been implemented in vncviewer.</li></ul>
+<p><font color="#700000"><b>2001-09-16 22:34</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/vncConnDialog.cpp:</font> 
+Modified patch for WinVNC from Steve Kann, to support reverse connections on ports other than 5500.</li></ul>
+<p><font color="#700000"><b>2001-09-15 18:16</b></font> <b>const</b></p>
+<ul><li><font color="#007000">TightVNC.iss:</font> 
+DOS-style end-of-lines removed.</li></ul>
+<p><font color="#700000"><b>2001-09-15 18:15</b></font> <b>const</b></p>
+<ul><li><font color="#007000">TightVNC.iss:</font> 
+Configuration file for Inno Setup packaging.</li></ul>
+<p><font color="#700000"><b>2001-09-10 16:20</b></font> <b>const</b></p>
+<ul><li><font color="#007000">LICENCE.txt:</font> 
+LICENSE.txt renamed back to LICENCE.txt. :-)</li></ul>
+<p><font color="#700000"><b>2001-09-10 16:17</b></font> <b>const</b></p>
+<ul><li><font color="#007000">LICENCE.txt:</font> 
+LICENCE.txt renamed to LICENSE.txt.</li></ul>
+<p><font color="#700000"><b>2001-09-09 15:18</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/VNCOptions.cpp:</font> 
+Now viewer should support -noshared option.</li></ul>
+<p><font color="#700000"><b>2001-09-05 01:33</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/res/idr_tray.ico:</font> 
+Forgot to replace this icon with new icon file.</li></ul>
+<p><font color="#700000"><b>2001-08-15 14:56</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/res/tightvnc.bmp, vncviewer/res/tightvnc48.bmp, vncviewer/res/vncviewer.ico, winvnc/res/WinVNC.ico, winvnc/res/ico00001.ico, winvnc/res/icon1.ico, winvnc/res/tightvnc.bmp:</font> 
+New icons and modified logos.</li></ul>
+<p><font color="#700000"><b>2001-08-14 22:59</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/res/cursor1.cur, vncviewer/res/idr_tray.ico, vncviewer/res/nocursor.cur, vncviewer/res/tightvnc.bmp, vncviewer/res/tightvnc48.bmp, vncviewer/res/vncviewer.ico, vncviewer/res/vncviewer.rc, winvnc/WinVNC.rc, winvnc/VNCHooks/VNCHooks.rc, winvnc/res/WinVNC.ico, winvnc/res/ico00001.ico, winvnc/res/icon1.ico, winvnc/res/tightvnc.bmp:</font> 
+Version strings changed, new logo and icons added, a number of dialogs changed to include icons, version info etc.</li></ul>
+<p><font color="#700000"><b>2001-08-14 22:53</b></font> <b>const</b></p>
+<ul><li><font color="#007000">[MANY FILES]:</font> 
+Version strings changed, a link to TightVNC homepage added to comments at top of each file.</li></ul>
+<p><font color="#700000"><b>2001-08-09 21:09</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/: Makefile.bcc32, VNCHooks/Makefile.bcc32, VNCHooks/SharedData.cpp, VNCHooks/SharedData.h:</font> 
+DOS-style end-of-lines converted to Unix-style ones.</li></ul>
+<p><font color="#700000"><b>2001-08-09 20:12</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/: Makefile.bcc32, res/resource.h:</font> 
+DOS-style end-of-lines converted to Unix-style ones.</li></ul>
+<p><font color="#700000"><b>2001-08-09 17:48</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/vncDesktop.cpp:</font> 
+DrawIconEx flags corrected, now custom cursors can be shown properly under both WinNT and Win95/Win98, regardless of settings related to local cursor support.</li></ul>
+<p><font color="#700000"><b>2001-08-05 19:37</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/vncClient.cpp:</font> 
+Conflicts between VNC, TightVNC and TridiaVNC hopefully resolved.</li></ul>
+<p><font color="#700000"><b>2001-08-05 19:35</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/Makefile.bcc32:</font> 
+New file, vncAdvancedProperties.cpp.</li></ul>
+<p><font color="#700000"><b>2001-08-05 19:34</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/WinVNC.rc:</font> 
+DS_SETFOREGROUND flags removed -- not understood by Borland C++ 5.5.</li></ul>
+<p><font color="#700000"><b>2001-08-05 17:57</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/: History.txt, Log.cpp, Log.h, WinVNC.rc, vncAcceptDialog.cpp, vncAcceptDialog.h, vncBuffer.cpp, vncClient.cpp, vncDesktop.cpp, vncDesktop.h, vncEncodeCoRRE.cpp, vncEncodeHexT.cpp, vncEncodeRRE.cpp, vncHTTPConnect.cpp, vncMenu.cpp, vncProperties.cpp, vncProperties.h, vncServer.cpp, vncServer.h, vncService.cpp, vncService.h:</font> 
+Integrated changes from standard VNC 3.3.3r9.</li></ul>
+<p><font color="#700000"><b>2001-08-05 16:45</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.cpp, ClientConnection.h, Flasher.cpp, History.txt:</font> 
+Integrated changes from standard VNC 3.3.3r9.</li></ul>
+<p><font color="#700000"><b>2001-08-05 16:08</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/: Log.cpp, Log.h, WinVNC.dsp, WinVNC.rc, resource.h, vncAcceptDialog.cpp, vncAcceptDialog.h, vncClient.cpp, vncMenu.cpp, vncMenu.h, vncProperties.cpp, vncProperties.h, vncServer.cpp, vncServer.h, vncService.cpp, res/ico00001.ico:</font> 
+Integrated Robert Ragno's Advanced Properties dialog and AllowNoPassword, from TridiaVNC CVS.</li></ul>
+<p><font color="#700000"><b>2001-07-30 01:05</b></font> <b>const</b></p>
+<ul><li><font color="#007000">BUILDING.txt, README.txt:</font> 
+Version strings changed.</li></ul>
+<p><font color="#700000"><b>2001-07-30 01:04</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/: vncBuffer.cpp, vncBuffer.h, vncClient.cpp, vncClient.h, vncDesktop.cpp, vncDesktop.h, vncEncoder.cpp, vncEncoder.h, vncService.cpp:</font> 
+RichCursor encoding is now fully supported. Code implementing cursor shape updates has been reorganized, large parts were rewritten; this should be the final version of the &quot;local cursor&quot; feature. Besides that, code cleanups in many places.</li></ul>
+<p><font color="#700000"><b>2001-07-18 23:26</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnectionCursor.cpp:</font> 
+Bug fixed: vncviewer used to set cursor hotspot incorrectly on XCursor and RichCursor updates.</li></ul>
+<p><font color="#700000"><b>2001-03-13 18:52</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnectionCursor.cpp:</font> 
+Bugfix: local cursor implementation allocated DC and bitmap on each cursor movement but failed to free these recources. On Win95/98, after GDI resources were exhausted, mouse movement leaved cursor trails on the screen. Current fix allocates DC and bitmap only on cursor shape updates and disposes them properly.</li></ul>
+<p><font color="#700000"><b>2001-03-13 18:44</b></font> <b>const</b></p>
+<ul><li><font color="#007000">build-bcc32.bat, vncviewer/omnithread/build-bcc32.bat, vncviewer/res/build-bcc32.bat, winvnc/Makefile.bcc32, winvnc/WinVNC.rc, winvnc/VNCHooks/Makefile.bcc32, winvnc/omnithread/build-bcc32.bat:</font> 
+More porting to Borland C++ 5.5 compiler. Now build scripts and makefiles should work in Win95/98 environment.</li></ul>
+<p><font color="#700000"><b>2001-03-12 00:13</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/: vncClient.cpp, vncClient.h:</font> 
+Started work to implement cursor shape updates for every possible cursor shape. At this moment, a skeleton for new implementation has been prepared, the code has been re-organized, but basic functionality has remained the same.</li></ul>
+<p><font color="#700000"><b>2001-03-12 00:05</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/Log.cpp, winvnc/Log.cpp:</font> 
+CORE SDI fixes applied to fix buffer overflows reported 2001-01-29.</li></ul>
+<p><font color="#700000"><b>2001-03-11 01:41</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/vncDesktop.cpp:</font> 
+The color depth is set to correct value in 24-bit truecolor mode. Original WinVNC always used to set depth = bitsPerPixel. This change notably improves performance of the Tight encoder in both compression ratios and encoding/decoding speed.</li></ul>
+<p><font color="#700000"><b>2001-03-11 01:35</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/vncEncodeTight.cpp:</font> 
+The &quot;gradient&quot; filter enabled again.</li></ul>
+<p><font color="#700000"><b>2001-03-11 01:33</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.cpp, ClientConnectionClipboard.cpp, ClientConnectionCopyRect.cpp, ClientConnectionCursor.cpp, ClientConnectionFile.cpp, ClientConnectionRaw.cpp, ClientConnectionTight.cpp, ClientConnectionZlib.cpp, ClientConnectionZlibHex.cpp, Daemon.cpp, Flasher.cpp, KeyMap.cpp, Log.h, VNCOptions.cpp, VNCviewerApp.cpp, VNCviewerApp32.cpp, vncviewer.cpp, vncviewer.h:</font> 
+The name of global variable &quot;log&quot; changed to &quot;vnclog&quot;.</li></ul>
+<p><font color="#700000"><b>2001-03-10 23:06</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnectionTight.cpp:</font> 
+Bugfix: &quot;gradient&quot; filter was broken in non-24-bit color depths.</li></ul>
+<p><font color="#700000"><b>2001-03-10 23:05</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/VNCOptions.cpp:</font> 
+Default preferred encoding is now Tight.</li></ul>
+<p><font color="#700000"><b>2001-03-10 23:05</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/res/vncviewer.rc:</font> 
+Two version info blocks merged into one record.</li></ul>
+<p><font color="#700000"><b>2001-03-08 00:30</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/tabletranstemplate.cpp:</font> 
+Workaround for buggy Borland C++ 5.5 compiler: pixel format translations from 24-bit colors worked incorrectly when optimizations were enabled.</li></ul>
+<p><font color="#700000"><b>2001-03-07 14:03</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.cpp, ClientConnection.h, ClientConnectionCursor.cpp:</font> 
+&quot;Local cursor&quot; implementation now works with scaling.</li></ul>
+<p><font color="#700000"><b>2001-03-07 13:56</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/: vncEncodeTight.cpp, vncEncodeTight.h:</font> 
+Changes from current Unix version ported to Win32 code. Minor formatting changes and code clean-ups.</li></ul>
+<p><font color="#700000"><b>2001-03-06 01:00</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/vncEncodeTight.cpp:</font> 
+JPEG encoder worked incorrectly in 16bpp mode (bug found by Martin Granell).</li></ul>
+<p><font color="#700000"><b>2001-03-06 00:03</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnectionTight.cpp:</font> 
+Minor clean-ups and tiny formatting fix.</li></ul>
+<p><font color="#700000"><b>2001-03-05 23:39</b></font> <b>const</b></p>
+<ul><li><font color="#007000">BUILDING-bcc32.txt:</font> 
+MS-DOS end-of-line markers replaced with Unix newlines.</li></ul>
+<p><font color="#700000"><b>2001-03-05 23:32</b></font> <b>const</b></p>
+<ul><li><font color="#007000">[MANY FILES]:</font> 
+Finished porting to Borland C++ 5.5 compiler. Global variable &quot;log&quot; in WinVNC changed to &quot;vnclog&quot;.  Proper cooperation between threads in &quot;local cursor&quot; code. Correct loading of configuration files where &quot;compresslevel&quot; or &quot;quality&quot; setting were not set. Corrected path to libjpeg library in the vncviewer.dsw. Minor code clean-ups.</li></ul>
+<p><font color="#700000"><b>2001-03-03 23:13</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/vncEncodeTight.cpp:</font> 
+Debugging code removed. Minor formatting changes.</li></ul>
+<p><font color="#700000"><b>2001-02-09 00:44</b></font> <b>const</b></p>
+<ul><li><font color="#007000">BUILDING.txt, README.txt:</font> 
+Notes on the status of release and unpacking/building instructions.</li></ul>
+<p><font color="#700000"><b>2001-02-09 00:17</b></font> <b>const</b></p>
+<ul><li><font color="#007000">[MANY FILES]:</font> 
+Features from Unix version ported to Win32 source: &quot;local cursor&quot; feature, JPEG compression, the code to split large rectangles in smarter way etc.</li></ul>
+<p><font color="#700000"><b>2001-01-06 01:07</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/vncEncodeTight.cpp:</font> 
+Changes from Unix version ported: Constant sets for compression levels 0 and 1 changed. Minor code cleanups and optimizations. Comments clarified, typos in comments fixed.</li></ul>
+<p><font color="#700000"><b>2001-01-06 00:38</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.cpp, ClientConnection.h, ClientConnectionCursor.cpp, ClientConnectionTight.cpp:</font> 
+Preparing for shape updates support (unfinished code).</li></ul>
+<p><font color="#700000"><b>2000-12-09 05:31</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnectionTight.cpp:</font> 
+Bugfix from Unix source: viewer crashed in rare situations after inflate() call when decompressed data filled the whole output buffer but there was no more input data.</li></ul>
+<p><font color="#700000"><b>2000-12-07 21:09</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.cpp, ClientConnection.h, ClientConnectionCursor.cpp, vncviewer.dsp:</font> 
+Preparing for XCursor/RichCursor encodings implementation.</li></ul>
+<p><font color="#700000"><b>2000-12-07 21:08</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/: vncEncodeTight.cpp, vncEncodeTight.h:</font> 
+Logging statistics for Tight encoding.</li></ul>
+<p><font color="#700000"><b>2000-12-01 01:52</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp, vncviewer/VNCOptions.cpp, vncviewer/VNCOptions.h, vncviewer/res/resource.h, vncviewer/res/vncviewer.rc, winvnc/vncBuffer.cpp, winvnc/vncBuffer.h, winvnc/vncClient.cpp, winvnc/vncEncodeTight.cpp, winvnc/vncEncodeTight.h, winvnc/vncEncodeZlib.cpp, winvnc/vncEncodeZlibHex.cpp, winvnc/vncEncoder.cpp, winvnc/vncEncoder.h:</font> 
+Speed optimizations and configurable compression levels. Other code also ported from Unix sources.</li></ul>
+<p><font color="#700000"><b>2000-11-16 03:09</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/: vncEncodeTight.cpp, vncEncodeTight.h:</font> 
+Compilation errors fixed.</li></ul>
+<p><font color="#700000"><b>2000-11-15 20:51</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp, vncviewer/VNCOptions.h, vncviewer/res/resource.h, vncviewer/res/vncviewer.rc, winvnc/vncBuffer.cpp, winvnc/vncBuffer.h, winvnc/vncEncodeZlib.cpp:</font> 
+Changes from TridiaVNC CVS have been merged in the source.</li></ul>
+<p><font color="#700000"><b>2000-11-15 04:31</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/: vncEncodeTight.cpp, vncEncodeTight.h:</font> 
+Changes from recent Unix sources partially integrated: tight encoder rewrites and cleanups, preparing for configurable compression and cursor shape encoding.</li></ul>
+<p><font color="#700000"><b>2000-10-11 02:00</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp, vncviewer/ClientConnection.h, vncviewer/VNCOptions.h, vncviewer/vncviewer.dsp, vncviewer/res/resource.h, vncviewer/res/vncviewer.rc, winvnc/WinVNC.dsp, winvnc/vncBuffer.cpp, winvnc/vncBuffer.h, winvnc/vncEncodeZlib.cpp, winvnc/vncEncodeZlib.h, winvnc/res/icon1.ico:</font> 
+Merged with TridiaVNC CVS tree.</li></ul>
+<p><font color="#700000"><b>2000-10-11 01:18</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnectionZlibHex.cpp, winvnc/vncEncodeZlibHex.cpp, winvnc/vncEncodeZlibHex.h:</font> 
+Initial revision</li></ul>
+<p><font color="#700000"><b>2000-10-05 16:35</b></font> <b>const</b></p>
+<ul><li><font color="#007000">winvnc/vncEncodeTight.cpp:</font> 
+Compilation errors caused by inaccurate porting from Unix source have been fixed.</li></ul>
+<p><font color="#700000"><b>2000-10-02 03:46</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnectionTight.cpp, winvnc/vncEncodeTight.cpp, winvnc/vncEncodeTight.h:</font> 
+Tight Encoding 1.1 ported from Unix sources (not tested yet).</li></ul>
+<p><font color="#700000"><b>2000-08-28 00:26</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/: ClientConnection.cpp, ClientConnection.h, VNCOptions.h, res/vncviewer.rc:</font> 
+Merged changes from TridiaVNC.</li></ul>
+<p><font color="#700000"><b>2000-08-27 22:00</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/ClientConnection.cpp, vncviewer/ClientConnection.h, vncviewer/ClientConnectionTight.cpp, vncviewer/VNCOptions.h, vncviewer/vncviewer.dsp, vncviewer/res/resource.h, vncviewer/res/vncviewer.rc, winvnc/WinVNC.dsp, winvnc/vncBuffer.cpp, winvnc/vncBuffer.h, winvnc/vncEncodeTight.cpp, winvnc/vncEncodeTight.h, winvnc/vncEncodeZlib.cpp, winvnc/vncEncodeZlib.h, winvnc/res/icon1.ico:</font> 
+Tight encoding release 1.0 added.</li></ul>
+<p><font color="#700000"><b>2000-08-27 20:41</b></font> <b>const</b></p>
+<ul><li><font color="#007000">[MANY FILES]:</font> 
+Initial revision</li></ul>
+<p><font color="#700000"><b>2000-08-27 20:41</b></font> <b>const</b></p>
+<ul><li><font color="#007000">vncviewer/LICENCE.txt, vncviewer/ToDo.txt, vncviewer/d3des.c, vncviewer/d3des.h, vncviewer/fred, vncviewer/omnithread/omnithread.h, vncviewer/res/toolbar1.bmp, winvnc/BUILDING.txt, winvnc/LICENCE.txt, winvnc/VNCHooks_Settings.reg, winvnc/d3des.h, winvnc/VNCHooks/resource.h:</font> 
+Imported sources</li></ul>
+            </td></tr>
+          </table>
+        </td><td width="2" bgcolor="#C49A82">
+          <img src="brpixel.jpg" width="2" height="1" alt="">
+        </td><td width="6" valign="top" bgcolor="#F8EECB">
+          &nbsp;
+        </td><td width="128" valign="top" bgcolor="#F8EECB">
+          <table border="0" width="100%" cellspacing="0" cellpadding="8">
+            <tr><td align="center"><a href="http://www.tightvnc.com/"><img
+              src="tightvnc-logo.jpg" width="128" height="128" border="0"
+              alt="[LOGO]"></a></td></tr>
+            <tr><td align="center">
+              <table align="center" border="0"><tr><td nowrap>
+  <p><b>TightVNC:</b><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="index.html">main page</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="download.html"><b>download</b></a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="support.html">get support</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="contribute.html">contribute</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="contact.html">contact us</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="people.html">people</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="sitemap.html">site map</a><br>
+  <p><b>Information:</b><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="intro.html">introduction</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="http://www.tightvnc.com/screenshots.html">screenshots</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="docs.html">documentation</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="faq.html">FAQ</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="lists.html">mailing lists</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="changelogs.html">change logs</a><br>
+  <p><b>Development:</b><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="bugs.html">report bugs</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="rfe.html">suggest features</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="http://sourceforge.net/tracker/?func=add&group_id=14067&atid=314067">submit patches</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="http://sourceforge.net/cvs/?group_id=14067">CVS</a><br>
+  <p><b>Links:</b><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="http://www.tightvnc.com/">primary site</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="othersites.html">other sites</a><br>
+  <img src="ldot.jpg" width="8" height="8" hspace="4" alt="*"> <a href="related.html">related software</a><br>
+              </td></tr></table>
+            </td></tr>
+          </table>
+        </td><td width="6" bgcolor="#F8EECB">
+          &nbsp;
+        </td></tr>
+    </table> 
+  </body>
+</html>
+<!-- Guava tools by Steve Morphet 1999-2001. -->
