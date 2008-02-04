@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual C++ Express 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vncclient", "vncclient\vncclient.vcproj", "{D89A42EB-BAEB-43EB-A81B-15B259FE5E0E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{59F6587F-7A0D-4007-BFED-67A8145E7B7C} = {59F6587F-7A0D-4007-BFED-67A8145E7B7C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vncserver", "vncserver\vncserver.vcproj", "{74C55A90-A4DF-46FF-AF81-DAE45E12735D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{59F6587F-7A0D-4007-BFED-67A8145E7B7C} = {59F6587F-7A0D-4007-BFED-67A8145E7B7C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vnclib", "vnclib\vnclib.vcproj", "{59F6587F-7A0D-4007-BFED-67A8145E7B7C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D89A42EB-BAEB-43EB-A81B-15B259FE5E0E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D89A42EB-BAEB-43EB-A81B-15B259FE5E0E}.Debug|Win32.Build.0 = Debug|Win32
+		{D89A42EB-BAEB-43EB-A81B-15B259FE5E0E}.Release|Win32.ActiveCfg = Release|Win32
+		{D89A42EB-BAEB-43EB-A81B-15B259FE5E0E}.Release|Win32.Build.0 = Release|Win32
+		{74C55A90-A4DF-46FF-AF81-DAE45E12735D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{74C55A90-A4DF-46FF-AF81-DAE45E12735D}.Debug|Win32.Build.0 = Debug|Win32
+		{74C55A90-A4DF-46FF-AF81-DAE45E12735D}.Release|Win32.ActiveCfg = Release|Win32
+		{74C55A90-A4DF-46FF-AF81-DAE45E12735D}.Release|Win32.Build.0 = Release|Win32
+		{59F6587F-7A0D-4007-BFED-67A8145E7B7C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{59F6587F-7A0D-4007-BFED-67A8145E7B7C}.Debug|Win32.Build.0 = Debug|Win32
+		{59F6587F-7A0D-4007-BFED-67A8145E7B7C}.Release|Win32.ActiveCfg = Release|Win32
+		{59F6587F-7A0D-4007-BFED-67A8145E7B7C}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
