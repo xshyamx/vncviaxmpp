@@ -570,6 +570,46 @@
 					</File>
 				</Filter>
 			</Filter>
+			<Filter
+				Name="examples"
+				>
+				<Filter
+					Name="login"
+					>
+					<File
+						RelativePath=".\libjingle\talk\examples\login\jingleinfotask.cc"
+						>
+					</File>
+					<File
+						RelativePath=".\libjingle\talk\examples\login\login_main.cc"
+						>
+					</File>
+					<File
+						RelativePath=".\libjingle\talk\examples\login\presenceouttask.cc"
+						>
+					</File>
+					<File
+						RelativePath=".\libjingle\talk\examples\login\presencepushtask.cc"
+						>
+					</File>
+					<File
+						RelativePath=".\libjingle\talk\examples\login\xmppauth.cc"
+						>
+					</File>
+					<File
+						RelativePath=".\libjingle\talk\examples\login\xmpppump.cc"
+						>
+					</File>
+					<File
+						RelativePath=".\libjingle\talk\examples\login\xmppsocket.cc"
+						>
+					</File>
+					<File
+						RelativePath=".\libjingle\talk\examples\login\xmppthread.cc"
+						>
+					</File>
+				</Filter>
+			</Filter>
 		</Filter>
 		<Filter
 			Name="Header Files"
@@ -1192,6 +1232,46 @@
 					</File>
 					<File
 						RelativePath=".\libjingle\talk\p2p\client\socketmonitor.h"
+						>
+					</File>
+				</Filter>
+			</Filter>
+			<Filter
+				Name="examples"
+				>
+				<Filter
+					Name="login"
+					>
+					<File
+						RelativePath=".\libjingle\talk\examples\login\jingleinfotask.h"
+						>
+					</File>
+					<File
+						RelativePath=".\libjingle\talk\examples\login\presenceouttask.h"
+						>
+					</File>
+					<File
+						RelativePath=".\libjingle\talk\examples\login\presencepushtask.h"
+						>
+					</File>
+					<File
+						RelativePath=".\libjingle\talk\examples\login\status.h"
+						>
+					</File>
+					<File
+						RelativePath=".\libjingle\talk\examples\login\xmppauth.h"
+						>
+					</File>
+					<File
+						RelativePath=".\libjingle\talk\examples\login\xmpppump.h"
+						>
+					</File>
+					<File
+						RelativePath=".\libjingle\talk\examples\login\xmppsocket.h"
+						>
+					</File>
+					<File
+						RelativePath=".\libjingle\talk\examples\login\xmppthread.h"
 						>
 					</File>
 				</Filter>
