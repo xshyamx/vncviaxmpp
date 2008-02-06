@@ -65,19 +65,27 @@ public class VNCManager {
         // find vnc base dir
         File baseDir = findFile(tempDir, "vncviewer.exe").getParentFile();
 
+        return baseDir;
+    }
+
+    private void installVNCRegistry() throws Exception {
+        // create a temp folder
+        File tempFile = File.createTempFile("registry", ".tmp");
+        tempFile.delete();
+        File tempDir = new File(tempFile.getAbsolutePath());
+        tempDir.mkdir();
+
         // copy vnc.reg to that folder
-        is = VNCManager.class.getResourceAsStream("/vnc.reg");
-        FileOutputStream os = new FileOutputStream(new File(baseDir, "vnc.reg"));
+        InputStream is = VNCManager.class.getResourceAsStream("/vnc.reg");
+        FileOutputStream os = new FileOutputStream(new File(tempDir, "vnc.reg"));
         IOUtils.copy(is, os);
         is.close();
         os.close();
 
-        String cmdLine = "REGEDIT /S \"" + baseDir.getAbsolutePath() + "/vnc.reg\"";
+        String cmdLine = "REGEDIT /S \"" + tempDir.getAbsolutePath() + "/vnc.reg\"";
         logger.info("Executing command: " + cmdLine);
-        Process p = Runtime.getRuntime().exec(new String[]{"REGEDIT", "/S", baseDir.getAbsolutePath() + "/vnc.reg"});
+        Process p = Runtime.getRuntime().exec(new String[]{"REGEDIT", "/S", tempDir.getAbsolutePath() + "/vnc.reg"});
         p.waitFor();
-
-        return baseDir;
     }
 
     private File findFile(File dir, String fileName) {
@@ -101,6 +109,7 @@ public class VNCManager {
 
     public Process startVNCServer() throws Exception {
         File vncBaseDir = installVNC();
+        installVNCRegistry();
 
         String winVNC = vncBaseDir.getAbsolutePath() + "/WinVNC.exe";
         logger.info("Executing command: " + winVNC + " -kill");
