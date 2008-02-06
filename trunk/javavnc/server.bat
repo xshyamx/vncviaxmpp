@@ -1,2 +1,2 @@
-rem java -server -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000 -cp .\javavnc-1.0-SNAPSHOT.jar;target\dependency\javavnc-1.0-SNAPSHOT.jar org.javavnc.xmpp2tcp.XMPP2TCPMain
-java -cp .\javavnc-1.0-SNAPSHOT.jar;target\dependency\javavnc-1.0-SNAPSHOT.jar org.javavnc.xmpp2tcp.XMPP2TCPMain
+java -server -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000 -cp .\javavnc-1.0-SNAPSHOT.jar;target\dependency\javavnc-1.0-SNAPSHOT.jar org.javavnc.xmpp2tcp.XMPP2TCPMain
+rem java -cp .\javavnc-1.0-SNAPSHOT.jar;target\dependency\javavnc-1.0-SNAPSHOT.jar org.javavnc.xmpp2tcp.XMPP2TCPMain
