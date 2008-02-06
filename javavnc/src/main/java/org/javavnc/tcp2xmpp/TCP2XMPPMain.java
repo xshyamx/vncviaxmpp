@@ -56,7 +56,8 @@ public class TCP2XMPPMain {
         }
 
         // start vnc client
-        new VNCManager().startVNCClient("localhost", Integer.parseInt(port));
+        VNCManager manager = new VNCManager();
+        manager.startVNCClient("localhost", Integer.parseInt(port));
 
         // usr/pwd: xmppclient@gmail.com/thaiha
         // usr/pwd: xmppserver@gmail.com/thaiha
